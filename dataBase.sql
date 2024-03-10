@@ -181,14 +181,20 @@ DROP TABLE IF EXISTS `Patient`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `Patient` (
   `Ssn` char(9) NOT NULL,
-  `Address` varchar(255) NOT NULL,
+  `Address_Line1` varchar(45) NOT NULL,
+  `Address_Line2` varchar(45) DEFAULT NULL,
+  `City` varchar(45) NOT NULL,
+  `State` char(2) NOT NULL,
+  `Zipcode` char(5) DEFAULT NULL,
   `Dob` datetime NOT NULL,
   `Age` int(11) NOT NULL,
   `Sex` char(1) NOT NULL,
   `First_Name` varchar(20) NOT NULL,
-  `Minit` varchar(20) DEFAULT NULL,
+  `Minit` char(1) DEFAULT NULL,
   `Last_Name` varchar(20) NOT NULL,
   `Primary_Doctor_ID` char(9) NOT NULL,
+  `Phone_Number` char(10) DEFAULT NULL,
+  `Email` varchar(45) DEFAULT NULL,
   PRIMARY KEY (`Ssn`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;

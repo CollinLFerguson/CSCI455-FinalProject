@@ -28,7 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
+            Button button1;
             label1 = new Label();
+            button1 = new Button();
             SuspendLayout();
             // 
             // label1
@@ -41,11 +43,22 @@
             label1.TabIndex = 0;
             label1.Text = "455 TEAM LETS GO";
             // 
+            // button1
+            // 
+            button1.Location = new Point(106, 256);
+            button1.Name = "button1";
+            button1.Size = new Size(75, 23);
+            button1.TabIndex = 1;
+            button1.Text = "Fight on!";
+            button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(button1);
             Controls.Add(label1);
             Name = "Form1";
             Text = "Form1";
@@ -56,5 +69,6 @@
         #endregion
 
         private Label label1;
+        private Button button1;
     }
 }

@@ -1,9 +1,18 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "\\\\Mac\\Home\\Desktop\\school\\2024_spring\\455\\project\\EMRKS\\",
+  "WorkspaceRootPath": "G:\\School\\CSCI 455 Database\\FinalProject\\CSCI455-FinalProject\\EMRKS\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{2D2C62A6-DA00-496A-8DD4-F062FC784036}|EMRKS\\EMRKS.csproj|\\\\mac\\home\\desktop\\school\\2024_spring\\455\\project\\emrks\\emrks\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{2D2C62A6-DA00-496A-8DD4-F062FC784036}|EMRKS\\EMRKS.csproj|g:\\school\\csci 455 database\\finalproject\\csci455-finalproject\\emrks\\emrks\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{2D2C62A6-DA00-496A-8DD4-F062FC784036}|EMRKS\\EMRKS.csproj|solutionrelative:emrks\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2D2C62A6-DA00-496A-8DD4-F062FC784036}|EMRKS\\EMRKS.csproj|g:\\school\\csci 455 database\\finalproject\\csci455-finalproject\\emrks\\emrks\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2D2C62A6-DA00-496A-8DD4-F062FC784036}|EMRKS\\EMRKS.csproj|solutionrelative:emrks\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2D2C62A6-DA00-496A-8DD4-F062FC784036}|EMRKS\\EMRKS.csproj|g:\\school\\csci 455 database\\finalproject\\csci455-finalproject\\emrks\\emrks\\form1.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2D2C62A6-DA00-496A-8DD4-F062FC784036}|EMRKS\\EMRKS.csproj|solutionrelative:emrks\\form1.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -13,7 +22,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Bookmark",
@@ -21,14 +30,40 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Form1.Designer.cs",
+              "DocumentMoniker": "G:\\School\\CSCI 455 Database\\FinalProject\\CSCI455-FinalProject\\EMRKS\\EMRKS\\Form1.Designer.cs",
+              "RelativeDocumentMoniker": "EMRKS\\Form1.Designer.cs",
+              "ToolTip": "G:\\School\\CSCI 455 Database\\FinalProject\\CSCI455-FinalProject\\EMRKS\\EMRKS\\Form1.Designer.cs*",
+              "RelativeToolTip": "EMRKS\\Form1.Designer.cs*",
+              "ViewState": "AQIAABQAAAAAAAAAAAAwwD4AAAAbAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-20T23:18:29.421Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Form1.cs",
+              "DocumentMoniker": "G:\\School\\CSCI 455 Database\\FinalProject\\CSCI455-FinalProject\\EMRKS\\EMRKS\\Form1.cs",
+              "RelativeDocumentMoniker": "EMRKS\\Form1.cs",
+              "ToolTip": "G:\\School\\CSCI 455 Database\\FinalProject\\CSCI455-FinalProject\\EMRKS\\EMRKS\\Form1.cs*",
+              "RelativeToolTip": "EMRKS\\Form1.cs*",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAAsAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-20T23:18:12.801Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 0,
               "Title": "Form1.cs [Design]",
-              "DocumentMoniker": "\\\\Mac\\Home\\Desktop\\school\\2024_spring\\455\\project\\EMRKS\\EMRKS\\Form1.cs",
+              "DocumentMoniker": "G:\\School\\CSCI 455 Database\\FinalProject\\CSCI455-FinalProject\\EMRKS\\EMRKS\\Form1.cs",
               "RelativeDocumentMoniker": "EMRKS\\Form1.cs",
-              "ToolTip": "\\\\Mac\\Home\\Desktop\\school\\2024_spring\\455\\project\\EMRKS\\EMRKS\\Form1.cs [Design]",
-              "RelativeToolTip": "EMRKS\\Form1.cs [Design]",
+              "ToolTip": "G:\\School\\CSCI 455 Database\\FinalProject\\CSCI455-FinalProject\\EMRKS\\EMRKS\\Form1.cs [Design]*",
+              "RelativeToolTip": "EMRKS\\Form1.cs [Design]*",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-18T18:55:00.432Z",
+              "WhenOpened": "2024-03-20T23:17:50.579Z",
               "EditorCaption": " [Design]"
             }
           ]

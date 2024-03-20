@@ -1,0 +1,39 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "\\\\Mac\\Home\\Desktop\\school\\2024_spring\\455\\project\\EMRKS\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{2D2C62A6-DA00-496A-8DD4-F062FC784036}|EMRKS\\EMRKS.csproj|\\\\mac\\home\\desktop\\school\\2024_spring\\455\\project\\emrks\\emrks\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{eefa5220-e298-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Form1.cs [Design]",
+              "DocumentMoniker": "\\\\Mac\\Home\\Desktop\\school\\2024_spring\\455\\project\\EMRKS\\EMRKS\\Form1.cs",
+              "RelativeDocumentMoniker": "EMRKS\\Form1.cs",
+              "ToolTip": "\\\\Mac\\Home\\Desktop\\school\\2024_spring\\455\\project\\EMRKS\\EMRKS\\Form1.cs [Design]",
+              "RelativeToolTip": "EMRKS\\Form1.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-18T18:55:00.432Z",
+              "EditorCaption": " [Design]"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

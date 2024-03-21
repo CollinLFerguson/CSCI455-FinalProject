@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -20,7 +21,7 @@ namespace EMRKS
         private void onLogin(object sender, EventArgs e)
         {
             //IF AUTHORIZED DO THE EXECUTE THE BELOW CODE
-            MainForm mainForm = new MainForm();
+            MainForm mainForm = new MainForm(this);
             mainForm.Show();
             this.Hide(); //TODO: Should this be a kill or close instead? Now exiting the program doesn't actually exit.
         }

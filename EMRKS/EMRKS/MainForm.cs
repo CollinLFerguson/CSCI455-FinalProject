@@ -25,5 +25,10 @@ namespace EMRKS
             landingPage.MdiParent = this;
             landingPage.Show();
         }
+
+        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

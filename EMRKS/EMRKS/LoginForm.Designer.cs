@@ -30,9 +30,9 @@
         {
             label1 = new Label();
             button1 = new Button();
-            textBox1 = new TextBox();
+            txtUsername = new TextBox();
             label2 = new Label();
-            textBox2 = new TextBox();
+            txtPin = new TextBox();
             SuspendLayout();
             // 
             // label1
@@ -56,15 +56,15 @@
             button1.UseVisualStyleBackColor = true;
             button1.Click += onLogin;
             // 
-            // textBox1
+            // txtUsername
             // 
-            textBox1.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
-            textBox1.Location = new Point(73, 109);
-            textBox1.Multiline = true;
-            textBox1.Name = "textBox1";
-            textBox1.PlaceholderText = "ID Number";
-            textBox1.Size = new Size(143, 25);
-            textBox1.TabIndex = 2;
+            txtUsername.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
+            txtUsername.Location = new Point(73, 109);
+            txtUsername.Multiline = true;
+            txtUsername.Name = "txtUsername";
+            txtUsername.PlaceholderText = "ID Number";
+            txtUsername.Size = new Size(143, 25);
+            txtUsername.TabIndex = 2;
             // 
             // label2
             // 
@@ -75,16 +75,16 @@
             label2.TabIndex = 4;
             label2.Text = "Trouble signing in?";
             // 
-            // textBox2
+            // txtPin
             // 
-            textBox2.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
-            textBox2.Location = new Point(73, 162);
-            textBox2.Name = "textBox2";
-            textBox2.PasswordChar = '*';
-            textBox2.PlaceholderText = "Pin";
-            textBox2.Size = new Size(143, 25);
-            textBox2.TabIndex = 5;
-            textBox2.UseSystemPasswordChar = true;
+            txtPin.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
+            txtPin.Location = new Point(73, 162);
+            txtPin.Name = "txtPin";
+            txtPin.PasswordChar = '*';
+            txtPin.PlaceholderText = "Pin";
+            txtPin.Size = new Size(143, 25);
+            txtPin.TabIndex = 5;
+            txtPin.UseSystemPasswordChar = true;
             // 
             // LoginForm
             // 
@@ -92,9 +92,9 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Green;
             ClientSize = new Size(327, 322);
-            Controls.Add(textBox2);
+            Controls.Add(txtPin);
             Controls.Add(label2);
-            Controls.Add(textBox1);
+            Controls.Add(txtUsername);
             Controls.Add(button1);
             Controls.Add(label1);
             FormBorderStyle = FormBorderStyle.None;
@@ -109,8 +109,8 @@
 
         private Label label1;
         private Button button1;
-        private TextBox textBox1;
+        private TextBox txtUsername;
         private Label label2;
-        private TextBox textBox2;
+        private TextBox txtPin;
     }
 }

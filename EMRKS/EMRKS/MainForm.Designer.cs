@@ -31,7 +31,11 @@
             Button button1;
             label1 = new Label();
             button2 = new Button();
+            menuStrip1 = new MenuStrip();
+            fileToolStripMenuItem = new ToolStripMenuItem();
+            exitToolStripMenuItem = new ToolStripMenuItem();
             button1 = new Button();
+            menuStrip1.SuspendLayout();
             SuspendLayout();
             // 
             // button1
@@ -48,7 +52,7 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 45F, FontStyle.Bold | FontStyle.Italic | FontStyle.Underline);
-            label1.Location = new Point(204, 9);
+            label1.Location = new Point(185, 24);
             label1.Name = "label1";
             label1.Size = new Size(568, 81);
             label1.TabIndex = 0;
@@ -63,6 +67,29 @@
             button2.Text = "Merge test button";
             button2.UseVisualStyleBackColor = true;
             // 
+            // menuStrip1
+            // 
+            menuStrip1.Items.AddRange(new ToolStripItem[] { fileToolStripMenuItem });
+            menuStrip1.Location = new Point(0, 0);
+            menuStrip1.Name = "menuStrip1";
+            menuStrip1.Size = new Size(943, 24);
+            menuStrip1.TabIndex = 4;
+            menuStrip1.Text = "menuStrip1";
+            // 
+            // fileToolStripMenuItem
+            // 
+            fileToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { exitToolStripMenuItem });
+            fileToolStripMenuItem.Name = "fileToolStripMenuItem";
+            fileToolStripMenuItem.Size = new Size(37, 20);
+            fileToolStripMenuItem.Text = "File";
+            // 
+            // exitToolStripMenuItem
+            // 
+            exitToolStripMenuItem.Name = "exitToolStripMenuItem";
+            exitToolStripMenuItem.Size = new Size(180, 22);
+            exitToolStripMenuItem.Text = "Exit";
+            exitToolStripMenuItem.Click += exitToolStripMenuItem_Click;
+            // 
             // MainForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -71,10 +98,14 @@
             Controls.Add(button2);
             Controls.Add(button1);
             Controls.Add(label1);
+            Controls.Add(menuStrip1);
             IsMdiContainer = true;
+            MainMenuStrip = menuStrip1;
             Name = "MainForm";
             Text = "MainForm";
             Load += MainForm_Load;
+            menuStrip1.ResumeLayout(false);
+            menuStrip1.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -84,5 +115,8 @@
         private Label label1;
         private Button button1;
         private Button button2;
+        private MenuStrip menuStrip1;
+        private ToolStripMenuItem fileToolStripMenuItem;
+        private ToolStripMenuItem exitToolStripMenuItem;
     }
 }

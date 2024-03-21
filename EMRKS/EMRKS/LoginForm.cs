@@ -20,7 +20,9 @@ namespace EMRKS
         private void onLogin(object sender, EventArgs e)
         {
             //IF AUTHORIZED DO THE EXECUTE THE BELOW CODE
-
+            MainForm mainForm = new MainForm();
+            mainForm.Show();
+            this.Hide();
         }
     }
 }

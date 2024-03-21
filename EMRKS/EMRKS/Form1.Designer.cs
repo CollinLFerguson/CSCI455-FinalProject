@@ -30,18 +30,9 @@
         {
             Button button1;
             label1 = new Label();
+            button2 = new Button();
             button1 = new Button();
             SuspendLayout();
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI", 45F, FontStyle.Bold | FontStyle.Italic | FontStyle.Underline);
-            label1.Location = new Point(106, 149);
-            label1.Name = "label1";
-            label1.Size = new Size(568, 81);
-            label1.TabIndex = 0;
-            label1.Text = "455 TEAM LETS GO";
             // 
             // button1
             // 
@@ -53,11 +44,31 @@
             button1.UseVisualStyleBackColor = true;
             button1.Click += button1_Click;
             // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Segoe UI", 45F, FontStyle.Bold | FontStyle.Italic | FontStyle.Underline);
+            label1.Location = new Point(106, 149);
+            label1.Name = "label1";
+            label1.Size = new Size(568, 81);
+            label1.TabIndex = 0;
+            label1.Text = "455 TEAM LETS GO";
+            // 
+            // button2
+            // 
+            button2.Location = new Point(677, 36);
+            button2.Name = "button2";
+            button2.Size = new Size(111, 54);
+            button2.TabIndex = 2;
+            button2.Text = "This is a merge test";
+            button2.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(button2);
             Controls.Add(button1);
             Controls.Add(label1);
             Name = "Form1";
@@ -70,5 +81,6 @@
 
         private Label label1;
         private Button button1;
+        private Button button2;
     }
 }

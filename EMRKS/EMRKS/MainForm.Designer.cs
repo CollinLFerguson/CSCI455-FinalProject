@@ -31,6 +31,7 @@
             Button button1;
             label1 = new Label();
             button2 = new Button();
+            button3 = new Button();
             button1 = new Button();
             SuspendLayout();
             // 
@@ -63,11 +64,21 @@
             button2.Text = "Merge test button";
             button2.UseVisualStyleBackColor = true;
             // 
+            // button3
+            // 
+            button3.Location = new Point(502, 367);
+            button3.Name = "button3";
+            button3.Size = new Size(140, 71);
+            button3.TabIndex = 3;
+            button3.Text = "Merge test button";
+            button3.UseVisualStyleBackColor = true;
+            // 
             // MainForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(button3);
             Controls.Add(button2);
             Controls.Add(button1);
             Controls.Add(label1);
@@ -82,5 +93,6 @@
         private Label label1;
         private Button button1;
         private Button button2;
+        private Button button3;
     }
 }

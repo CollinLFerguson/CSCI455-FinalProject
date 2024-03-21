@@ -62,9 +62,9 @@
             textBox1.Location = new Point(73, 109);
             textBox1.Multiline = true;
             textBox1.Name = "textBox1";
+            textBox1.PlaceholderText = "ID Number";
             textBox1.Size = new Size(143, 25);
             textBox1.TabIndex = 2;
-            textBox1.Text = "ID Number";
             // 
             // label2
             // 
@@ -79,11 +79,12 @@
             // 
             textBox2.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
             textBox2.Location = new Point(73, 162);
-            textBox2.Multiline = true;
             textBox2.Name = "textBox2";
+            textBox2.PasswordChar = '*';
+            textBox2.PlaceholderText = "Pin";
             textBox2.Size = new Size(143, 25);
             textBox2.TabIndex = 5;
-            textBox2.Text = "Pin";
+            textBox2.UseSystemPasswordChar = true;
             // 
             // LoginForm
             // 

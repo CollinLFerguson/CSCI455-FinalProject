@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("EMRKS")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+94941f36ae5ebd187a57a2933d01704fd0f7536e")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d5d856dff106e13b55085234c90b83bf8d266738")]
 [assembly: System.Reflection.AssemblyProductAttribute("EMRKS")]
 [assembly: System.Reflection.AssemblyTitleAttribute("EMRKS")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

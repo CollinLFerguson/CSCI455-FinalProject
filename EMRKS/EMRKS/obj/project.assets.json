@@ -8,24 +8,19 @@
     "net8.0-windows7.0": []
   },
   "packageFolders": {
-    "C:\\Users\\Collin\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "C:\\Users\\john\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "G:\\School\\CSCI 455 Database\\FinalProject\\CSCI455-FinalProject\\EMRKS\\EMRKS\\EMRKS.csproj",
+      "projectUniqueName": "\\\\Mac\\Home\\Desktop\\development\\CSCI455-FinalProject\\EMRKS\\EMRKS\\EMRKS.csproj",
       "projectName": "EMRKS",
-      "projectPath": "G:\\School\\CSCI 455 Database\\FinalProject\\CSCI455-FinalProject\\EMRKS\\EMRKS\\EMRKS.csproj",
-      "packagesPath": "C:\\Users\\Collin\\.nuget\\packages\\",
-      "outputPath": "G:\\School\\CSCI 455 Database\\FinalProject\\CSCI455-FinalProject\\EMRKS\\EMRKS\\obj\\",
+      "projectPath": "\\\\Mac\\Home\\Desktop\\development\\CSCI455-FinalProject\\EMRKS\\EMRKS\\EMRKS.csproj",
+      "packagesPath": "C:\\Users\\john\\.nuget\\packages\\",
+      "outputPath": "\\\\Mac\\Home\\Desktop\\development\\CSCI455-FinalProject\\EMRKS\\EMRKS\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-      ],
       "configFilePaths": [
-        "C:\\Users\\Collin\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Users\\john\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [

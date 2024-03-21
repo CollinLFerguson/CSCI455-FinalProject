@@ -15,3 +15,20 @@ G:\School\CSCI 455 Database\FinalProject\CSCI455-FinalProject\EMRKS\EMRKS\obj\De
 G:\School\CSCI 455 Database\FinalProject\CSCI455-FinalProject\EMRKS\EMRKS\obj\Debug\net8.0-windows\EMRKS.pdb
 G:\School\CSCI 455 Database\FinalProject\CSCI455-FinalProject\EMRKS\EMRKS\obj\Debug\net8.0-windows\EMRKS.genruntimeconfig.cache
 G:\School\CSCI 455 Database\FinalProject\CSCI455-FinalProject\EMRKS\EMRKS\obj\Debug\net8.0-windows\ref\EMRKS.dll
+\\Mac\Home\Desktop\development\CSCI455-FinalProject\EMRKS\EMRKS\bin\Debug\net8.0-windows\EMRKS.exe
+\\Mac\Home\Desktop\development\CSCI455-FinalProject\EMRKS\EMRKS\bin\Debug\net8.0-windows\EMRKS.deps.json
+\\Mac\Home\Desktop\development\CSCI455-FinalProject\EMRKS\EMRKS\bin\Debug\net8.0-windows\EMRKS.runtimeconfig.json
+\\Mac\Home\Desktop\development\CSCI455-FinalProject\EMRKS\EMRKS\bin\Debug\net8.0-windows\EMRKS.dll
+\\Mac\Home\Desktop\development\CSCI455-FinalProject\EMRKS\EMRKS\bin\Debug\net8.0-windows\EMRKS.pdb
+\\Mac\Home\Desktop\development\CSCI455-FinalProject\EMRKS\EMRKS\obj\Debug\net8.0-windows\EMRKS.Form1.resources
+\\Mac\Home\Desktop\development\CSCI455-FinalProject\EMRKS\EMRKS\obj\Debug\net8.0-windows\EMRKS.csproj.GenerateResource.cache
+\\Mac\Home\Desktop\development\CSCI455-FinalProject\EMRKS\EMRKS\obj\Debug\net8.0-windows\EMRKS.GeneratedMSBuildEditorConfig.editorconfig
+\\Mac\Home\Desktop\development\CSCI455-FinalProject\EMRKS\EMRKS\obj\Debug\net8.0-windows\EMRKS.AssemblyInfoInputs.cache
+\\Mac\Home\Desktop\development\CSCI455-FinalProject\EMRKS\EMRKS\obj\Debug\net8.0-windows\EMRKS.AssemblyInfo.cs
+\\Mac\Home\Desktop\development\CSCI455-FinalProject\EMRKS\EMRKS\obj\Debug\net8.0-windows\EMRKS.csproj.CoreCompileInputs.cache
+\\Mac\Home\Desktop\development\CSCI455-FinalProject\EMRKS\EMRKS\obj\Debug\net8.0-windows\EMRKS.sourcelink.json
+\\Mac\Home\Desktop\development\CSCI455-FinalProject\EMRKS\EMRKS\obj\Debug\net8.0-windows\EMRKS.dll
+\\Mac\Home\Desktop\development\CSCI455-FinalProject\EMRKS\EMRKS\obj\Debug\net8.0-windows\refint\EMRKS.dll
+\\Mac\Home\Desktop\development\CSCI455-FinalProject\EMRKS\EMRKS\obj\Debug\net8.0-windows\EMRKS.pdb
+\\Mac\Home\Desktop\development\CSCI455-FinalProject\EMRKS\EMRKS\obj\Debug\net8.0-windows\EMRKS.genruntimeconfig.cache
+\\Mac\Home\Desktop\development\CSCI455-FinalProject\EMRKS\EMRKS\obj\Debug\net8.0-windows\ref\EMRKS.dll

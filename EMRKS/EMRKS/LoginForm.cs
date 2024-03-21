@@ -16,5 +16,11 @@ namespace EMRKS
         {
             InitializeComponent();
         }
+
+        private void onLogin(object sender, EventArgs e)
+        {
+            //IF AUTHORIZED DO THE EXECUTE THE BELOW CODE
+
+        }
     }
 }

@@ -36,7 +36,7 @@
             // 
             // button1
             // 
-            button1.Location = new Point(106, 256);
+            button1.Location = new Point(12, 507);
             button1.Name = "button1";
             button1.Size = new Size(75, 23);
             button1.TabIndex = 1;
@@ -48,7 +48,7 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 45F, FontStyle.Bold | FontStyle.Italic | FontStyle.Underline);
-            label1.Location = new Point(106, 149);
+            label1.Location = new Point(204, 9);
             label1.Name = "label1";
             label1.Size = new Size(568, 81);
             label1.TabIndex = 0;
@@ -56,7 +56,7 @@
             // 
             // button2
             // 
-            button2.Location = new Point(648, 367);
+            button2.Location = new Point(791, 459);
             button2.Name = "button2";
             button2.Size = new Size(140, 71);
             button2.TabIndex = 2;
@@ -67,12 +67,14 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(943, 542);
             Controls.Add(button2);
             Controls.Add(button1);
             Controls.Add(label1);
+            IsMdiContainer = true;
             Name = "MainForm";
             Text = "MainForm";
+            Load += MainForm_Load;
             ResumeLayout(false);
             PerformLayout();
         }

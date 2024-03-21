@@ -11,5 +11,19 @@ namespace EMRKS
         {
             label1.Text = "Lets get that A!!";
         }
+
+        private void MainForm_Load(object sender, EventArgs e)
+        {
+            LoginForm loginForm = new LoginForm();
+            loginForm.MdiParent = this;
+            loginForm.Show();
+        }
+
+        public void loadLanding()
+        {
+            LandingPage landingPage = new LandingPage();
+            landingPage.MdiParent = this;
+            landingPage.Show();
+        }
     }
 }

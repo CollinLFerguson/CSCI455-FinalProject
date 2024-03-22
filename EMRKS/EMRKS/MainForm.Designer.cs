@@ -40,7 +40,7 @@
             // 
             // button1
             // 
-            button1.Location = new Point(12, 507);
+            button1.Location = new Point(12, 646);
             button1.Name = "button1";
             button1.Size = new Size(75, 23);
             button1.TabIndex = 1;
@@ -52,7 +52,7 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 45F, FontStyle.Bold | FontStyle.Italic | FontStyle.Underline);
-            label1.Location = new Point(185, 24);
+            label1.Location = new Point(365, 24);
             label1.Name = "label1";
             label1.Size = new Size(568, 81);
             label1.TabIndex = 0;
@@ -60,7 +60,7 @@
             // 
             // button2
             // 
-            button2.Location = new Point(791, 459);
+            button2.Location = new Point(1112, 598);
             button2.Name = "button2";
             button2.Size = new Size(140, 71);
             button2.TabIndex = 2;
@@ -72,7 +72,7 @@
             menuStrip1.Items.AddRange(new ToolStripItem[] { fileToolStripMenuItem });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
-            menuStrip1.Size = new Size(943, 24);
+            menuStrip1.Size = new Size(1264, 24);
             menuStrip1.TabIndex = 4;
             menuStrip1.Text = "menuStrip1";
             // 
@@ -86,7 +86,7 @@
             // exitToolStripMenuItem
             // 
             exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            exitToolStripMenuItem.Size = new Size(180, 22);
+            exitToolStripMenuItem.Size = new Size(93, 22);
             exitToolStripMenuItem.Text = "Exit";
             exitToolStripMenuItem.Click += exitToolStripMenuItem_Click;
             // 
@@ -94,7 +94,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(943, 542);
+            ClientSize = new Size(1264, 681);
             Controls.Add(button2);
             Controls.Add(button1);
             Controls.Add(label1);

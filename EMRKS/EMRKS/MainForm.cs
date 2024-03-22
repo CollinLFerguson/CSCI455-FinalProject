@@ -2,12 +2,9 @@ namespace EMRKS
 {
     public partial class MainForm : Form
     {
-        LoginForm loginForm;
-
-        public MainForm(LoginForm loginForm)
+        public MainForm()
         {
             InitializeComponent();
-            this.loginForm = loginForm;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -15,18 +12,23 @@ namespace EMRKS
             label1.Text = "Lets get that A!!";
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void MainForm_Load(object sender, EventArgs e)
         {
-
+            LoginForm loginForm = new LoginForm();
+            loginForm.MdiParent = this;
+            loginForm.Show();
         }
 
-        protected override void OnFormClosing(FormClosingEventArgs e)
+        public void loadLanding()
         {
-            loginForm.Close();
-            base.OnFormClosing(e);
+            LandingPage landingPage = new LandingPage();
+            landingPage.MdiParent = this;
+            landingPage.Show();
+        }
 
-            if (e.CloseReason == CloseReason.WindowsShutDown) return;
-
+        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

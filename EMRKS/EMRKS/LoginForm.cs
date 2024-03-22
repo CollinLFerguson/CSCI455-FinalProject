@@ -20,10 +20,15 @@ namespace EMRKS
 
         private void onLogin(object sender, EventArgs e)
         {
+            if (this.MdiParent == null) { this.Close(); return;} //Prevents the rare case where a login form was created without a parent.
+
+            //validateUser(txtUsername.text, txtPin.text);
+                      
             //IF AUTHORIZED DO THE EXECUTE THE BELOW CODE
-            MainForm mainForm = new MainForm(this);
-            mainForm.Show();
-            this.Hide(); //TODO: Should this be a kill or close instead? Now exiting the program doesn't actually exit.
+           
+            this.Hide();
+            ((MainForm)this.MdiParent).loadLanding();
+            this.Close();
         }
     }
 }

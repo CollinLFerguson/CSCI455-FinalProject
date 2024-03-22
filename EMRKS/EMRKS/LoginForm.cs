@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -24,7 +25,7 @@ namespace EMRKS
             //validateUser(txtUsername.text, txtPin.text);
                       
             //IF AUTHORIZED DO THE EXECUTE THE BELOW CODE
-            
+           
             this.Hide();
             ((MainForm)this.MdiParent).loadLanding();
             this.Close();

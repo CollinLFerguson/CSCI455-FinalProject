@@ -36,18 +36,19 @@
             label1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 45F, FontStyle.Bold | FontStyle.Italic | FontStyle.Underline);
-            label1.Location = new Point(22, 167);
+            label1.Location = new Point(251, 286);
             label1.Name = "label1";
             label1.Size = new Size(756, 81);
             label1.TabIndex = 1;
             label1.Text = "I AM THE LANDING PAGE";
+            label1.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // LandingPage
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Green;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(1280, 720);
             Controls.Add(label1);
             FormBorderStyle = FormBorderStyle.None;
             Name = "LandingPage";

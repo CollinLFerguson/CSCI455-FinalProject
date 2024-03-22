@@ -39,7 +39,7 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 14F, FontStyle.Bold);
-            label1.Location = new Point(73, 52);
+            label1.Location = new Point(284, 209);
             label1.Name = "label1";
             label1.Size = new Size(143, 25);
             label1.TabIndex = 0;
@@ -48,7 +48,7 @@
             // button1
             // 
             button1.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
-            button1.Location = new Point(73, 220);
+            button1.Location = new Point(284, 377);
             button1.Name = "button1";
             button1.Size = new Size(106, 32);
             button1.TabIndex = 1;
@@ -59,7 +59,7 @@
             // txtUsername
             // 
             txtUsername.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
-            txtUsername.Location = new Point(73, 109);
+            txtUsername.Location = new Point(284, 266);
             txtUsername.Multiline = true;
             txtUsername.Name = "txtUsername";
             txtUsername.PlaceholderText = "ID Number";
@@ -69,7 +69,7 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(73, 255);
+            label2.Location = new Point(284, 412);
             label2.Name = "label2";
             label2.Size = new Size(106, 15);
             label2.TabIndex = 4;
@@ -78,7 +78,7 @@
             // txtPin
             // 
             txtPin.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
-            txtPin.Location = new Point(73, 162);
+            txtPin.Location = new Point(284, 319);
             txtPin.Name = "txtPin";
             txtPin.PasswordChar = '*';
             txtPin.PlaceholderText = "Pin";
@@ -91,7 +91,7 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Green;
-            ClientSize = new Size(327, 322);
+            ClientSize = new Size(720, 720);
             Controls.Add(txtPin);
             Controls.Add(label2);
             Controls.Add(txtUsername);

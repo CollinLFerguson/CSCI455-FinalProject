@@ -1,3 +1,5 @@
+using System.Windows.Forms;
+
 namespace EMRKS
 {
     public partial class MainForm : Form
@@ -6,12 +8,6 @@ namespace EMRKS
         {
             InitializeComponent();
         }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            label1.Text = "Lets get that A!!";
-        }
-
         private void MainForm_Load(object sender, EventArgs e)
         {
             LoginForm loginForm = new LoginForm();

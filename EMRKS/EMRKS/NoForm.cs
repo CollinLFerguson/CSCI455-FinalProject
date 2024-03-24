@@ -10,18 +10,11 @@ using System.Windows.Forms;
 
 namespace EMRKS
 {
-    public partial class LandingPage : Form
+    public partial class NoForm : Form
     {
-        public LandingPage()
+        public NoForm()
         {
             InitializeComponent();
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            AddPatient addPatientPage = new AddPatient();
-            addPatientPage.MdiParent = this.MdiParent;
-            addPatientPage.Show();
         }
     }
 }

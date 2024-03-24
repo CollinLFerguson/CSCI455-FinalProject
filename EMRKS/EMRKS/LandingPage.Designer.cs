@@ -33,7 +33,6 @@
             button3 = new Button();
             button2 = new Button();
             button1 = new Button();
-            label1 = new Label();
             panel1.SuspendLayout();
             SuspendLayout();
             // 
@@ -78,6 +77,7 @@
             button2.TabIndex = 1;
             button2.Text = "Add Patient";
             button2.UseVisualStyleBackColor = true;
+            button2.Click += button2_Click;
             // 
             // button1
             // 
@@ -89,32 +89,20 @@
             button1.Text = "Find Patient";
             button1.UseVisualStyleBackColor = true;
             // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI", 100F);
-            label1.Location = new Point(458, 204);
-            label1.Name = "label1";
-            label1.Size = new Size(492, 177);
-            label1.TabIndex = 1;
-            label1.Text = "EMRKS";
-            // 
             // LandingPage
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             AutoScroll = true;
             BackColor = SystemColors.Control;
-            ClientSize = new Size(1280, 720);
-            Controls.Add(label1);
+            ClientSize = new Size(202, 720);
             Controls.Add(panel1);
             FormBorderStyle = FormBorderStyle.None;
             Name = "LandingPage";
-            StartPosition = FormStartPosition.CenterScreen;
+            StartPosition = FormStartPosition.Manual;
             Text = "LandingPage";
             panel1.ResumeLayout(false);
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
@@ -124,6 +112,5 @@
         private Button button3;
         private Button button2;
         private Button button4;
-        private Label label1;
     }
 }

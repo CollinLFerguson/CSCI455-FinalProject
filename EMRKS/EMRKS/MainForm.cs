@@ -6,8 +6,7 @@ namespace EMRKS
     {
         LandingPage landingPage;
         NoForm noFormPage;
-        AddPatient addPatientPage;
-        
+        Form? currentPage; //is expected to be null at some points, holds the currently loaded page.
 
         public MainForm()
         {
@@ -36,24 +35,36 @@ namespace EMRKS
 
         }
         public void loadAddPatient(){
-            if(addPatientPage == null) {
-                addPatientPage = new AddPatient();
-                addPatientPage.MdiParent = this;
-            }
+            if (currentPage != null){ destroyCurrentPage();}
+            Form addPatientPage = new AddPatient();
+            addPatientPage.MdiParent = this;
+            currentPage = addPatientPage;
+
             addPatientPage.Show();
             noFormPage.Hide();
         }
 
-        public void destroyPages(){
-            //** Destroys all pages except for the landingPage and noFormPage.
-            //   This function should be called whenever one of the side menu buttons are hit.
-            if(addPatientPage != null) { addPatientPage.Close();}
-        
-        
+        public void loadAddStaff(){
+            if (currentPage != null) { destroyCurrentPage(); }
+            Form addStaffPage = new AddStaff();
+            addStaffPage.MdiParent = this;
+            currentPage = addStaffPage;
+
+            addStaffPage.Show();
+            noFormPage.Hide();       
         }
 
 
 
+        public void destroyCurrentPage(){
+            //** Destroys the currently loaded page.
+            //   This function should be called whenever one of the side menu buttons are hit.
+            if(currentPage != null){
+                currentPage.Close();
+                currentPage = null;
+            }
+            noFormPage.Show();
+        }
 
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
         {

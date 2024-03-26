@@ -10,11 +10,23 @@ using System.Windows.Forms;
 
 namespace EMRKS
 {
-    public partial class AddPatient : Form
+    public partial class AddStaff : Form
     {
-        public AddPatient()
+        public AddStaff()
         {
             InitializeComponent();
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (comboBox1.Text == "Doctor")
+            {
+                groupBox2.Enabled = true;
+            }
+            else
+            {
+                groupBox2.Enabled = false;
+            }
         }
 
         private void button4_Click(object sender, EventArgs e)
@@ -23,13 +35,13 @@ namespace EMRKS
             //SQL add commands.
 
 
-            //If the add is successful, return to landing.
-            if (this.MdiParent != null){((MainForm)this.MdiParent).destroyCurrentPage();} //Returns back to landing page
+            //If the add is successful
+            if (this.MdiParent != null) { ((MainForm)this.MdiParent).destroyCurrentPage(); } //Returns back to landing page
         }
+
         private void button5_Click(object sender, EventArgs e)
         {
             if (this.MdiParent != null) { ((MainForm)this.MdiParent).destroyCurrentPage(); } //Returns back to landing page
         }
-
     }
 }

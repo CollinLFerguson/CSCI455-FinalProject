@@ -60,17 +60,20 @@
             label13 = new Label();
             label12 = new Label();
             groupBox3 = new GroupBox();
-            groupBox4 = new GroupBox();
-            label15 = new Label();
-            textBox4 = new TextBox();
-            label16 = new Label();
-            label17 = new Label();
-            textBox5 = new TextBox();
-            label18 = new Label();
-            textBox6 = new TextBox();
-            textBox7 = new TextBox();
-            button2 = new Button();
             button3 = new Button();
+            groupBox4 = new GroupBox();
+            button2 = new Button();
+            textBox7 = new TextBox();
+            textBox6 = new TextBox();
+            label18 = new Label();
+            textBox5 = new TextBox();
+            label17 = new Label();
+            label16 = new Label();
+            textBox4 = new TextBox();
+            label15 = new Label();
+            label19 = new Label();
+            button4 = new Button();
+            button5 = new Button();
             groupBox1.SuspendLayout();
             groupBox2.SuspendLayout();
             groupBox3.SuspendLayout();
@@ -101,7 +104,7 @@
             groupBox1.Controls.Add(label3);
             groupBox1.Controls.Add(label2);
             groupBox1.Controls.Add(label1);
-            groupBox1.Location = new Point(12, 12);
+            groupBox1.Location = new Point(12, 58);
             groupBox1.Name = "groupBox1";
             groupBox1.Size = new Size(917, 208);
             groupBox1.TabIndex = 0;
@@ -300,7 +303,7 @@
             groupBox2.Controls.Add(label14);
             groupBox2.Controls.Add(label13);
             groupBox2.Controls.Add(label12);
-            groupBox2.Location = new Point(12, 226);
+            groupBox2.Location = new Point(12, 272);
             groupBox2.Name = "groupBox2";
             groupBox2.Size = new Size(607, 147);
             groupBox2.TabIndex = 1;
@@ -367,12 +370,21 @@
             // groupBox3
             // 
             groupBox3.Controls.Add(button3);
-            groupBox3.Location = new Point(625, 226);
+            groupBox3.Location = new Point(625, 272);
             groupBox3.Name = "groupBox3";
             groupBox3.Size = new Size(304, 340);
             groupBox3.TabIndex = 2;
             groupBox3.TabStop = false;
-            groupBox3.Text = "Known Allergies (One per line)";
+            groupBox3.Text = "Known Allergies";
+            // 
+            // button3
+            // 
+            button3.Location = new Point(6, 29);
+            button3.Name = "button3";
+            button3.Size = new Size(135, 23);
+            button3.TabIndex = 28;
+            button3.Text = "+Add Allergy";
+            button3.UseVisualStyleBackColor = true;
             // 
             // groupBox4
             // 
@@ -385,53 +397,35 @@
             groupBox4.Controls.Add(label16);
             groupBox4.Controls.Add(textBox4);
             groupBox4.Controls.Add(label15);
-            groupBox4.Location = new Point(12, 379);
+            groupBox4.Location = new Point(12, 425);
             groupBox4.Name = "groupBox4";
             groupBox4.Size = new Size(607, 187);
             groupBox4.TabIndex = 2;
             groupBox4.TabStop = false;
             groupBox4.Text = "Payment Info";
             // 
-            // label15
+            // button2
             // 
-            label15.AutoSize = true;
-            label15.Location = new Point(6, 31);
-            label15.Name = "label15";
-            label15.Size = new Size(105, 15);
-            label15.TabIndex = 27;
-            label15.Text = "Insurance Provider";
+            button2.Location = new Point(6, 93);
+            button2.Name = "button2";
+            button2.Size = new Size(135, 23);
+            button2.TabIndex = 27;
+            button2.Text = "+ Add Other Insurance";
+            button2.UseVisualStyleBackColor = true;
             // 
-            // textBox4
+            // textBox7
             // 
-            textBox4.Location = new Point(117, 22);
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(155, 23);
-            textBox4.TabIndex = 27;
+            textBox7.Location = new Point(365, 54);
+            textBox7.Name = "textBox7";
+            textBox7.Size = new Size(179, 23);
+            textBox7.TabIndex = 31;
             // 
-            // label16
+            // textBox6
             // 
-            label16.AutoSize = true;
-            label16.Location = new Point(278, 30);
-            label16.Name = "label16";
-            label16.Size = new Size(86, 15);
-            label16.TabIndex = 27;
-            label16.Text = "Policy Number";
-            // 
-            // label17
-            // 
-            label17.AutoSize = true;
-            label17.Location = new Point(6, 62);
-            label17.Name = "label17";
-            label17.Size = new Size(87, 15);
-            label17.TabIndex = 27;
-            label17.Text = "Group Number";
-            // 
-            // textBox5
-            // 
-            textBox5.Location = new Point(365, 22);
-            textBox5.Name = "textBox5";
-            textBox5.Size = new Size(153, 23);
-            textBox5.TabIndex = 28;
+            textBox6.Location = new Point(93, 54);
+            textBox6.Name = "textBox6";
+            textBox6.Size = new Size(138, 23);
+            textBox6.TabIndex = 30;
             // 
             // label18
             // 
@@ -442,37 +436,76 @@
             label18.TabIndex = 29;
             label18.Text = "Name on insurance";
             // 
-            // textBox6
+            // textBox5
             // 
-            textBox6.Location = new Point(93, 54);
-            textBox6.Name = "textBox6";
-            textBox6.Size = new Size(138, 23);
-            textBox6.TabIndex = 30;
+            textBox5.Location = new Point(365, 22);
+            textBox5.Name = "textBox5";
+            textBox5.Size = new Size(153, 23);
+            textBox5.TabIndex = 28;
             // 
-            // textBox7
+            // label17
             // 
-            textBox7.Location = new Point(365, 54);
-            textBox7.Name = "textBox7";
-            textBox7.Size = new Size(179, 23);
-            textBox7.TabIndex = 31;
+            label17.AutoSize = true;
+            label17.Location = new Point(6, 62);
+            label17.Name = "label17";
+            label17.Size = new Size(87, 15);
+            label17.TabIndex = 27;
+            label17.Text = "Group Number";
             // 
-            // button2
+            // label16
             // 
-            button2.Location = new Point(6, 83);
-            button2.Name = "button2";
-            button2.Size = new Size(135, 23);
-            button2.TabIndex = 27;
-            button2.Text = "+ Add Other Insurance";
-            button2.UseVisualStyleBackColor = true;
+            label16.AutoSize = true;
+            label16.Location = new Point(278, 30);
+            label16.Name = "label16";
+            label16.Size = new Size(86, 15);
+            label16.TabIndex = 27;
+            label16.Text = "Policy Number";
             // 
-            // button3
+            // textBox4
             // 
-            button3.Location = new Point(6, 29);
-            button3.Name = "button3";
-            button3.Size = new Size(135, 23);
-            button3.TabIndex = 28;
-            button3.Text = "+Add Allergy";
-            button3.UseVisualStyleBackColor = true;
+            textBox4.Location = new Point(117, 22);
+            textBox4.Name = "textBox4";
+            textBox4.Size = new Size(155, 23);
+            textBox4.TabIndex = 27;
+            // 
+            // label15
+            // 
+            label15.AutoSize = true;
+            label15.Location = new Point(6, 31);
+            label15.Name = "label15";
+            label15.Size = new Size(105, 15);
+            label15.TabIndex = 27;
+            label15.Text = "Insurance Provider";
+            // 
+            // label19
+            // 
+            label19.AutoSize = true;
+            label19.Font = new Font("Segoe UI", 24F, FontStyle.Underline, GraphicsUnit.Point, 0);
+            label19.Location = new Point(10, 10);
+            label19.Name = "label19";
+            label19.Size = new Size(186, 45);
+            label19.TabIndex = 3;
+            label19.Text = "Add Patient";
+            // 
+            // button4
+            // 
+            button4.Location = new Point(10, 618);
+            button4.Name = "button4";
+            button4.Size = new Size(135, 23);
+            button4.TabIndex = 32;
+            button4.Text = "Add Patient";
+            button4.UseVisualStyleBackColor = true;
+            button4.Click += button4_Click;
+            // 
+            // button5
+            // 
+            button5.Location = new Point(794, 618);
+            button5.Name = "button5";
+            button5.Size = new Size(135, 23);
+            button5.TabIndex = 33;
+            button5.Text = "Cancel Add Patient";
+            button5.UseVisualStyleBackColor = true;
+            button5.Click += this.button5_Click;
             // 
             // AddPatient
             // 
@@ -480,6 +513,9 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Green;
             ClientSize = new Size(1078, 720);
+            Controls.Add(button5);
+            Controls.Add(button4);
+            Controls.Add(label19);
             Controls.Add(groupBox4);
             Controls.Add(groupBox3);
             Controls.Add(groupBox2);
@@ -498,6 +534,7 @@
             groupBox4.ResumeLayout(false);
             groupBox4.PerformLayout();
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -545,5 +582,8 @@
         private Button button2;
         private TextBox textBox7;
         private TextBox textBox6;
+        private Label label19;
+        private Button button4;
+        private Button button5;
     }
 }

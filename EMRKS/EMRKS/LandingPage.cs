@@ -19,9 +19,12 @@ namespace EMRKS
 
         private void button2_Click(object sender, EventArgs e)
         {
-            AddPatient addPatientPage = new AddPatient();
-            addPatientPage.MdiParent = this.MdiParent;
-            addPatientPage.Show();
+            if (this.MdiParent != null) { ((MainForm)this.MdiParent).loadAddPatient();}
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            if (this.MdiParent != null) { ((MainForm)this.MdiParent).loadAddStaff(); }
         }
     }
 }

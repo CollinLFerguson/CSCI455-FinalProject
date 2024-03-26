@@ -38,6 +38,7 @@
             // 
             // panel1
             // 
+            panel1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
             panel1.BorderStyle = BorderStyle.FixedSingle;
             panel1.Controls.Add(button4);
             panel1.Controls.Add(button3);
@@ -45,7 +46,7 @@
             panel1.Controls.Add(button1);
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(202, 720);
+            panel1.Size = new Size(205, 227);
             panel1.TabIndex = 0;
             // 
             // button4
@@ -95,12 +96,13 @@
             AutoScaleMode = AutoScaleMode.Font;
             AutoScroll = true;
             BackColor = SystemColors.Control;
-            ClientSize = new Size(202, 720);
+            ClientSize = new Size(205, 720);
             Controls.Add(panel1);
             FormBorderStyle = FormBorderStyle.None;
             Name = "LandingPage";
             StartPosition = FormStartPosition.Manual;
             Text = "LandingPage";
+            TopMost = true;
             panel1.ResumeLayout(false);
             ResumeLayout(false);
         }

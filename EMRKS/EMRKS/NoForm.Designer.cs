@@ -45,10 +45,11 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1062, 681);
+            BackColor = SystemColors.ControlDark;
+            ClientSize = new Size(1057, 720);
             Controls.Add(label1);
             FormBorderStyle = FormBorderStyle.None;
-            Location = new Point(202, 0);
+            Location = new Point(205, 0);
             Name = "NoForm";
             StartPosition = FormStartPosition.Manual;
             Text = "NoForm";

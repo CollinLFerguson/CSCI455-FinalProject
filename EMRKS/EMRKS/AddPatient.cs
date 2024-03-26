@@ -17,12 +17,7 @@ namespace EMRKS
             InitializeComponent();
         }
 
-        private void calDOB_DateChanged(object sender, DateRangeEventArgs e)
-        {
-
-        }
-
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        private void groupBox1_Enter(object sender, EventArgs e)
         {
 
         }

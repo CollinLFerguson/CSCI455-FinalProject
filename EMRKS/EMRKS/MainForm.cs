@@ -41,6 +41,7 @@ namespace EMRKS
                 addPatientPage.MdiParent = this;
             }
             addPatientPage.Show();
+            noFormPage.Hide();
         }
 
         public void destroyPages(){

@@ -35,10 +35,10 @@ namespace EMRKS
 
         }
         public void loadAddPatient(){
-            if (currentPage != null){ destroyCurrentPage();}
-            Form addPatientPage = new AddPatient();
-            addPatientPage.MdiParent = this;
-            currentPage = addPatientPage;
+            if (currentPage != null){ destroyCurrentPage();} //If a page other than NoForm exists, destroy it so it can be replaced.
+            Form addPatientPage = new AddPatient(); //Creates the new form
+            addPatientPage.MdiParent = this; //Sets the parent to MainForm, so it can be called in the future
+            currentPage = addPatientPage; //Sets the currentPage to the recently created form so it can be called later if needed.
 
             addPatientPage.Show();
             noFormPage.Hide();

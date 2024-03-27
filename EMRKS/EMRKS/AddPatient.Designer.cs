@@ -74,10 +74,13 @@
             label19 = new Label();
             button4 = new Button();
             button5 = new Button();
+            groupBox5 = new GroupBox();
+            button6 = new Button();
             groupBox1.SuspendLayout();
             groupBox2.SuspendLayout();
             groupBox3.SuspendLayout();
             groupBox4.SuspendLayout();
+            groupBox5.SuspendLayout();
             SuspendLayout();
             // 
             // groupBox1
@@ -372,7 +375,7 @@
             groupBox3.Controls.Add(button3);
             groupBox3.Location = new Point(625, 272);
             groupBox3.Name = "groupBox3";
-            groupBox3.Size = new Size(304, 340);
+            groupBox3.Size = new Size(304, 147);
             groupBox3.TabIndex = 2;
             groupBox3.TabStop = false;
             groupBox3.Text = "Known Allergies";
@@ -505,7 +508,26 @@
             button5.TabIndex = 33;
             button5.Text = "Cancel Add Patient";
             button5.UseVisualStyleBackColor = true;
-            button5.Click += this.button5_Click;
+            button5.Click += button5_Click;
+            // 
+            // groupBox5
+            // 
+            groupBox5.Controls.Add(button6);
+            groupBox5.Location = new Point(625, 425);
+            groupBox5.Name = "groupBox5";
+            groupBox5.Size = new Size(304, 187);
+            groupBox5.TabIndex = 29;
+            groupBox5.TabStop = false;
+            groupBox5.Text = "Emergency Contacts";
+            // 
+            // button6
+            // 
+            button6.Location = new Point(6, 29);
+            button6.Name = "button6";
+            button6.Size = new Size(169, 23);
+            button6.TabIndex = 28;
+            button6.Text = "+ Add Emergency Contact";
+            button6.UseVisualStyleBackColor = true;
             // 
             // AddPatient
             // 
@@ -513,6 +535,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Green;
             ClientSize = new Size(1078, 720);
+            Controls.Add(groupBox5);
             Controls.Add(button5);
             Controls.Add(button4);
             Controls.Add(label19);
@@ -533,6 +556,7 @@
             groupBox3.ResumeLayout(false);
             groupBox4.ResumeLayout(false);
             groupBox4.PerformLayout();
+            groupBox5.ResumeLayout(false);
             ResumeLayout(false);
             PerformLayout();
         }
@@ -585,5 +609,7 @@
         private Label label19;
         private Button button4;
         private Button button5;
+        private GroupBox groupBox5;
+        private Button button6;
     }
 }

@@ -76,6 +76,8 @@
             button5 = new Button();
             groupBox5 = new GroupBox();
             button6 = new Button();
+            label20 = new Label();
+            comboBox1 = new ComboBox();
             groupBox1.SuspendLayout();
             groupBox2.SuspendLayout();
             groupBox3.SuspendLayout();
@@ -85,6 +87,8 @@
             // 
             // groupBox1
             // 
+            groupBox1.Controls.Add(comboBox1);
+            groupBox1.Controls.Add(label20);
             groupBox1.Controls.Add(txtZip);
             groupBox1.Controls.Add(comboState);
             groupBox1.Controls.Add(txtCity);
@@ -529,6 +533,25 @@
             button6.Text = "+ Add Emergency Contact";
             button6.UseVisualStyleBackColor = true;
             // 
+            // label20
+            // 
+            label20.AutoSize = true;
+            label20.Location = new Point(15, 162);
+            label20.Name = "label20";
+            label20.Size = new Size(87, 15);
+            label20.TabIndex = 23;
+            label20.Text = "Primary Doctor";
+            // 
+            // comboBox1
+            // 
+            comboBox1.DropDownStyle = ComboBoxStyle.DropDownList;
+            comboBox1.FormattingEnabled = true;
+            comboBox1.Items.AddRange(new object[] { "Male", "Female" });
+            comboBox1.Location = new Point(76, 154);
+            comboBox1.Name = "comboBox1";
+            comboBox1.Size = new Size(134, 23);
+            comboBox1.TabIndex = 24;
+            // 
             // AddPatient
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -611,5 +634,7 @@
         private Button button5;
         private GroupBox groupBox5;
         private Button button6;
+        private ComboBox comboBox1;
+        private Label label20;
     }
 }

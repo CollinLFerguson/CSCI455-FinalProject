@@ -26,5 +26,10 @@ namespace EMRKS
         {
             if (this.MdiParent != null) { ((MainForm)this.MdiParent).loadAddStaff(); }
         }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            if (this.MdiParent != null) { ((MainForm)this.MdiParent).loadFindPatient(); }
+        }
     }
 }

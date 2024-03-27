@@ -34,7 +34,6 @@ namespace EMRKS
             //Validate the info will go cleanly into the DB
             //SQL add commands.
 
-
             //If the add is successful
             if (this.MdiParent != null) { ((MainForm)this.MdiParent).destroyCurrentPage(); } //Returns back to landing page
         }

@@ -35,21 +35,22 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 100F);
-            label1.Location = new Point(285, 252);
+            label1.Location = new Point(326, 319);
             label1.Name = "label1";
-            label1.Size = new Size(492, 177);
+            label1.Size = new Size(561, 203);
             label1.TabIndex = 7;
             label1.Text = "EMRKS";
             // 
             // NoForm
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 19F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = SystemColors.ControlDark;
-            ClientSize = new Size(1057, 720);
+            BackColor = Color.SeaGreen;
+            ClientSize = new Size(1208, 912);
             Controls.Add(label1);
             FormBorderStyle = FormBorderStyle.None;
             Location = new Point(205, 0);
+            Margin = new Padding(3, 4, 3, 4);
             Name = "NoForm";
             StartPosition = FormStartPosition.Manual;
             Text = "NoForm";

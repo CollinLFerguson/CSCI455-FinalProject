@@ -7,6 +7,7 @@ namespace EMRKS
         LandingPage landingPage;
         NoForm noFormPage;
         Form? currentPage; //is expected to be null at some points, holds the currently loaded page.
+        Database DB = new Database();
 
         public MainForm()
         {

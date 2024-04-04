@@ -24,12 +24,16 @@ namespace EMRKS
 
 
             //If the add is successful, return to landing.
-            if (this.MdiParent != null){((MainForm)this.MdiParent).destroyCurrentPage();} //Returns back to landing page
+            if (this.MdiParent != null) { ((MainForm)this.MdiParent).destroyCurrentPage(); } //Returns back to landing page
         }
         private void button5_Click(object sender, EventArgs e)
         {
             if (this.MdiParent != null) { ((MainForm)this.MdiParent).destroyCurrentPage(); } //Returns back to landing page
         }
 
+        private void AddPatient_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

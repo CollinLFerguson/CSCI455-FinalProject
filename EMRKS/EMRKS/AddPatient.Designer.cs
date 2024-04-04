@@ -76,13 +76,17 @@
             label19 = new Label();
             button4 = new Button();
             button5 = new Button();
-            groupBox5 = new GroupBox();
-            button6 = new Button();
+            panel1 = new Panel();
+            panel2 = new Panel();
+            groupBox6 = new GroupBox();
+            button7 = new Button();
             groupBox1.SuspendLayout();
             groupBox2.SuspendLayout();
             groupBox3.SuspendLayout();
             groupBox4.SuspendLayout();
-            groupBox5.SuspendLayout();
+            panel1.SuspendLayout();
+            panel2.SuspendLayout();
+            groupBox6.SuspendLayout();
             SuspendLayout();
             // 
             // groupBox1
@@ -395,8 +399,12 @@
             // 
             // groupBox3
             // 
+            groupBox3.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            groupBox3.AutoSize = true;
+            groupBox3.AutoSizeMode = AutoSizeMode.GrowAndShrink;
             groupBox3.Controls.Add(button3);
-            groupBox3.Location = new Point(625, 272);
+            groupBox3.Location = new Point(0, 0);
+            groupBox3.MinimumSize = new Size(304, 147);
             groupBox3.Name = "groupBox3";
             groupBox3.Size = new Size(304, 147);
             groupBox3.TabIndex = 2;
@@ -405,7 +413,7 @@
             // 
             // button3
             // 
-            button3.Location = new Point(6, 29);
+            button3.Location = new Point(6, 22);
             button3.Name = "button3";
             button3.Size = new Size(135, 23);
             button3.TabIndex = 28;
@@ -533,24 +541,48 @@
             button5.UseVisualStyleBackColor = true;
             button5.Click += button5_Click;
             // 
-            // groupBox5
+            // panel1
             // 
-            groupBox5.Controls.Add(button6);
-            groupBox5.Location = new Point(625, 425);
-            groupBox5.Name = "groupBox5";
-            groupBox5.Size = new Size(304, 187);
-            groupBox5.TabIndex = 29;
-            groupBox5.TabStop = false;
-            groupBox5.Text = "Emergency Contacts";
+            panel1.AutoScroll = true;
+            panel1.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            panel1.Controls.Add(groupBox3);
+            panel1.Location = new Point(625, 272);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(304, 147);
+            panel1.TabIndex = 34;
             // 
-            // button6
+            // panel2
             // 
-            button6.Location = new Point(6, 29);
-            button6.Name = "button6";
-            button6.Size = new Size(169, 23);
-            button6.TabIndex = 28;
-            button6.Text = "+ Add Emergency Contact";
-            button6.UseVisualStyleBackColor = true;
+            panel2.AutoScroll = true;
+            panel2.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            panel2.Controls.Add(groupBox6);
+            panel2.Location = new Point(625, 425);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(304, 187);
+            panel2.TabIndex = 35;
+            // 
+            // groupBox6
+            // 
+            groupBox6.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            groupBox6.AutoSize = true;
+            groupBox6.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            groupBox6.Controls.Add(button7);
+            groupBox6.Location = new Point(0, 0);
+            groupBox6.MinimumSize = new Size(304, 187);
+            groupBox6.Name = "groupBox6";
+            groupBox6.Size = new Size(304, 187);
+            groupBox6.TabIndex = 2;
+            groupBox6.TabStop = false;
+            groupBox6.Text = "Emergency Contacts";
+            // 
+            // button7
+            // 
+            button7.Location = new Point(6, 22);
+            button7.Name = "button7";
+            button7.Size = new Size(169, 23);
+            button7.TabIndex = 28;
+            button7.Text = "+Add Emergency Contact";
+            button7.UseVisualStyleBackColor = true;
             // 
             // AddPatient
             // 
@@ -558,20 +590,21 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.DarkSeaGreen;
             ClientSize = new Size(1078, 720);
-            Controls.Add(groupBox5);
+            Controls.Add(panel2);
+            Controls.Add(panel1);
             Controls.Add(button5);
             Controls.Add(button4);
             Controls.Add(label19);
             Controls.Add(groupBox4);
-            Controls.Add(groupBox3);
             Controls.Add(groupBox2);
             Controls.Add(groupBox1);
             FormBorderStyle = FormBorderStyle.None;
             Location = new Point(202, 0);
             Name = "AddPatient";
             StartPosition = FormStartPosition.Manual;
-            Text = "AddPatient";
+            Text = " ";
             TopMost = true;
+            Load += AddPatient_Load;
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
             groupBox2.ResumeLayout(false);
@@ -579,7 +612,11 @@
             groupBox3.ResumeLayout(false);
             groupBox4.ResumeLayout(false);
             groupBox4.PerformLayout();
-            groupBox5.ResumeLayout(false);
+            panel1.ResumeLayout(false);
+            panel1.PerformLayout();
+            panel2.ResumeLayout(false);
+            panel2.PerformLayout();
+            groupBox6.ResumeLayout(false);
             ResumeLayout(false);
             PerformLayout();
         }
@@ -632,9 +669,11 @@
         private Label label19;
         private Button button4;
         private Button button5;
-        private GroupBox groupBox5;
-        private Button button6;
         private ComboBox comboBox1;
         private Label label20;
+        private Panel panel1;
+        private Panel panel2;
+        private GroupBox groupBox6;
+        private Button button7;
     }
 }

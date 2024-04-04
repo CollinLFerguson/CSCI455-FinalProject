@@ -28,5 +28,10 @@ namespace EMRKS
             patientOptionsPanel.Visible = true;
             goodPanel.Visible = true;
         }
+
+        private void onEditPatientPersonalInfo(object sender, EventArgs e)
+        {
+            Database.Test();
+        }
     }
 }

@@ -21,5 +21,31 @@ namespace EMRKS
             connection.ConnectionString = "server=" + server + ";uid=" + username + ";pwd=" + password + ";database=" + databaseName;
             connection.Open();
         }
+
+        public static void Test()
+        {
+            try
+            {
+                string query = "SELECT * FROM Patient";
+
+                MySqlCommand cmd = new MySqlCommand(query, connection);
+
+                using (MySqlDataReader reader = cmd.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        //
+                    }
+                }
+
+                MessageBox.Show("CONNECTED");
+
+
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
     }
 }

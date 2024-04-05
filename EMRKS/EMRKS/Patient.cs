@@ -52,5 +52,6 @@ namespace EMRKS
             }
         }
         public string getPhoneNumber() { return phoneNumber; }
+        public Address? getAddress() { return Database.GetAddress(SSN); }
     } 
 }

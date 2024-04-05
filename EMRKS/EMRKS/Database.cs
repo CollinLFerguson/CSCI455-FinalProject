@@ -71,5 +71,29 @@ namespace EMRKS
 
             return null;
         }
+
+        public static Address? GetAddress(string SSN)
+        {
+            try
+            {
+                string query = "SELECT * FROM Address WHERE Ssn = " + SSN;
+                MySqlCommand cmd = new MySqlCommand(query, connection);
+
+                using (MySqlDataReader reader = cmd.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        return new Address(reader["Ssn"].ToString(), reader["Line_1"].ToString(), reader["Line_2"].ToString(), reader["City"].ToString(), reader["State"].ToString(), reader["Zip"].ToString());
+                    }
+                }
+            }
+            catch (MySqlException ex)
+            {
+                //QUERY FAILED
+            }
+
+            return null;
+        }
+
     }
 }

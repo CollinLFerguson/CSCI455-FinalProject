@@ -33,13 +33,13 @@
             textBox1 = new TextBox();
             label1 = new Label();
             patientInfoPanel = new GroupBox();
-            textBox5 = new TextBox();
+            patientInfoState = new TextBox();
             patientInfoPrimaryDoctor = new TextBox();
             patientInfoDOB = new TextBox();
             patientInfoSex = new TextBox();
             label20 = new Label();
-            txtZip = new TextBox();
-            txtCity = new TextBox();
+            patientInfoZip = new TextBox();
+            patientInfoCity = new TextBox();
             txtAddress = new TextBox();
             patientInfoMI = new TextBox();
             patientInfoPhoneNumber = new TextBox();
@@ -115,13 +115,13 @@
             // 
             // patientInfoPanel
             // 
-            patientInfoPanel.Controls.Add(textBox5);
+            patientInfoPanel.Controls.Add(patientInfoState);
             patientInfoPanel.Controls.Add(patientInfoPrimaryDoctor);
             patientInfoPanel.Controls.Add(patientInfoDOB);
             patientInfoPanel.Controls.Add(patientInfoSex);
             patientInfoPanel.Controls.Add(label20);
-            patientInfoPanel.Controls.Add(txtZip);
-            patientInfoPanel.Controls.Add(txtCity);
+            patientInfoPanel.Controls.Add(patientInfoZip);
+            patientInfoPanel.Controls.Add(patientInfoCity);
             patientInfoPanel.Controls.Add(txtAddress);
             patientInfoPanel.Controls.Add(patientInfoMI);
             patientInfoPanel.Controls.Add(patientInfoPhoneNumber);
@@ -147,14 +147,14 @@
             patientInfoPanel.Text = "Patient Info";
             patientInfoPanel.Visible = false;
             // 
-            // textBox5
+            // patientInfoState
             // 
-            textBox5.Location = new Point(613, 113);
-            textBox5.Name = "textBox5";
-            textBox5.ReadOnly = true;
-            textBox5.Size = new Size(25, 23);
-            textBox5.TabIndex = 28;
-            textBox5.TextAlign = HorizontalAlignment.Center;
+            patientInfoState.Location = new Point(613, 113);
+            patientInfoState.Name = "patientInfoState";
+            patientInfoState.ReadOnly = true;
+            patientInfoState.Size = new Size(25, 23);
+            patientInfoState.TabIndex = 28;
+            patientInfoState.TextAlign = HorizontalAlignment.Center;
             // 
             // patientInfoPrimaryDoctor
             // 
@@ -190,21 +190,21 @@
             label20.TabIndex = 23;
             label20.Text = "Primary Doctor";
             // 
-            // txtZip
+            // patientInfoZip
             // 
-            txtZip.Location = new Point(705, 113);
-            txtZip.Name = "txtZip";
-            txtZip.ReadOnly = true;
-            txtZip.Size = new Size(110, 23);
-            txtZip.TabIndex = 22;
+            patientInfoZip.Location = new Point(705, 113);
+            patientInfoZip.Name = "patientInfoZip";
+            patientInfoZip.ReadOnly = true;
+            patientInfoZip.Size = new Size(110, 23);
+            patientInfoZip.TabIndex = 22;
             // 
-            // txtCity
+            // patientInfoCity
             // 
-            txtCity.Location = new Point(365, 113);
-            txtCity.Name = "txtCity";
-            txtCity.ReadOnly = true;
-            txtCity.Size = new Size(203, 23);
-            txtCity.TabIndex = 20;
+            patientInfoCity.Location = new Point(365, 113);
+            patientInfoCity.Name = "patientInfoCity";
+            patientInfoCity.ReadOnly = true;
+            patientInfoCity.Size = new Size(203, 23);
+            patientInfoCity.TabIndex = 20;
             // 
             // txtAddress
             // 
@@ -495,8 +495,8 @@
         private Button patientSearchButton;
         private GroupBox patientInfoPanel;
         private Label label20;
-        private TextBox txtZip;
-        private TextBox txtCity;
+        private TextBox patientInfoZip;
+        private TextBox patientInfoCity;
         private TextBox txtAddress;
         private TextBox patientInfoMI;
         private TextBox patientInfoPhoneNumber;
@@ -529,6 +529,6 @@
         private TextBox patientInfoSex;
         private TextBox patientInfoPrimaryDoctor;
         private TextBox patientInfoDOB;
-        private TextBox textBox5;
+        private TextBox patientInfoState;
     }
 }

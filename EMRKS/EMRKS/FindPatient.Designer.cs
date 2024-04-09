@@ -430,6 +430,7 @@
             button8.TabIndex = 3;
             button8.Text = "Medication Manager";
             button8.UseVisualStyleBackColor = true;
+            button8.Click += button8_Click;
             // 
             // button7
             // 

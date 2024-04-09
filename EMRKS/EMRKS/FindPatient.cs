@@ -54,7 +54,18 @@ namespace EMRKS
 
             if (address != null)
             {
-                //NEED TO DO LINE 1 AND 2
+                string line1 = address.getLine1();
+                string? line2 = address.getLine2();
+
+                if (line2 != "NULL")
+                {
+                    patientInfoAddress.Text = line1 + " " + line2;
+                }
+                else
+                {
+                    patientInfoAddress.Text = line1;
+                }
+
                 patientInfoCity.Text = address.getCity();
                 patientInfoState.Text = address.getState();
                 patientInfoZip.Text = address.getZip();

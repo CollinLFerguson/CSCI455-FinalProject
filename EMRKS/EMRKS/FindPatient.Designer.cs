@@ -40,7 +40,7 @@
             label20 = new Label();
             patientInfoZip = new TextBox();
             patientInfoCity = new TextBox();
-            txtAddress = new TextBox();
+            patientInfoAddress = new TextBox();
             patientInfoMI = new TextBox();
             patientInfoPhoneNumber = new TextBox();
             patientInfoLastName = new TextBox();
@@ -122,7 +122,7 @@
             patientInfoPanel.Controls.Add(label20);
             patientInfoPanel.Controls.Add(patientInfoZip);
             patientInfoPanel.Controls.Add(patientInfoCity);
-            patientInfoPanel.Controls.Add(txtAddress);
+            patientInfoPanel.Controls.Add(patientInfoAddress);
             patientInfoPanel.Controls.Add(patientInfoMI);
             patientInfoPanel.Controls.Add(patientInfoPhoneNumber);
             patientInfoPanel.Controls.Add(patientInfoLastName);
@@ -149,7 +149,7 @@
             // 
             // patientInfoState
             // 
-            patientInfoState.Location = new Point(613, 113);
+            patientInfoState.Location = new Point(601, 113);
             patientInfoState.Name = "patientInfoState";
             patientInfoState.ReadOnly = true;
             patientInfoState.Size = new Size(25, 23);
@@ -192,27 +192,27 @@
             // 
             // patientInfoZip
             // 
-            patientInfoZip.Location = new Point(705, 113);
+            patientInfoZip.Location = new Point(693, 113);
             patientInfoZip.Name = "patientInfoZip";
             patientInfoZip.ReadOnly = true;
-            patientInfoZip.Size = new Size(110, 23);
+            patientInfoZip.Size = new Size(65, 23);
             patientInfoZip.TabIndex = 22;
             // 
             // patientInfoCity
             // 
-            patientInfoCity.Location = new Point(365, 113);
+            patientInfoCity.Location = new Point(353, 113);
             patientInfoCity.Name = "patientInfoCity";
             patientInfoCity.ReadOnly = true;
             patientInfoCity.Size = new Size(203, 23);
             patientInfoCity.TabIndex = 20;
             // 
-            // txtAddress
+            // patientInfoAddress
             // 
-            txtAddress.Location = new Point(70, 113);
-            txtAddress.Name = "txtAddress";
-            txtAddress.ReadOnly = true;
-            txtAddress.Size = new Size(255, 23);
-            txtAddress.TabIndex = 19;
+            patientInfoAddress.Location = new Point(70, 113);
+            patientInfoAddress.Name = "patientInfoAddress";
+            patientInfoAddress.ReadOnly = true;
+            patientInfoAddress.Size = new Size(243, 23);
+            patientInfoAddress.TabIndex = 19;
             // 
             // patientInfoMI
             // 
@@ -258,7 +258,7 @@
             // label11
             // 
             label11.AutoSize = true;
-            label11.Location = new Point(644, 116);
+            label11.Location = new Point(632, 116);
             label11.Name = "label11";
             label11.Size = new Size(55, 15);
             label11.TabIndex = 11;
@@ -267,7 +267,7 @@
             // label10
             // 
             label10.AutoSize = true;
-            label10.Location = new Point(574, 116);
+            label10.Location = new Point(562, 116);
             label10.Name = "label10";
             label10.Size = new Size(33, 15);
             label10.TabIndex = 10;
@@ -276,7 +276,7 @@
             // label9
             // 
             label9.AutoSize = true;
-            label9.Location = new Point(331, 116);
+            label9.Location = new Point(319, 116);
             label9.Name = "label9";
             label9.Size = new Size(28, 15);
             label9.TabIndex = 9;
@@ -497,7 +497,7 @@
         private Label label20;
         private TextBox patientInfoZip;
         private TextBox patientInfoCity;
-        private TextBox txtAddress;
+        private TextBox patientInfoAddress;
         private TextBox patientInfoMI;
         private TextBox patientInfoPhoneNumber;
         private TextBox patientInfoLastName;

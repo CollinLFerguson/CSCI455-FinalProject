@@ -24,9 +24,15 @@ namespace EMRKS
 
         public static Patient? GetPatient(string patientSSN)
         {
+            if (patientSSN.Length != 9)
+            {
+                return null;
+            }
+
             try
             {
                 string query = "SELECT * FROM Patient WHERE Ssn = " + patientSSN;
+
                 MySqlCommand cmd = new MySqlCommand(query, connection);
 
                 using (MySqlDataReader reader = cmd.ExecuteReader())

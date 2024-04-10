@@ -31,5 +31,6 @@ namespace EMRKS
         {
             if (this.MdiParent != null) { ((MainForm)this.MdiParent).loadFindPatient(); }
         }
+
     }
 }

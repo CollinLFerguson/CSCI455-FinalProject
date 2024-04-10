@@ -33,19 +33,19 @@
             textBox1 = new TextBox();
             label1 = new Label();
             patientInfoPanel = new GroupBox();
-            comboBox1 = new ComboBox();
+            patientInfoState = new TextBox();
+            patientInfoPrimaryDoctor = new TextBox();
+            patientInfoDOB = new TextBox();
+            patientInfoSex = new TextBox();
             label20 = new Label();
-            txtZip = new TextBox();
-            comboState = new ComboBox();
-            txtCity = new TextBox();
-            txtAddress = new TextBox();
-            txtMInit = new TextBox();
-            txtFName = new TextBox();
-            txtLName = new TextBox();
-            dtpDOB = new DateTimePicker();
-            comboSex = new ComboBox();
-            txtPhoneNumber = new TextBox();
-            lblSSN = new TextBox();
+            patientInfoZip = new TextBox();
+            patientInfoCity = new TextBox();
+            patientInfoAddress = new TextBox();
+            patientInfoMI = new TextBox();
+            patientInfoPhoneNumber = new TextBox();
+            patientInfoLastName = new TextBox();
+            patientInfoFirstName = new TextBox();
+            patientInfoSSN = new TextBox();
             label11 = new Label();
             label10 = new Label();
             label9 = new Label();
@@ -115,19 +115,19 @@
             // 
             // patientInfoPanel
             // 
-            patientInfoPanel.Controls.Add(comboBox1);
+            patientInfoPanel.Controls.Add(patientInfoState);
+            patientInfoPanel.Controls.Add(patientInfoPrimaryDoctor);
+            patientInfoPanel.Controls.Add(patientInfoDOB);
+            patientInfoPanel.Controls.Add(patientInfoSex);
             patientInfoPanel.Controls.Add(label20);
-            patientInfoPanel.Controls.Add(txtZip);
-            patientInfoPanel.Controls.Add(comboState);
-            patientInfoPanel.Controls.Add(txtCity);
-            patientInfoPanel.Controls.Add(txtAddress);
-            patientInfoPanel.Controls.Add(txtMInit);
-            patientInfoPanel.Controls.Add(txtFName);
-            patientInfoPanel.Controls.Add(txtLName);
-            patientInfoPanel.Controls.Add(dtpDOB);
-            patientInfoPanel.Controls.Add(comboSex);
-            patientInfoPanel.Controls.Add(txtPhoneNumber);
-            patientInfoPanel.Controls.Add(lblSSN);
+            patientInfoPanel.Controls.Add(patientInfoZip);
+            patientInfoPanel.Controls.Add(patientInfoCity);
+            patientInfoPanel.Controls.Add(patientInfoAddress);
+            patientInfoPanel.Controls.Add(patientInfoMI);
+            patientInfoPanel.Controls.Add(patientInfoPhoneNumber);
+            patientInfoPanel.Controls.Add(patientInfoLastName);
+            patientInfoPanel.Controls.Add(patientInfoFirstName);
+            patientInfoPanel.Controls.Add(patientInfoSSN);
             patientInfoPanel.Controls.Add(label11);
             patientInfoPanel.Controls.Add(label10);
             patientInfoPanel.Controls.Add(label9);
@@ -141,119 +141,124 @@
             patientInfoPanel.Controls.Add(label12);
             patientInfoPanel.Location = new Point(87, 34);
             patientInfoPanel.Name = "patientInfoPanel";
-            patientInfoPanel.Size = new Size(917, 208);
+            patientInfoPanel.Size = new Size(917, 155);
             patientInfoPanel.TabIndex = 3;
             patientInfoPanel.TabStop = false;
             patientInfoPanel.Text = "Patient Info";
             patientInfoPanel.Visible = false;
             // 
-            // comboBox1
+            // patientInfoState
             // 
-            comboBox1.DropDownStyle = ComboBoxStyle.DropDownList;
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Items.AddRange(new object[] { "Male", "Female" });
-            comboBox1.Location = new Point(108, 159);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(134, 23);
-            comboBox1.TabIndex = 24;
+            patientInfoState.Location = new Point(601, 113);
+            patientInfoState.Name = "patientInfoState";
+            patientInfoState.ReadOnly = true;
+            patientInfoState.Size = new Size(25, 23);
+            patientInfoState.TabIndex = 28;
+            patientInfoState.TextAlign = HorizontalAlignment.Center;
+            // 
+            // patientInfoPrimaryDoctor
+            // 
+            patientInfoPrimaryDoctor.Location = new Point(353, 70);
+            patientInfoPrimaryDoctor.Name = "patientInfoPrimaryDoctor";
+            patientInfoPrimaryDoctor.ReadOnly = true;
+            patientInfoPrimaryDoctor.Size = new Size(110, 23);
+            patientInfoPrimaryDoctor.TabIndex = 27;
+            // 
+            // patientInfoDOB
+            // 
+            patientInfoDOB.Location = new Point(776, 35);
+            patientInfoDOB.Name = "patientInfoDOB";
+            patientInfoDOB.ReadOnly = true;
+            patientInfoDOB.Size = new Size(80, 23);
+            patientInfoDOB.TabIndex = 26;
+            // 
+            // patientInfoSex
+            // 
+            patientInfoSex.Location = new Point(708, 35);
+            patientInfoSex.Name = "patientInfoSex";
+            patientInfoSex.ReadOnly = true;
+            patientInfoSex.Size = new Size(25, 23);
+            patientInfoSex.TabIndex = 25;
+            patientInfoSex.TextAlign = HorizontalAlignment.Center;
             // 
             // label20
             // 
             label20.AutoSize = true;
-            label20.Location = new Point(15, 162);
+            label20.Location = new Point(260, 73);
             label20.Name = "label20";
             label20.Size = new Size(87, 15);
             label20.TabIndex = 23;
             label20.Text = "Primary Doctor";
             // 
-            // txtZip
+            // patientInfoZip
             // 
-            txtZip.Location = new Point(794, 119);
-            txtZip.Name = "txtZip";
-            txtZip.Size = new Size(110, 23);
-            txtZip.TabIndex = 22;
+            patientInfoZip.Location = new Point(693, 113);
+            patientInfoZip.Name = "patientInfoZip";
+            patientInfoZip.ReadOnly = true;
+            patientInfoZip.Size = new Size(65, 23);
+            patientInfoZip.TabIndex = 22;
             // 
-            // comboState
+            // patientInfoCity
             // 
-            comboState.DropDownStyle = ComboBoxStyle.DropDownList;
-            comboState.FormattingEnabled = true;
-            comboState.Items.AddRange(new object[] { "AL", "AK", "AZ", "AR", "CA", "CO", "CT", "DE", "DC", "FL", "GA", "HI", "ID", "IL", "IN", "IA", "KS", "KY", "LA", "ME", "MD", "MA", "MI", "MN", "MS", "MO", "MT", "NE", "NV", "NH", "NJ", "NM", "NY", "NC", "ND", "OH", "OK", "OR", "PA", "RI", "SC", "SD", "TN", "TX", "UT", "VT", "VA", "WA", "WV", "WI", "WY" });
-            comboState.Location = new Point(634, 119);
-            comboState.Name = "comboState";
-            comboState.Size = new Size(83, 23);
-            comboState.TabIndex = 21;
+            patientInfoCity.Location = new Point(353, 113);
+            patientInfoCity.Name = "patientInfoCity";
+            patientInfoCity.ReadOnly = true;
+            patientInfoCity.Size = new Size(203, 23);
+            patientInfoCity.TabIndex = 20;
             // 
-            // txtCity
+            // patientInfoAddress
             // 
-            txtCity.Location = new Point(381, 122);
-            txtCity.Name = "txtCity";
-            txtCity.Size = new Size(203, 23);
-            txtCity.TabIndex = 20;
+            patientInfoAddress.Location = new Point(70, 113);
+            patientInfoAddress.Name = "patientInfoAddress";
+            patientInfoAddress.ReadOnly = true;
+            patientInfoAddress.Size = new Size(243, 23);
+            patientInfoAddress.TabIndex = 19;
             // 
-            // txtAddress
+            // patientInfoMI
             // 
-            txtAddress.Location = new Point(84, 125);
-            txtAddress.Name = "txtAddress";
-            txtAddress.Size = new Size(255, 23);
-            txtAddress.TabIndex = 19;
+            patientInfoMI.Location = new Point(417, 35);
+            patientInfoMI.Name = "patientInfoMI";
+            patientInfoMI.ReadOnly = true;
+            patientInfoMI.Size = new Size(26, 23);
+            patientInfoMI.TabIndex = 18;
+            patientInfoMI.TextAlign = HorizontalAlignment.Center;
             // 
-            // txtMInit
+            // patientInfoPhoneNumber
             // 
-            txtMInit.Location = new Point(575, 76);
-            txtMInit.Name = "txtMInit";
-            txtMInit.Size = new Size(134, 23);
-            txtMInit.TabIndex = 18;
+            patientInfoPhoneNumber.Location = new Point(109, 68);
+            patientInfoPhoneNumber.Name = "patientInfoPhoneNumber";
+            patientInfoPhoneNumber.ReadOnly = true;
+            patientInfoPhoneNumber.Size = new Size(145, 23);
+            patientInfoPhoneNumber.TabIndex = 17;
             // 
-            // txtFName
+            // patientInfoLastName
             // 
-            txtFName.Location = new Point(339, 76);
-            txtFName.Name = "txtFName";
-            txtFName.Size = new Size(145, 23);
-            txtFName.TabIndex = 17;
+            patientInfoLastName.Location = new Point(518, 35);
+            patientInfoLastName.Name = "patientInfoLastName";
+            patientInfoLastName.ReadOnly = true;
+            patientInfoLastName.Size = new Size(153, 23);
+            patientInfoLastName.TabIndex = 16;
             // 
-            // txtLName
+            // patientInfoFirstName
             // 
-            txtLName.Location = new Point(84, 76);
-            txtLName.Name = "txtLName";
-            txtLName.Size = new Size(153, 23);
-            txtLName.TabIndex = 16;
+            patientInfoFirstName.Location = new Point(239, 35);
+            patientInfoFirstName.Name = "patientInfoFirstName";
+            patientInfoFirstName.ReadOnly = true;
+            patientInfoFirstName.Size = new Size(145, 23);
+            patientInfoFirstName.TabIndex = 13;
             // 
-            // dtpDOB
+            // patientInfoSSN
             // 
-            dtpDOB.Format = DateTimePickerFormat.Short;
-            dtpDOB.Location = new Point(794, 38);
-            dtpDOB.Name = "dtpDOB";
-            dtpDOB.Size = new Size(86, 23);
-            dtpDOB.TabIndex = 15;
-            // 
-            // comboSex
-            // 
-            comboSex.DropDownStyle = ComboBoxStyle.DropDownList;
-            comboSex.FormattingEnabled = true;
-            comboSex.Items.AddRange(new object[] { "Male", "Female" });
-            comboSex.Location = new Point(575, 36);
-            comboSex.Name = "comboSex";
-            comboSex.Size = new Size(134, 23);
-            comboSex.TabIndex = 14;
-            // 
-            // txtPhoneNumber
-            // 
-            txtPhoneNumber.Location = new Point(339, 36);
-            txtPhoneNumber.Name = "txtPhoneNumber";
-            txtPhoneNumber.Size = new Size(145, 23);
-            txtPhoneNumber.TabIndex = 13;
-            // 
-            // lblSSN
-            // 
-            lblSSN.Location = new Point(84, 38);
-            lblSSN.Name = "lblSSN";
-            lblSSN.Size = new Size(153, 23);
-            lblSSN.TabIndex = 12;
+            patientInfoSSN.Location = new Point(49, 35);
+            patientInfoSSN.Name = "patientInfoSSN";
+            patientInfoSSN.ReadOnly = true;
+            patientInfoSSN.Size = new Size(114, 23);
+            patientInfoSSN.TabIndex = 12;
             // 
             // label11
             // 
             label11.AutoSize = true;
-            label11.Location = new Point(733, 122);
+            label11.Location = new Point(632, 116);
             label11.Name = "label11";
             label11.Size = new Size(55, 15);
             label11.TabIndex = 11;
@@ -262,7 +267,7 @@
             // label10
             // 
             label10.AutoSize = true;
-            label10.Location = new Point(595, 125);
+            label10.Location = new Point(562, 116);
             label10.Name = "label10";
             label10.Size = new Size(33, 15);
             label10.TabIndex = 10;
@@ -271,7 +276,7 @@
             // label9
             // 
             label9.AutoSize = true;
-            label9.Location = new Point(347, 125);
+            label9.Location = new Point(319, 116);
             label9.Name = "label9";
             label9.Size = new Size(28, 15);
             label9.TabIndex = 9;
@@ -280,7 +285,7 @@
             // label8
             // 
             label8.AutoSize = true;
-            label8.Location = new Point(29, 129);
+            label8.Location = new Point(15, 116);
             label8.Name = "label8";
             label8.Size = new Size(49, 15);
             label8.TabIndex = 8;
@@ -289,7 +294,7 @@
             // label7
             // 
             label7.AutoSize = true;
-            label7.Location = new Point(544, 41);
+            label7.Location = new Point(677, 38);
             label7.Name = "label7";
             label7.Size = new Size(25, 15);
             label7.TabIndex = 6;
@@ -298,16 +303,16 @@
             // label6
             // 
             label6.AutoSize = true;
-            label6.Location = new Point(493, 79);
+            label6.Location = new Point(390, 38);
             label6.Name = "label6";
-            label6.Size = new Size(76, 15);
+            label6.Size = new Size(21, 15);
             label6.TabIndex = 5;
-            label6.Text = "Middle Initial";
+            label6.Text = "MI";
             // 
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new Point(245, 41);
+            label5.Location = new Point(15, 73);
             label5.Name = "label5";
             label5.Size = new Size(88, 15);
             label5.TabIndex = 4;
@@ -316,16 +321,16 @@
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(715, 41);
+            label4.Location = new Point(739, 38);
             label4.Name = "label4";
-            label4.Size = new Size(73, 15);
+            label4.Size = new Size(31, 15);
             label4.TabIndex = 3;
-            label4.Text = "Date of Birth";
+            label4.Text = "DOB";
             // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(269, 79);
+            label3.Location = new Point(169, 38);
             label3.Name = "label3";
             label3.Size = new Size(64, 15);
             label3.TabIndex = 2;
@@ -334,7 +339,7 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(15, 79);
+            label2.Location = new Point(449, 38);
             label2.Name = "label2";
             label2.Size = new Size(63, 15);
             label2.TabIndex = 1;
@@ -343,7 +348,7 @@
             // label12
             // 
             label12.AutoSize = true;
-            label12.Location = new Point(50, 41);
+            label12.Location = new Point(15, 38);
             label12.Name = "label12";
             label12.Size = new Size(28, 15);
             label12.TabIndex = 0;
@@ -389,9 +394,9 @@
             // 
             goodPanel.BackColor = Color.SeaGreen;
             goodPanel.Controls.Add(label13);
-            goodPanel.Location = new Point(293, 250);
+            goodPanel.Location = new Point(293, 195);
             goodPanel.Name = "goodPanel";
-            goodPanel.Size = new Size(711, 458);
+            goodPanel.Size = new Size(711, 513);
             goodPanel.TabIndex = 5;
             goodPanel.Visible = false;
             // 
@@ -410,7 +415,7 @@
             patientOptionsPanel.Controls.Add(button7);
             patientOptionsPanel.Controls.Add(button6);
             patientOptionsPanel.Controls.Add(button5);
-            patientOptionsPanel.Location = new Point(87, 250);
+            patientOptionsPanel.Location = new Point(89, 195);
             patientOptionsPanel.Name = "patientOptionsPanel";
             patientOptionsPanel.Size = new Size(200, 211);
             patientOptionsPanel.TabIndex = 6;
@@ -489,19 +494,15 @@
         private Label label1;
         private Button patientSearchButton;
         private GroupBox patientInfoPanel;
-        private ComboBox comboBox1;
         private Label label20;
-        private TextBox txtZip;
-        private ComboBox comboState;
-        private TextBox txtCity;
-        private TextBox txtAddress;
-        private TextBox txtMInit;
-        private TextBox txtFName;
-        private TextBox txtLName;
-        private DateTimePicker dtpDOB;
-        private ComboBox comboSex;
-        private TextBox txtPhoneNumber;
-        private TextBox lblSSN;
+        private TextBox patientInfoZip;
+        private TextBox patientInfoCity;
+        private TextBox patientInfoAddress;
+        private TextBox patientInfoMI;
+        private TextBox patientInfoPhoneNumber;
+        private TextBox patientInfoLastName;
+        private TextBox patientInfoFirstName;
+        private TextBox patientInfoSSN;
         private Label label11;
         private Label label10;
         private Label label9;
@@ -525,5 +526,9 @@
         private Button button7;
         private Button button6;
         private Button button5;
+        private TextBox patientInfoSex;
+        private TextBox patientInfoPrimaryDoctor;
+        private TextBox patientInfoDOB;
+        private TextBox patientInfoState;
     }
 }

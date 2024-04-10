@@ -20,18 +20,61 @@ namespace EMRKS
 
         private void onPatientSearch(object sender, EventArgs e)
         {
-            //IF PATIENT FOUND HIDE PANEL AND DISPLAY PATIENT INFO
-            //ELSE SHOW PATIENT NOT FOUND
+            string patientSsn = textBox1.Text;
 
-            patientSearchPanel.Visible = false;
-            patientInfoPanel.Visible = true;
-            patientOptionsPanel.Visible = true;
-            goodPanel.Visible = true;
+            var patient = Database.GetPatient(textBox1.Text);
+
+            if (patient != null)
+            {
+                FillPatientInformation(patient);
+
+                patientSearchPanel.Visible = false;
+                patientInfoPanel.Visible = true;
+                patientOptionsPanel.Visible = true;
+                goodPanel.Visible = true;
+            }
+            else
+            {
+                MessageBox.Show("CANT FIND PATIENT");
+            }
+        }
+
+        private void FillPatientInformation(Patient patient)
+        {
+            patientInfoSSN.Text = patient.getSsn();
+            patientInfoFirstName.Text = patient.getFirstName();
+            patientInfoMI.Text = patient.getMiddleInit();
+            patientInfoLastName.Text = patient.getLastName();
+            patientInfoSex.Text = patient.getSex();
+            patientInfoDOB.Text = patient.getDOB();
+            patientInfoPhoneNumber.Text = patient.getPhoneNumber();
+            patientInfoPrimaryDoctor.Text = patient.getPrimaryDoctor();
+
+            var address = patient.getAddress();
+
+            if (address != null)
+            {
+                string line1 = address.getLine1();
+                string? line2 = address.getLine2();
+
+                if (line2 != "NULL")
+                {
+                    patientInfoAddress.Text = line1 + " " + line2;
+                }
+                else
+                {
+                    patientInfoAddress.Text = line1;
+                }
+
+                patientInfoCity.Text = address.getCity();
+                patientInfoState.Text = address.getState();
+                patientInfoZip.Text = address.getZip();
+            }
         }
 
         private void onEditPatientPersonalInfo(object sender, EventArgs e)
         {
-            Database.Test();
+            //
         }
     }
 }

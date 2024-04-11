@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace EMRKS
 {
-    public class Patient
+    public class Patient //TEMPORARY, return to internal
     {
         private string SSN;
         private DateTime DOB;

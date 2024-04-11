@@ -24,7 +24,8 @@ namespace EMRKS
 
         private void HideSubControls()
         {
-            patientEditor.Hide();
+            //patientEditor.Hide();
+            medication_Manager1.Hide();
         }
 
         private void onPatientSearch(object sender, EventArgs e)
@@ -90,7 +91,7 @@ namespace EMRKS
 
         private void button8_Click(object sender, EventArgs e)
         {
-            //medication manager button
+            medication_Manager1.Show();
         }
     }
 }

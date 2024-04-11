@@ -62,7 +62,6 @@
             button2 = new Button();
             button1 = new Button();
             goodPanel = new Panel();
-            patientEditor = new PatientEditor();
             label13 = new Label();
             patientOptionsPanel = new Panel();
             button8 = new Button();
@@ -70,6 +69,7 @@
             button6 = new Button();
             button5 = new Button();
             helpProvider1 = new HelpProvider();
+            medication_Manager1 = new Medication_Manager();
             patientSearchPanel.SuspendLayout();
             patientInfoPanel.SuspendLayout();
             goodPanel.SuspendLayout();
@@ -394,21 +394,13 @@
             // goodPanel
             // 
             goodPanel.BackColor = Color.SeaGreen;
-            goodPanel.Controls.Add(patientEditor);
+            goodPanel.Controls.Add(medication_Manager1);
             goodPanel.Controls.Add(label13);
             goodPanel.Location = new Point(293, 195);
             goodPanel.Name = "goodPanel";
             goodPanel.Size = new Size(711, 513);
             goodPanel.TabIndex = 5;
             goodPanel.Visible = false;
-            // 
-            // patientEditor
-            // 
-            patientEditor.BackColor = Color.GreenYellow;
-            patientEditor.Location = new Point(0, 0);
-            patientEditor.Name = "patientEditor";
-            patientEditor.Size = new Size(711, 513);
-            patientEditor.TabIndex = 1;
             // 
             // label13
             // 
@@ -472,6 +464,14 @@
             button5.Text = "Edit Personl Info";
             button5.UseVisualStyleBackColor = true;
             button5.Click += onEditPatientPersonalInfo;
+            // 
+            // medication_Manager1
+            // 
+            medication_Manager1.BackColor = Color.SeaGreen;
+            medication_Manager1.Location = new Point(0, 0);
+            medication_Manager1.Name = "medication_Manager1";
+            medication_Manager1.Size = new Size(711, 513);
+            medication_Manager1.TabIndex = 1;
             // 
             // FindPatient
             // 
@@ -542,5 +542,6 @@
         private TextBox patientInfoDOB;
         private TextBox patientInfoState;
         private PatientEditor patientEditor;
+        private Medication_Manager medication_Manager1;
     }
 }

@@ -142,4 +142,28 @@ namespace EMRKS
         }
 
     }
+
+    public static Medication? GetMedication(string patientSSN)
+    {
+        try
+        {
+            string query = "SELECT * FROM Prescription WHERE GivenSsn = " + patientSSN;
+
+            MySqlCommand cmd = new MySqlCommand(query, connection);
+
+            using (MySqlDataReader reader = cmd.ExecuteReader())
+            {
+                while (reader.Read())
+                {
+                    //return medication
+                }
+            }
+        }
+        catch (MySqlException ex)
+        {
+            //QUERY FAILED
+        }
+
+        return null;
+    }
 }

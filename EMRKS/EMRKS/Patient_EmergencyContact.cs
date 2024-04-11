@@ -18,6 +18,12 @@ namespace EMRKS
             InitializeComponent();
         }
 
+        public String[] getInfo()
+        {
+            return [];
+        
+        }
+        
         private void button1_Click(object sender, EventArgs e)
         {
             ((AddPatient)this.parentForm).removeAndReorderEmContacts(this);

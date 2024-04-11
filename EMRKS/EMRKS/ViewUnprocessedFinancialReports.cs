@@ -13,20 +13,22 @@ namespace EMRKS
 {
     public partial class ViewUnprocessedFinancialReports : Form
     {
-        private static MySqlConnection? connection = null;
+        //private static MySqlConnection? connection = null;
 
-        private string server = "sql5.freesqldatabase.com";
-        private string username = "sql5679201";
-        private string password = "kDArXyz1aB";
-        private string databaseName = "sql5679201";
+        //private string server = "sql5.freesqldatabase.com";
+        //private string username = "sql5679201";
+        //private string password = "kDArXyz1aB";
+        //private string databaseName = "sql5679201";
 
-
+        private Database database = new Database();
         public ViewUnprocessedFinancialReports()
         {
             InitializeComponent();
-            connection = new MySqlConnection();
-            connection.ConnectionString = "server=" + server + ";uid=" + username + ";pwd=" + password + ";database=" + databaseName;
-            connection.Open();
+
+            
+            //connection = new MySqlConnection();
+            //connection.ConnectionString = "server=" + server + ";uid=" + username + ";pwd=" + password + ";database=" + databaseName;
+            //connection.Open();
 
         }
 
@@ -43,31 +45,15 @@ namespace EMRKS
         private void ViewUnprocessedFinancialReports_Load(object sender, EventArgs e)
         {
 
-            try
-            {
-                string query = "SELECT * FROM Financial_Report WHERE Processing_Date = NULL";
 
-                MySqlDataAdapter sqlDa = new MySqlDataAdapter(query, connection);
-                DataTable dtbl = new DataTable();
-                sqlDa.Fill(dtbl);
-
-                dataGridView1.DataSource = dtbl;
-
-
-            }
-            catch (MySqlException ex)
-            {
-                //QUERY FAILED
-            }
-
-
+            database.ViewUnprocessedFinancialReports(dataGridView1);
 
 
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-
+            
         }
 
         //private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)

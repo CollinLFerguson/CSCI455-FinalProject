@@ -5,6 +5,7 @@ using System.Linq;
 using System.Runtime.Intrinsics.X86;
 using System.Text;
 using System.Threading.Tasks;
+using System.Data;
 
 namespace EMRKS
 {
@@ -115,6 +116,27 @@ namespace EMRKS
             return true;
         }
 
+        public static Boolean ViewUnprocessedFinancialReports( DataGridView dataGridView1)
+        {
+            try
+            {
+                string query = "SELECT * FROM Financial_Report WHERE Processing_Date = NULL";
+
+                MySqlDataAdapter sqlDa = new MySqlDataAdapter(query, connection);
+                DataTable dtbl = new DataTable();
+                sqlDa.Fill(dtbl);
+
+                dataGridView1.DataSource = dtbl;
+
+
+            }
+            catch (MySqlException ex)
+            {
+                return false; //QUERY FAILED
+            }
+            return true;
+
+        }
 
     }
 }

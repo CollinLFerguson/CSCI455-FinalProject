@@ -138,9 +138,7 @@ namespace EMRKS
             {
                 return null; //QUERY FAILED
             }
-
         }
-
     }
 
     public static Medication? GetMedication(string patientSSN)

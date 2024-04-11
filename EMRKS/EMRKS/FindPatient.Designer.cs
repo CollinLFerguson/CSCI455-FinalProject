@@ -62,6 +62,7 @@
             button2 = new Button();
             button1 = new Button();
             goodPanel = new Panel();
+            medication_Manager1 = new Medication_Manager();
             label13 = new Label();
             patientOptionsPanel = new Panel();
             button8 = new Button();
@@ -69,7 +70,6 @@
             button6 = new Button();
             button5 = new Button();
             helpProvider1 = new HelpProvider();
-            medication_Manager1 = new Medication_Manager();
             patientSearchPanel.SuspendLayout();
             patientInfoPanel.SuspendLayout();
             goodPanel.SuspendLayout();
@@ -402,6 +402,14 @@
             goodPanel.TabIndex = 5;
             goodPanel.Visible = false;
             // 
+            // medication_Manager1
+            // 
+            medication_Manager1.BackColor = Color.SeaGreen;
+            medication_Manager1.Location = new Point(0, 0);
+            medication_Manager1.Name = "medication_Manager1";
+            medication_Manager1.Size = new Size(711, 513);
+            medication_Manager1.TabIndex = 1;
+            // 
             // label13
             // 
             label13.AutoSize = true;
@@ -464,14 +472,6 @@
             button5.Text = "Edit Personl Info";
             button5.UseVisualStyleBackColor = true;
             button5.Click += onEditPatientPersonalInfo;
-            // 
-            // medication_Manager1
-            // 
-            medication_Manager1.BackColor = Color.SeaGreen;
-            medication_Manager1.Location = new Point(0, 0);
-            medication_Manager1.Name = "medication_Manager1";
-            medication_Manager1.Size = new Size(711, 513);
-            medication_Manager1.TabIndex = 1;
             // 
             // FindPatient
             // 

@@ -13,22 +13,11 @@ namespace EMRKS
 {
     public partial class ViewUnprocessedFinancialReports : Form
     {
-        //private static MySqlConnection? connection = null;
 
-        //private string server = "sql5.freesqldatabase.com";
-        //private string username = "sql5679201";
-        //private string password = "kDArXyz1aB";
-        //private string databaseName = "sql5679201";
-
-        private Database database = new Database();
         public ViewUnprocessedFinancialReports()
         {
             InitializeComponent();
 
-            
-            //connection = new MySqlConnection();
-            //connection.ConnectionString = "server=" + server + ";uid=" + username + ";pwd=" + password + ";database=" + databaseName;
-            //connection.Open();
 
         }
 
@@ -46,7 +35,7 @@ namespace EMRKS
         {
 
 
-            database.ViewUnprocessedFinancialReports(dataGridView1);
+            dataGridView1.DataSource = Database.ViewUnprocessedFinancialReports();
 
 
         }
@@ -56,9 +45,5 @@ namespace EMRKS
             
         }
 
-        //private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        //{
-
-        //}
     }
 }

@@ -119,8 +119,9 @@ namespace EMRKS
             return true;
         }
 
-        public static Boolean ViewUnprocessedFinancialReports( DataGridView dataGridView1)
+        public static DataTable? ViewUnprocessedFinancialReports()
         {
+       
             try
             {
                 string query = "SELECT * FROM Financial_Report WHERE Processing_Date = NULL";
@@ -129,15 +130,14 @@ namespace EMRKS
                 DataTable dtbl = new DataTable();
                 sqlDa.Fill(dtbl);
 
-                dataGridView1.DataSource = dtbl;
+                return dtbl;
 
 
             }
             catch (MySqlException ex)
             {
-                return false; //QUERY FAILED
+                return null; //QUERY FAILED
             }
-            return true;
 
         }
 

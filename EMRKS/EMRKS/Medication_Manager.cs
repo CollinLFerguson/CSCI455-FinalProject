@@ -13,11 +13,16 @@ namespace EMRKS
 {
     public partial class Medication_Manager : UserControl
     {
-        private Patient patient = FindPatient.getPatient();
+        private Patient patient;
 
         public Medication_Manager()
         {
             InitializeComponent();
+        }
+
+        public void SetPatient(Patient patient)
+        {
+            this.patient = patient;
         }
 
         private void Medication_Manager_Load(object sender, EventArgs e)
@@ -26,6 +31,7 @@ namespace EMRKS
             {
                 dataGridView1.DataSource = Database.GetMedication(patient.getSsn());
             }
+            catch { }
         }
     }
 }

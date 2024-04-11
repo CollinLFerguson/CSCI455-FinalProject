@@ -19,10 +19,13 @@ namespace EMRKS
         private string primaryDoctorID;
         private string phoneNumber;
 
-        public Patient(string SSN, string DOB, int age, char sex, string firstName, char middleInit, string lastName, string primaryDoctorID, string phoneNumber) { 
+        public Patient(string SSN, string DOB, char sex, string firstName, char middleInit, string lastName, string primaryDoctorID, string phoneNumber) { 
             this.SSN = SSN;
             this.DOB = DateTime.Parse(DOB);
-            this.age = age;
+            DateTime now = DateTime.Today;
+            this.age = now.Year - this.DOB.Year;
+            if (this.DOB > now.AddYears(-age)) age--;
+
             this.sex = sex;
             this.firstName = firstName;
             this.middleInit = middleInit;

@@ -41,7 +41,7 @@ namespace EMRKS
                 {
                     while (reader.Read())
                     {
-                        return new Patient(reader["Ssn"].ToString(), reader["Dob"].ToString(), Int32.Parse(reader["Age"].ToString()), char.Parse(reader["Sex"].ToString()), reader["First_Name"].ToString(), char.Parse(reader["Minit"].ToString()), reader["Last_Name"].ToString(), reader["Primary_Doctor_ID"].ToString(), reader["Phone_Number"].ToString());
+                        return new Patient(reader["Ssn"].ToString(), reader["Dob"].ToString(), char.Parse(reader["Sex"].ToString()), reader["First_Name"].ToString(), char.Parse(reader["Minit"].ToString()), reader["Last_Name"].ToString(), reader["Primary_Doctor_ID"].ToString(), reader["Phone_Number"].ToString());
                     }
                 }
             }

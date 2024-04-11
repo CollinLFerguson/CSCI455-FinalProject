@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.VisualBasic;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -29,6 +30,16 @@ namespace EMRKS
 
         private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
         {
+
+        }
+        private void BtnPopData_Click(object sender, EventArgs e)
+        {
+            //Database database = new Database();
+            //int year;
+            //int month;
+            //int day;
+
+            //String sqlStatement = "SELECT * FROM Appointent WHERE Date_Time >" + year + "-" + month + "-" + day + " 00:00:00 AND Date_Time <" + year + "-" + month + "-" + day + " 23:59:59";
 
         }
     }

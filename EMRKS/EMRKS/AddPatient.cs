@@ -24,11 +24,6 @@ namespace EMRKS
 
         private void btnAddPatient_Click(object sender, EventArgs e)
         {
-            
-            Database database = new Database();
-
-
-
             String sqlStatement;
             sqlStatement = "'" + txtSSN.Text +    "',";
             sqlStatement += "'" + dtpDOB.Text +   "',";

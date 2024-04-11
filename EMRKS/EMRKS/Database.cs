@@ -1,10 +1,11 @@
-﻿using MySql.Data.MySqlClient;
+using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.Intrinsics.X86;
 using System.Text;
 using System.Threading.Tasks;
+using System.Data;
 
 namespace EMRKS
 {
@@ -117,5 +118,28 @@ namespace EMRKS
             }
             return true;
         }
+
+        public static DataTable? ViewUnprocessedFinancialReports()
+        {
+       
+            try
+            {
+                string query = "SELECT * FROM Financial_Report WHERE Processing_Date = NULL";
+
+                MySqlDataAdapter sqlDa = new MySqlDataAdapter(query, connection);
+                DataTable dtbl = new DataTable();
+                sqlDa.Fill(dtbl);
+
+                return dtbl;
+
+
+            }
+            catch (MySqlException ex)
+            {
+                return null; //QUERY FAILED
+            }
+
+        }
+
     }
 }

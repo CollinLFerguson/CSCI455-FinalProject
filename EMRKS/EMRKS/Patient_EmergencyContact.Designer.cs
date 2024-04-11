@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             button1 = new Button();
-            textBox1 = new TextBox();
+            txtContactName = new TextBox();
             label1 = new Label();
-            textBox2 = new TextBox();
+            txtContactPhone = new TextBox();
             label2 = new Label();
             label3 = new Label();
-            textBox3 = new TextBox();
+            txtContactRelationship = new TextBox();
             SuspendLayout();
             // 
             // button1
@@ -47,12 +47,12 @@
             button1.UseVisualStyleBackColor = true;
             button1.Click += button1_Click;
             // 
-            // textBox1
+            // txtContactName
             // 
-            textBox1.Location = new Point(93, 12);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(206, 23);
-            textBox1.TabIndex = 4;
+            txtContactName.Location = new Point(93, 12);
+            txtContactName.Name = "txtContactName";
+            txtContactName.Size = new Size(206, 23);
+            txtContactName.TabIndex = 4;
             // 
             // label1
             // 
@@ -63,12 +63,12 @@
             label1.TabIndex = 3;
             label1.Text = "Contact Name";
             // 
-            // textBox2
+            // txtContactPhone
             // 
-            textBox2.Location = new Point(105, 41);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(194, 23);
-            textBox2.TabIndex = 6;
+            txtContactPhone.Location = new Point(105, 41);
+            txtContactPhone.Name = "txtContactPhone";
+            txtContactPhone.Size = new Size(194, 23);
+            txtContactPhone.TabIndex = 6;
             // 
             // label2
             // 
@@ -88,23 +88,23 @@
             label3.TabIndex = 8;
             label3.Text = "Contact Relationship";
             // 
-            // textBox3
+            // txtContactRelationship
             // 
-            textBox3.Location = new Point(126, 70);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(173, 23);
-            textBox3.TabIndex = 9;
+            txtContactRelationship.Location = new Point(126, 70);
+            txtContactRelationship.Name = "txtContactRelationship";
+            txtContactRelationship.Size = new Size(173, 23);
+            txtContactRelationship.TabIndex = 9;
             // 
             // Patient_EmergencyContact
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            Controls.Add(textBox3);
+            Controls.Add(txtContactRelationship);
             Controls.Add(label3);
             Controls.Add(label2);
-            Controls.Add(textBox2);
+            Controls.Add(txtContactPhone);
             Controls.Add(button1);
-            Controls.Add(textBox1);
+            Controls.Add(txtContactName);
             Controls.Add(label1);
             Name = "Patient_EmergencyContact";
             Size = new Size(302, 132);
@@ -115,11 +115,11 @@
         #endregion
 
         private Button button1;
-        private TextBox textBox1;
+        private TextBox txtContactName;
         private Label label1;
-        private TextBox textBox2;
+        private TextBox txtContactPhone;
         private Label label2;
         private Label label3;
-        private TextBox textBox3;
+        private TextBox txtContactRelationship;
     }
 }

@@ -57,7 +57,6 @@
             dataGridView1.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
             dataGridView1.Location = new Point(36, 69);
             dataGridView1.Name = "dataGridView1";
-            dataGridView1.RightToLeft = RightToLeft.Yes;
             dataGridView1.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.AutoSizeToDisplayedHeaders;
             dataGridView1.Size = new Size(1006, 629);
             dataGridView1.TabIndex = 5;

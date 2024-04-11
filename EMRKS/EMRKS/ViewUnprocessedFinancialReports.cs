@@ -24,6 +24,7 @@ namespace EMRKS
         public ViewUnprocessedFinancialReports()
         {
             InitializeComponent();
+
             connection = new MySqlConnection();
             connection.ConnectionString = "server=" + server + ";uid=" + username + ";pwd=" + password + ";database=" + databaseName;
             connection.Open();
@@ -59,9 +60,6 @@ namespace EMRKS
             {
                 //QUERY FAILED
             }
-
-
-
 
         }
 

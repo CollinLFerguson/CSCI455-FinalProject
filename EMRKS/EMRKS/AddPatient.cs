@@ -49,17 +49,19 @@ namespace EMRKS
             sqlStatement += "'" + txtPhoneNumber.Text + "'";
 
             Console.WriteLine(sqlStatement);
-            Console.WriteLine(Database.addPatient(sqlStatement));
 
-            //Validate the info will go cleanly into the DB
-            //validateSQL();
-            
+            Boolean addedCorrectly = Database.addPatient(sqlStatement);
+
+            while (!addedCorrectly){
+                addedCorrectly = Database.addPatient(sqlStatement);
+            }
+
             
             //SQL add commands.
 
 
             //If the add is successful, return to landing.
-            //if (this.MdiParent != null) { ((MainForm)this.MdiParent).destroyCurrentPage(); } //Returns back to landing page
+            if (this.MdiParent != null) { ((MainForm)this.MdiParent).destroyCurrentPage(); } //Returns back to landing page
         }
         private void button5_Click(object sender, EventArgs e)
         {

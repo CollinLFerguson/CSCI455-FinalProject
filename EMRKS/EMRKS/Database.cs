@@ -101,6 +101,9 @@ namespace EMRKS
         }
 
         public static Boolean addPatient(string fullPatient)
+            /// Adds the sent patient details to the database.
+            /// Returns TRUE if the entry was added successfully
+            /// Returns FALSE if the entry could not be added.
         {
             try
             {
@@ -114,7 +117,5 @@ namespace EMRKS
             }
             return true;
         }
-
-
     }
 }

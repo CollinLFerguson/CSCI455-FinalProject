@@ -185,11 +185,14 @@
             // 
             // dtpDOB
             // 
-            dtpDOB.Format = DateTimePickerFormat.Short;
+            dtpDOB.CustomFormat = "yyyy/MM/dd";
+            dtpDOB.Format = DateTimePickerFormat.Custom;
             dtpDOB.Location = new Point(794, 33);
+            dtpDOB.MaxDate = new DateTime(2024, 4, 11, 0, 0, 0, 0);
             dtpDOB.Name = "dtpDOB";
-            dtpDOB.Size = new Size(86, 23);
+            dtpDOB.Size = new Size(85, 23);
             dtpDOB.TabIndex = 15;
+            dtpDOB.Value = new DateTime(2024, 4, 11, 0, 0, 0, 0);
             // 
             // comboSex
             // 

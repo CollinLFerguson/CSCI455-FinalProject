@@ -16,5 +16,10 @@ namespace EMRKS
         {
             InitializeComponent();
         }
+
+        private void Medication_Manager_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -76,6 +76,17 @@ namespace EMRKS
             noFormPage.Hide();
         }
 
+        public void loadViewAppointments()
+        {
+            if (currentPage != null) { destroyCurrentPage(); }
+            Form ViewAppointmentsPage = new ViewAppointments();
+            ViewAppointmentsPage.MdiParent = this;
+            currentPage = ViewAppointmentsPage;
+
+            ViewAppointmentsPage.Show();
+            noFormPage.Hide();
+        }
+
         public void destroyCurrentPage(){
             //** Destroys the currently loaded page.
             //   This function should be called whenever one of the side menu buttons are hit.

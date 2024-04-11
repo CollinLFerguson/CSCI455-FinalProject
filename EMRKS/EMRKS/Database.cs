@@ -141,5 +141,28 @@ namespace EMRKS
 
         }
 
+        public static DataTable? ViewAppointments( DateTime appointmentTime)
+        {
+            try
+            {
+                  
+
+                String query = "SELECT * FROM Appointment WHERE Date_Time >" + appointmentTime.Year + "-" + appointmentTime.Month + "-" + appointmentTime.Day + " 00:00:00 AND Date_Time <" + appointmentTime.Year + "-" + appointmentTime.Month + "-" + appointmentTime.Day + " 23:59:59";
+
+                MySqlDataAdapter sqlDa = new MySqlDataAdapter(query, connection);
+                DataTable dtbl = new DataTable();
+                sqlDa.Fill(dtbl);
+
+                return dtbl;
+
+
+            }
+            catch (MySqlException ex)
+            {
+                return null; //QUERY FAILED
+            }
+
+        }
+
     }
 }

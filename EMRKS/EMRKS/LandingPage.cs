@@ -36,5 +36,9 @@ namespace EMRKS
         {
             if (this.MdiParent != null) { ((MainForm)this.MdiParent).loadViewUnprocessedFinancialReports(); }
         }
+        private void button6_Click(object sender, EventArgs e) // the click functions don't correspond to the correct buttons
+        {
+            if (this.MdiParent != null) { ((MainForm)this.MdiParent).loadViewAppointments(); }
+        }
     }
 }

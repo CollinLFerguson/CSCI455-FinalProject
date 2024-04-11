@@ -33,6 +33,7 @@
             button3 = new Button();
             button2 = new Button();
             button1 = new Button();
+            button5 = new Button();
             panel1.SuspendLayout();
             SuspendLayout();
             // 
@@ -93,6 +94,17 @@
             button1.UseVisualStyleBackColor = true;
             button1.Click += button4_Click;
             // 
+            // button5
+            // 
+            button5.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
+            button5.Location = new Point(1, 233);
+            button5.Name = "button5";
+            button5.Size = new Size(200, 58);
+            button5.TabIndex = 4;
+            button5.Text = "View Appointments";
+            button5.UseVisualStyleBackColor = true;
+            button5.Click += button6_Click;
+            // 
             // LandingPage
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -100,6 +112,7 @@
             AutoScroll = true;
             BackColor = SystemColors.Control;
             ClientSize = new Size(205, 720);
+            Controls.Add(button5);
             Controls.Add(panel1);
             FormBorderStyle = FormBorderStyle.None;
             Name = "LandingPage";
@@ -117,5 +130,6 @@
         private Button button3;
         private Button button2;
         private Button button4;
+        private Button button5;
     }
 }

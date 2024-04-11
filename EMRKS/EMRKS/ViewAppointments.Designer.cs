@@ -30,9 +30,9 @@
         {
             label19 = new Label();
             button1 = new Button();
-            textBox1 = new TextBox();
             label1 = new Label();
             dataGridView1 = new DataGridView();
+            dtpDOB = new DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
@@ -55,13 +55,7 @@
             button1.TabIndex = 7;
             button1.Text = "Populate Data";
             button1.UseVisualStyleBackColor = true;
-            // 
-            // textBox1
-            // 
-            textBox1.Location = new Point(108, 106);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(254, 23);
-            textBox1.TabIndex = 10;
+            button1.Click += BtnPopData_Click;
             // 
             // label1
             // 
@@ -85,20 +79,33 @@
             dataGridView1.Size = new Size(866, 389);
             dataGridView1.TabIndex = 12;
             // 
+            // dtpDOB
+            // 
+            dtpDOB.CustomFormat = "yyyy/MM/dd";
+            dtpDOB.Format = DateTimePickerFormat.Custom;
+            dtpDOB.Location = new Point(108, 106);
+            dtpDOB.MaxDate = new DateTime(2024, 4, 11, 0, 0, 0, 0);
+            dtpDOB.Name = "dtpDOB";
+            dtpDOB.Size = new Size(216, 23);
+            dtpDOB.TabIndex = 16;
+            dtpDOB.Value = new DateTime(2024, 4, 11, 0, 0, 0, 0);
+            // 
             // ViewAppointments
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.DarkSeaGreen;
             ClientSize = new Size(1078, 720);
+            Controls.Add(dtpDOB);
             Controls.Add(dataGridView1);
             Controls.Add(label1);
-            Controls.Add(textBox1);
             Controls.Add(button1);
             Controls.Add(label19);
             ForeColor = SystemColors.ControlText;
             FormBorderStyle = FormBorderStyle.None;
+            Location = new Point(210, 0);
             Name = "ViewAppointments";
+            StartPosition = FormStartPosition.Manual;
             Text = "ViewAppointments";
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
@@ -109,8 +116,8 @@
 
         private Label label19;
         private Button button1;
-        private TextBox textBox1;
         private Label label1;
         private DataGridView dataGridView1;
+        private DateTimePicker dtpDOB;
     }
 }

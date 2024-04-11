@@ -34,13 +34,13 @@ namespace EMRKS
         }
         private void BtnPopData_Click(object sender, EventArgs e)
         {
-            //Database database = new Database();
-            //int year;
-            //int month;
-            //int day;
+            string appointmentTime;
+            appointmentTime = dtpDOB.Text;
 
-            //String sqlStatement = "SELECT * FROM Appointent WHERE Date_Time >" + year + "-" + month + "-" + day + " 00:00:00 AND Date_Time <" + year + "-" + month + "-" + day + " 23:59:59";
+            // need to remove / from appointment timme and replace with -
 
+            DateTime myDate = DateTime.ParseExact(appointmentTime + " 00:00:00,531", "yyyy-MM-dd HH:mm:ss,fff", System.Globalization.CultureInfo.InvariantCulture);
+            dataGridView1.DataSource = Database.ViewAppointments(myDate.Date);
         }
     }
 }

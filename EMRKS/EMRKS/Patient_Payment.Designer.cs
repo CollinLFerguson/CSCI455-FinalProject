@@ -45,6 +45,7 @@
             button2.TabIndex = 47;
             button2.Text = "Remove Payment";
             button2.UseVisualStyleBackColor = true;
+            button2.Click += button2_Click;
             // 
             // textBox3
             // 
@@ -106,7 +107,7 @@
             Controls.Add(label13);
             Controls.Add(label12);
             Name = "Patient_Payment";
-            Size = new Size(607, 65);
+            Size = new Size(586, 65);
             ResumeLayout(false);
             PerformLayout();
         }

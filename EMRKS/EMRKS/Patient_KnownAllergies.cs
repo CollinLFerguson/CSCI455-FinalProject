@@ -12,9 +12,16 @@ namespace EMRKS
 {
     public partial class Patient_KnownAllergies : UserControl
     {
+        public Form parentForm;
+
         public Patient_KnownAllergies()
         {
             InitializeComponent();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            ((AddPatient)this.parentForm).removeAndReorderAllergies(this);
         }
     }
 }

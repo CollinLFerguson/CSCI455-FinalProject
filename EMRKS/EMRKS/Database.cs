@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.Intrinsics.X86;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -98,6 +99,22 @@ namespace EMRKS
 
             return null;
         }
+
+        public static Boolean addPatient(string fullPatient)
+        {
+            try
+            {
+                string query = "INSERT INTO Patient(ssn, dob, sex, First_Name, Minit, Last_Name, Primary_Doctor_ID, Phone_Number) VALUES (" + fullPatient + ");";
+                MySqlCommand cmd = new MySqlCommand(query, connection);
+                cmd.ExecuteNonQuery();
+            }
+            catch (MySqlException ex)
+            {
+                return false; //QUERY FAILED
+            }
+            return true;
+        }
+
 
     }
 }

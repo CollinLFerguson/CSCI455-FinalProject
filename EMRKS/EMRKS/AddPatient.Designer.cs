@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             groupBox1 = new GroupBox();
-            comboBox1 = new ComboBox();
+            comboBoxDoctor = new ComboBox();
             label20 = new Label();
             txtZip = new TextBox();
             comboState = new ComboBox();
@@ -41,7 +41,7 @@
             dtpDOB = new DateTimePicker();
             comboSex = new ComboBox();
             txtPhoneNumber = new TextBox();
-            lblSSN = new TextBox();
+            txtSSN = new TextBox();
             label11 = new Label();
             label10 = new Label();
             label9 = new Label();
@@ -53,31 +53,35 @@
             label3 = new Label();
             label2 = new Label();
             label1 = new Label();
-            groupBox2 = new GroupBox();
+            groupBoxPayment = new GroupBox();
             btnPatientAddPayment = new Button();
-            groupBox3 = new GroupBox();
+            groupBoxAllergies = new GroupBox();
             btnAddPatientAllergy = new Button();
-            groupBox4 = new GroupBox();
+            groupBoxInsurance = new GroupBox();
             btnAddInsurance = new Button();
             label19 = new Label();
-            button4 = new Button();
+            btnAddPatient = new Button();
             button5 = new Button();
-            panel1 = new Panel();
-            panel2 = new Panel();
-            groupBox6 = new GroupBox();
-            button1 = new Button();
+            panelAllergies = new Panel();
+            panelEMContact = new Panel();
+            groupBoxEmContact = new GroupBox();
+            btnAddEmContact = new Button();
+            panelPayment = new Panel();
+            panelInsurance = new Panel();
             groupBox1.SuspendLayout();
-            groupBox2.SuspendLayout();
-            groupBox3.SuspendLayout();
-            groupBox4.SuspendLayout();
-            panel1.SuspendLayout();
-            panel2.SuspendLayout();
-            groupBox6.SuspendLayout();
+            groupBoxPayment.SuspendLayout();
+            groupBoxAllergies.SuspendLayout();
+            groupBoxInsurance.SuspendLayout();
+            panelAllergies.SuspendLayout();
+            panelEMContact.SuspendLayout();
+            groupBoxEmContact.SuspendLayout();
+            panelPayment.SuspendLayout();
+            panelInsurance.SuspendLayout();
             SuspendLayout();
             // 
             // groupBox1
             // 
-            groupBox1.Controls.Add(comboBox1);
+            groupBox1.Controls.Add(comboBoxDoctor);
             groupBox1.Controls.Add(label20);
             groupBox1.Controls.Add(txtZip);
             groupBox1.Controls.Add(comboState);
@@ -89,7 +93,7 @@
             groupBox1.Controls.Add(dtpDOB);
             groupBox1.Controls.Add(comboSex);
             groupBox1.Controls.Add(txtPhoneNumber);
-            groupBox1.Controls.Add(lblSSN);
+            groupBox1.Controls.Add(txtSSN);
             groupBox1.Controls.Add(label11);
             groupBox1.Controls.Add(label10);
             groupBox1.Controls.Add(label9);
@@ -103,20 +107,20 @@
             groupBox1.Controls.Add(label1);
             groupBox1.Location = new Point(12, 58);
             groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(917, 208);
+            groupBox1.Size = new Size(937, 208);
             groupBox1.TabIndex = 0;
             groupBox1.TabStop = false;
             groupBox1.Text = "Patient Info";
             // 
-            // comboBox1
+            // comboBoxDoctor
             // 
-            comboBox1.DropDownStyle = ComboBoxStyle.DropDownList;
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Items.AddRange(new object[] { "Male", "Female" });
-            comboBox1.Location = new Point(103, 154);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(134, 23);
-            comboBox1.TabIndex = 24;
+            comboBoxDoctor.DropDownStyle = ComboBoxStyle.DropDownList;
+            comboBoxDoctor.FormattingEnabled = true;
+            comboBoxDoctor.Items.AddRange(new object[] { "Male", "Female" });
+            comboBoxDoctor.Location = new Point(103, 154);
+            comboBoxDoctor.Name = "comboBoxDoctor";
+            comboBoxDoctor.Size = new Size(134, 23);
+            comboBoxDoctor.TabIndex = 24;
             // 
             // label20
             // 
@@ -191,7 +195,7 @@
             // 
             comboSex.DropDownStyle = ComboBoxStyle.DropDownList;
             comboSex.FormattingEnabled = true;
-            comboSex.Items.AddRange(new object[] { "Male", "Female" });
+            comboSex.Items.AddRange(new object[] { "M", "F" });
             comboSex.Location = new Point(575, 33);
             comboSex.Name = "comboSex";
             comboSex.Size = new Size(134, 23);
@@ -204,12 +208,12 @@
             txtPhoneNumber.Size = new Size(145, 23);
             txtPhoneNumber.TabIndex = 13;
             // 
-            // lblSSN
+            // txtSSN
             // 
-            lblSSN.Location = new Point(84, 33);
-            lblSSN.Name = "lblSSN";
-            lblSSN.Size = new Size(153, 23);
-            lblSSN.TabIndex = 12;
+            txtSSN.Location = new Point(84, 33);
+            txtSSN.Name = "txtSSN";
+            txtSSN.Size = new Size(153, 23);
+            txtSSN.TabIndex = 12;
             // 
             // label11
             // 
@@ -310,15 +314,19 @@
             label1.TabIndex = 0;
             label1.Text = "SSN";
             // 
-            // groupBox2
+            // groupBoxPayment
             // 
-            groupBox2.Controls.Add(btnPatientAddPayment);
-            groupBox2.Location = new Point(12, 272);
-            groupBox2.Name = "groupBox2";
-            groupBox2.Size = new Size(607, 147);
-            groupBox2.TabIndex = 1;
-            groupBox2.TabStop = false;
-            groupBox2.Text = "Payment Info";
+            groupBoxPayment.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            groupBoxPayment.AutoSize = true;
+            groupBoxPayment.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            groupBoxPayment.Controls.Add(btnPatientAddPayment);
+            groupBoxPayment.Location = new Point(0, 0);
+            groupBoxPayment.MinimumSize = new Size(607, 147);
+            groupBoxPayment.Name = "groupBoxPayment";
+            groupBoxPayment.Size = new Size(607, 147);
+            groupBoxPayment.TabIndex = 1;
+            groupBoxPayment.TabStop = false;
+            groupBoxPayment.Text = "Payment Info";
             // 
             // btnPatientAddPayment
             // 
@@ -328,20 +336,21 @@
             btnPatientAddPayment.TabIndex = 26;
             btnPatientAddPayment.Text = "+ Add Payment";
             btnPatientAddPayment.UseVisualStyleBackColor = true;
+            btnPatientAddPayment.Click += btnPatientAddPayment_Click;
             // 
-            // groupBox3
+            // groupBoxAllergies
             // 
-            groupBox3.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            groupBox3.AutoSize = true;
-            groupBox3.AutoSizeMode = AutoSizeMode.GrowAndShrink;
-            groupBox3.Controls.Add(btnAddPatientAllergy);
-            groupBox3.Location = new Point(0, 0);
-            groupBox3.MinimumSize = new Size(304, 147);
-            groupBox3.Name = "groupBox3";
-            groupBox3.Size = new Size(304, 147);
-            groupBox3.TabIndex = 2;
-            groupBox3.TabStop = false;
-            groupBox3.Text = "Known Allergies";
+            groupBoxAllergies.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            groupBoxAllergies.AutoSize = true;
+            groupBoxAllergies.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            groupBoxAllergies.Controls.Add(btnAddPatientAllergy);
+            groupBoxAllergies.Location = new Point(0, 0);
+            groupBoxAllergies.MinimumSize = new Size(324, 147);
+            groupBoxAllergies.Name = "groupBoxAllergies";
+            groupBoxAllergies.Size = new Size(324, 147);
+            groupBoxAllergies.TabIndex = 2;
+            groupBoxAllergies.TabStop = false;
+            groupBoxAllergies.Text = "Known Allergies";
             // 
             // btnAddPatientAllergy
             // 
@@ -351,16 +360,21 @@
             btnAddPatientAllergy.TabIndex = 28;
             btnAddPatientAllergy.Text = "+Add Allergy";
             btnAddPatientAllergy.UseVisualStyleBackColor = true;
+            btnAddPatientAllergy.Click += btnAddPatientAllergy_Click;
             // 
-            // groupBox4
+            // groupBoxInsurance
             // 
-            groupBox4.Controls.Add(btnAddInsurance);
-            groupBox4.Location = new Point(12, 425);
-            groupBox4.Name = "groupBox4";
-            groupBox4.Size = new Size(607, 187);
-            groupBox4.TabIndex = 2;
-            groupBox4.TabStop = false;
-            groupBox4.Text = "Insurance Info";
+            groupBoxInsurance.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            groupBoxInsurance.AutoSize = true;
+            groupBoxInsurance.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            groupBoxInsurance.Controls.Add(btnAddInsurance);
+            groupBoxInsurance.Location = new Point(0, 0);
+            groupBoxInsurance.MinimumSize = new Size(609, 187);
+            groupBoxInsurance.Name = "groupBoxInsurance";
+            groupBoxInsurance.Size = new Size(609, 187);
+            groupBoxInsurance.TabIndex = 2;
+            groupBoxInsurance.TabStop = false;
+            groupBoxInsurance.Text = "Insurance Info";
             // 
             // btnAddInsurance
             // 
@@ -370,6 +384,7 @@
             btnAddInsurance.TabIndex = 27;
             btnAddInsurance.Text = "+ Add Insurance";
             btnAddInsurance.UseVisualStyleBackColor = true;
+            btnAddInsurance.Click += btnAddInsurance_Click;
             // 
             // label19
             // 
@@ -381,15 +396,15 @@
             label19.TabIndex = 3;
             label19.Text = "Add Patient";
             // 
-            // button4
+            // btnAddPatient
             // 
-            button4.Location = new Point(10, 618);
-            button4.Name = "button4";
-            button4.Size = new Size(135, 23);
-            button4.TabIndex = 32;
-            button4.Text = "Add Patient";
-            button4.UseVisualStyleBackColor = true;
-            button4.Click += button4_Click;
+            btnAddPatient.Location = new Point(10, 618);
+            btnAddPatient.Name = "btnAddPatient";
+            btnAddPatient.Size = new Size(135, 23);
+            btnAddPatient.TabIndex = 32;
+            btnAddPatient.Text = "Add Patient";
+            btnAddPatient.UseVisualStyleBackColor = true;
+            btnAddPatient.Click += btnAddPatient_Click;
             // 
             // button5
             // 
@@ -401,48 +416,69 @@
             button5.UseVisualStyleBackColor = true;
             button5.Click += button5_Click;
             // 
-            // panel1
+            // panelAllergies
             // 
-            panel1.AutoScroll = true;
-            panel1.AutoSizeMode = AutoSizeMode.GrowAndShrink;
-            panel1.Controls.Add(groupBox3);
-            panel1.Location = new Point(625, 272);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(304, 147);
-            panel1.TabIndex = 34;
+            panelAllergies.AutoScroll = true;
+            panelAllergies.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            panelAllergies.Controls.Add(groupBoxAllergies);
+            panelAllergies.Location = new Point(625, 272);
+            panelAllergies.Name = "panelAllergies";
+            panelAllergies.Size = new Size(324, 150);
+            panelAllergies.TabIndex = 34;
             // 
-            // panel2
+            // panelEMContact
             // 
-            panel2.AutoScroll = true;
-            panel2.AutoSizeMode = AutoSizeMode.GrowAndShrink;
-            panel2.Controls.Add(groupBox6);
-            panel2.Location = new Point(625, 425);
-            panel2.Name = "panel2";
-            panel2.Size = new Size(304, 187);
-            panel2.TabIndex = 35;
+            panelEMContact.AutoScroll = true;
+            panelEMContact.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            panelEMContact.Controls.Add(groupBoxEmContact);
+            panelEMContact.Location = new Point(625, 425);
+            panelEMContact.Name = "panelEMContact";
+            panelEMContact.Size = new Size(324, 190);
+            panelEMContact.TabIndex = 35;
             // 
-            // groupBox6
+            // groupBoxEmContact
             // 
-            groupBox6.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            groupBox6.AutoSize = true;
-            groupBox6.AutoSizeMode = AutoSizeMode.GrowAndShrink;
-            groupBox6.Controls.Add(button1);
-            groupBox6.Location = new Point(0, 0);
-            groupBox6.MinimumSize = new Size(304, 187);
-            groupBox6.Name = "groupBox6";
-            groupBox6.Size = new Size(304, 187);
-            groupBox6.TabIndex = 2;
-            groupBox6.TabStop = false;
-            groupBox6.Text = "Emergency Contacts";
+            groupBoxEmContact.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            groupBoxEmContact.AutoSize = true;
+            groupBoxEmContact.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            groupBoxEmContact.Controls.Add(btnAddEmContact);
+            groupBoxEmContact.Location = new Point(0, 0);
+            groupBoxEmContact.MinimumSize = new Size(324, 187);
+            groupBoxEmContact.Name = "groupBoxEmContact";
+            groupBoxEmContact.Size = new Size(324, 187);
+            groupBoxEmContact.TabIndex = 2;
+            groupBoxEmContact.TabStop = false;
+            groupBoxEmContact.Text = "Emergency Contacts";
             // 
-            // button1
+            // btnAddEmContact
             // 
-            button1.Location = new Point(6, 22);
-            button1.Name = "button1";
-            button1.Size = new Size(162, 23);
-            button1.TabIndex = 29;
-            button1.Text = "+Add Emergency Contact";
-            button1.UseVisualStyleBackColor = true;
+            btnAddEmContact.Location = new Point(6, 22);
+            btnAddEmContact.Name = "btnAddEmContact";
+            btnAddEmContact.Size = new Size(162, 23);
+            btnAddEmContact.TabIndex = 29;
+            btnAddEmContact.Text = "+Add Emergency Contact";
+            btnAddEmContact.UseVisualStyleBackColor = true;
+            btnAddEmContact.Click += btnAddEmContact_Click;
+            // 
+            // panelPayment
+            // 
+            panelPayment.AutoScroll = true;
+            panelPayment.Controls.Add(groupBoxPayment);
+            panelPayment.Location = new Point(12, 272);
+            panelPayment.Name = "panelPayment";
+            panelPayment.Size = new Size(607, 147);
+            panelPayment.TabIndex = 36;
+            // 
+            // panelInsurance
+            // 
+            panelInsurance.AutoScroll = true;
+            panelInsurance.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            panelInsurance.Controls.Add(groupBoxInsurance);
+            panelInsurance.Location = new Point(10, 425);
+            panelInsurance.MinimumSize = new Size(609, 190);
+            panelInsurance.Name = "panelInsurance";
+            panelInsurance.Size = new Size(609, 190);
+            panelInsurance.TabIndex = 37;
             // 
             // AddPatient
             // 
@@ -450,13 +486,13 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.DarkSeaGreen;
             ClientSize = new Size(1078, 720);
-            Controls.Add(panel2);
-            Controls.Add(panel1);
+            Controls.Add(panelInsurance);
+            Controls.Add(panelPayment);
+            Controls.Add(panelEMContact);
+            Controls.Add(panelAllergies);
             Controls.Add(button5);
-            Controls.Add(button4);
+            Controls.Add(btnAddPatient);
             Controls.Add(label19);
-            Controls.Add(groupBox4);
-            Controls.Add(groupBox2);
             Controls.Add(groupBox1);
             FormBorderStyle = FormBorderStyle.None;
             Location = new Point(202, 0);
@@ -464,17 +500,20 @@
             StartPosition = FormStartPosition.Manual;
             Text = " ";
             TopMost = true;
-            Load += AddPatient_Load;
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
-            groupBox2.ResumeLayout(false);
-            groupBox3.ResumeLayout(false);
-            groupBox4.ResumeLayout(false);
-            panel1.ResumeLayout(false);
-            panel1.PerformLayout();
-            panel2.ResumeLayout(false);
-            panel2.PerformLayout();
-            groupBox6.ResumeLayout(false);
+            groupBoxPayment.ResumeLayout(false);
+            groupBoxAllergies.ResumeLayout(false);
+            groupBoxInsurance.ResumeLayout(false);
+            panelAllergies.ResumeLayout(false);
+            panelAllergies.PerformLayout();
+            panelEMContact.ResumeLayout(false);
+            panelEMContact.PerformLayout();
+            groupBoxEmContact.ResumeLayout(false);
+            panelPayment.ResumeLayout(false);
+            panelPayment.PerformLayout();
+            panelInsurance.ResumeLayout(false);
+            panelInsurance.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -482,8 +521,8 @@
         #endregion
 
         private GroupBox groupBox1;
-        private GroupBox groupBox2;
-        private GroupBox groupBox3;
+        private GroupBox groupBoxPayment;
+        private GroupBox groupBoxAllergies;
         private Label label5;
         private Label label4;
         private Label label3;
@@ -492,7 +531,7 @@
         private Label label6;
         private Label label7;
         private Label label8;
-        private TextBox lblSSN;
+        private TextBox txtSSN;
         private Label label11;
         private Label label10;
         private Label label9;
@@ -506,18 +545,20 @@
         private TextBox txtAddress;
         private TextBox txtMInit;
         private TextBox txtZip;
-        private GroupBox groupBox4;
+        private GroupBox groupBoxInsurance;
         private Button btnPatientAddPayment;
         private Button btnAddPatientAllergy;
         private Button btnAddInsurance;
         private Label label19;
-        private Button button4;
+        private Button btnAddPatient;
         private Button button5;
-        private ComboBox comboBox1;
+        private ComboBox comboBoxDoctor;
         private Label label20;
-        private Panel panel1;
-        private Panel panel2;
-        private GroupBox groupBox6;
-        private Button button1;
+        private Panel panelAllergies;
+        private Panel panelEMContact;
+        private GroupBox groupBoxEmContact;
+        private Button btnAddEmContact;
+        private Panel panelPayment;
+        private Panel panelInsurance;
     }
 }

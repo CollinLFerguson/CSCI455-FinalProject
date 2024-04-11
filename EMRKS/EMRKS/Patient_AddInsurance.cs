@@ -12,9 +12,17 @@ namespace EMRKS
 {
     public partial class Patient_AddInsurance : UserControl
     {
+        public Form parentForm;
+
         public Patient_AddInsurance()
         {
             InitializeComponent();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            ((AddPatient)this.parentForm).removeAndReorderInsurance(this);
+
         }
     }
 }

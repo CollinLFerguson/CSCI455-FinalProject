@@ -41,18 +41,19 @@
             // 
             // button1
             // 
-            button1.Location = new Point(425, 69);
+            button1.Location = new Point(417, 69);
             button1.Name = "button1";
             button1.Size = new Size(116, 23);
             button1.TabIndex = 49;
             button1.Text = "Remove Insurance";
             button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
             // 
             // textBox7
             // 
-            textBox7.Location = new Point(362, 40);
+            textBox7.Location = new Point(368, 40);
             textBox7.Name = "textBox7";
-            textBox7.Size = new Size(179, 23);
+            textBox7.Size = new Size(165, 23);
             textBox7.TabIndex = 48;
             // 
             // textBox6
@@ -65,7 +66,7 @@
             // label18
             // 
             label18.AutoSize = true;
-            label18.Location = new Point(249, 48);
+            label18.Location = new Point(252, 48);
             label18.Name = "label18";
             label18.Size = new Size(110, 15);
             label18.TabIndex = 46;
@@ -73,7 +74,7 @@
             // 
             // textBox5
             // 
-            textBox5.Location = new Point(362, 8);
+            textBox5.Location = new Point(380, 8);
             textBox5.Name = "textBox5";
             textBox5.Size = new Size(153, 23);
             textBox5.TabIndex = 45;
@@ -90,7 +91,7 @@
             // label16
             // 
             label16.AutoSize = true;
-            label16.Location = new Point(275, 16);
+            label16.Location = new Point(288, 16);
             label16.Name = "label16";
             label16.Size = new Size(86, 15);
             label16.TabIndex = 42;
@@ -126,7 +127,7 @@
             Controls.Add(textBox4);
             Controls.Add(label15);
             Name = "Patient_AddInsurance";
-            Size = new Size(607, 97);
+            Size = new Size(536, 97);
             ResumeLayout(false);
             PerformLayout();
         }

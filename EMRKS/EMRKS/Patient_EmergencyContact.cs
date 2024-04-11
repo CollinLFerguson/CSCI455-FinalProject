@@ -12,9 +12,15 @@ namespace EMRKS
 {
     public partial class Patient_EmergencyContact : UserControl
     {
+        public Form parentForm;
         public Patient_EmergencyContact()
         {
             InitializeComponent();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            ((AddPatient)this.parentForm).removeAndReorderEmContacts(this);
         }
     }
 }

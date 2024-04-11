@@ -65,6 +65,16 @@ namespace EMRKS
             findPatientPage.Show();
             noFormPage.Hide();
         }
+        public void loadViewUnprocessedFinancialReports()
+        {
+            if (currentPage != null) { destroyCurrentPage(); } 
+            Form ViewUnprocessedFincancialReportsPage = new ViewUnprocessedFinancialReports(); 
+            ViewUnprocessedFincancialReportsPage.MdiParent = this; 
+            currentPage = ViewUnprocessedFincancialReportsPage;
+
+            ViewUnprocessedFincancialReportsPage.Show();
+            noFormPage.Hide();
+        }
 
         public void destroyCurrentPage(){
             //** Destroys the currently loaded page.

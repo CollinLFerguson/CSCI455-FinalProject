@@ -53,12 +53,15 @@
             // 
             // dataGridView1
             // 
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridView1.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
             dataGridView1.Location = new Point(36, 69);
             dataGridView1.Name = "dataGridView1";
+            dataGridView1.RightToLeft = RightToLeft.Yes;
+            dataGridView1.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.AutoSizeToDisplayedHeaders;
             dataGridView1.Size = new Size(1006, 629);
             dataGridView1.TabIndex = 5;
-            //dataGridView1.CellContentClick += dataGridView1_CellContentClick;
+            dataGridView1.CellContentClick += dataGridView1_CellContentClick;
             // 
             // ViewUnprocessedFinancialReports
             // 
@@ -70,7 +73,9 @@
             Controls.Add(label19);
             Controls.Add(label1);
             FormBorderStyle = FormBorderStyle.None;
+            Location = new Point(202, 0);
             Name = "ViewUnprocessedFinancialReports";
+            StartPosition = FormStartPosition.Manual;
             Text = "ViewUnprocessedFinancialReports";
             Load += ViewUnprocessedFinancialReports_Load;
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();

@@ -58,6 +58,7 @@
             button4.TabIndex = 3;
             button4.Text = "Unprocessed Reports";
             button4.UseVisualStyleBackColor = true;
+            button4.Click += button5_Click;
             // 
             // button3
             // 

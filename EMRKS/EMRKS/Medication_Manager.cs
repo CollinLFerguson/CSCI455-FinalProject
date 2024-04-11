@@ -13,8 +13,13 @@ namespace EMRKS
 {
     public partial class Medication_Manager : UserControl
     {
-        private Patient patient;
+        private Patient? patient;
 
+        public Medication_Manager(Patient patient)
+        {
+            this.patient = patient;
+            InitializeComponent();
+        }
         public Medication_Manager()
         {
             InitializeComponent();

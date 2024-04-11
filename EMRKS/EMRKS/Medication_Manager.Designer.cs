@@ -28,18 +28,32 @@
         /// </summary>
         private void InitializeComponent()
         {
+            dataGridView1 = new DataGridView();
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
+            // 
+            // dataGridView1
+            // 
+            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView1.Location = new Point(17, 15);
+            dataGridView1.Name = "dataGridView1";
+            dataGridView1.Size = new Size(185, 192);
+            dataGridView1.TabIndex = 2;
             // 
             // Medication_Manager
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.SeaGreen;
+            Controls.Add(dataGridView1);
             Name = "Medication_Manager";
             Size = new Size(711, 513);
+            Load += Medication_Manager_Load;
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
         }
 
         #endregion
+        private DataGridView dataGridView1;
     }
 }

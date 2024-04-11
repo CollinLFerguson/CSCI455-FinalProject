@@ -79,8 +79,7 @@ namespace EMRKS
 
         private void button8_Click(object sender, EventArgs e)
         {
-            // Medication management button
-            //Medication_Manager.show();
+            //medication manager button
         }
     }
 }

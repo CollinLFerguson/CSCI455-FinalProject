@@ -16,6 +16,15 @@ namespace EMRKS
         public FindPatient()
         {
             InitializeComponent();
+            HideSubControls();
+        }
+
+        private Patient patient;
+
+
+        private void HideSubControls()
+        {
+            patientEditor.Hide();
         }
 
         private void onPatientSearch(object sender, EventArgs e)
@@ -26,7 +35,9 @@ namespace EMRKS
 
             if (patient != null)
             {
-                FillPatientInformation(patient);
+                this.patient = patient;
+
+                FillPatientInformation();
 
                 patientSearchPanel.Visible = false;
                 patientInfoPanel.Visible = true;
@@ -39,7 +50,7 @@ namespace EMRKS
             }
         }
 
-        private void FillPatientInformation(Patient patient)
+        private void FillPatientInformation()
         {
             patientInfoSSN.Text = patient.getSsn();
             patientInfoFirstName.Text = patient.getFirstName();
@@ -74,7 +85,7 @@ namespace EMRKS
 
         private void onEditPatientPersonalInfo(object sender, EventArgs e)
         {
-            //
+            patientEditor.Show();
         }
 
         private void button8_Click(object sender, EventArgs e)

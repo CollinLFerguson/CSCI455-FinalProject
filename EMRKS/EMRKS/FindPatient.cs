@@ -22,6 +22,11 @@ namespace EMRKS
 
         private Patient patient;
 
+        public Patient getPatient()
+        {
+            return patient;
+        }
+
         private void HideSubControls()
         {
             //patientEditor.Hide();
@@ -120,6 +125,7 @@ namespace EMRKS
         private void button8_Click(object sender, EventArgs e)
         {
             medication_Manager1.Show();
+            medication_Manager1.patient = patient;
         }
     }
 }

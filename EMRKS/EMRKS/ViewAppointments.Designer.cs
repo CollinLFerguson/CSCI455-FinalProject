@@ -81,7 +81,7 @@
             // 
             // dtpDOB
             // 
-            dtpDOB.CustomFormat = "yyyy/MM/dd";
+            dtpDOB.CustomFormat = "yyyy-MM-dd";
             dtpDOB.Format = DateTimePickerFormat.Custom;
             dtpDOB.Location = new Point(108, 106);
             dtpDOB.MaxDate = new DateTime(2024, 4, 11, 0, 0, 0, 0);

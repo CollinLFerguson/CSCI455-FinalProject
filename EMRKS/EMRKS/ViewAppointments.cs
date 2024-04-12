@@ -34,12 +34,11 @@ namespace EMRKS
         }
         private void BtnPopData_Click(object sender, EventArgs e)
         {
-            string appointmentTime;
-            appointmentTime = dtpDOB.Text;
+            string appointmentTime = dtpDOB.Text;
+            appointmentTime = String.Concat(appointmentTime, " 00:00:00");
 
-            // need to remove / from appointment timme and replace with -
+            DateTime myDate = Convert.ToDateTime(appointmentTime);   //("yyyy-MM-dd HH:mm:ss");
 
-            DateTime myDate = DateTime.ParseExact(appointmentTime + " 00:00:00,531", "yyyy-MM-dd HH:mm:ss,fff", System.Globalization.CultureInfo.InvariantCulture);
             dataGridView1.DataSource = Database.ViewAppointments(myDate.Date);
         }
     }

@@ -4,9 +4,11 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.Intrinsics.X86;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace EMRKS
 {
@@ -23,8 +25,6 @@ namespace EMRKS
 
         public void FillInformation(List<string> patientInformation)
         {
-            patient = new Patient(patientInformation[0], patientInformation[5], char.Parse(patientInformation[4]), patientInformation[1], char.Parse(patientInformation[2]), patientInformation[3], patientInformation[6], patientInformation[7]);
-
             Ssn = patientInformation[0]; //Save Ssn incase they chagne it on update so we can still find who we want to update
 
             textBox1.Text = patientInformation[0];

@@ -17,7 +17,20 @@ namespace EMRKS
         {
             InitializeComponent();
         }
-
+        public String sqlSerialize()
+        {
+            return "'" + txtCardName.Text + "'," +
+                "'" + txtCardType.Text + "'," +
+                "'" + txtCardNumber.Text + "'," +
+                "'" + txtCcv.Text + "'," +
+                "'" + dtpExp.Text + "'";
+        }
+        public Boolean sqlCanSerialize()
+        {
+            if (txtCardName.TextLength!=0 && txtCardType.TextLength != 0
+                && txtCardNumber.TextLength != 0 && txtCcv.TextLength != 0
+                && dtpExp.Text!="") { return true; } else return false;        
+        }
         private void button2_Click(object sender, EventArgs e)
         {
             ((AddPatient)this.parentForm).removeAndReorderPayments(this);

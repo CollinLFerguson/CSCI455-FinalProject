@@ -19,6 +19,11 @@ namespace EMRKS
             InitializeComponent();
         }
 
+        public String sqlSerialize()
+        {
+            return "'" + txtAllergy.Text + "'";
+        }
+
         private void button1_Click(object sender, EventArgs e)
         {
             ((AddPatient)this.parentForm).removeAndReorderAllergies(this);

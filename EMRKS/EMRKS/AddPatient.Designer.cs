@@ -34,7 +34,7 @@
             txtZip = new TextBox();
             comboState = new ComboBox();
             txtCity = new TextBox();
-            txtAddress = new TextBox();
+            txtAddressLn1 = new TextBox();
             txtMInit = new TextBox();
             txtFName = new TextBox();
             txtLName = new TextBox();
@@ -68,6 +68,8 @@
             btnAddEmContact = new Button();
             panelPayment = new Panel();
             panelInsurance = new Panel();
+            txtAddressLn2 = new TextBox();
+            label12 = new Label();
             groupBox1.SuspendLayout();
             groupBoxPayment.SuspendLayout();
             groupBoxAllergies.SuspendLayout();
@@ -81,12 +83,14 @@
             // 
             // groupBox1
             // 
+            groupBox1.Controls.Add(txtAddressLn2);
+            groupBox1.Controls.Add(label12);
             groupBox1.Controls.Add(comboBoxDoctor);
             groupBox1.Controls.Add(label20);
             groupBox1.Controls.Add(txtZip);
             groupBox1.Controls.Add(comboState);
             groupBox1.Controls.Add(txtCity);
-            groupBox1.Controls.Add(txtAddress);
+            groupBox1.Controls.Add(txtAddressLn1);
             groupBox1.Controls.Add(txtMInit);
             groupBox1.Controls.Add(txtFName);
             groupBox1.Controls.Add(txtLName);
@@ -117,7 +121,7 @@
             comboBoxDoctor.DropDownStyle = ComboBoxStyle.DropDownList;
             comboBoxDoctor.FormattingEnabled = true;
             comboBoxDoctor.Items.AddRange(new object[] { "Male", "Female" });
-            comboBoxDoctor.Location = new Point(103, 154);
+            comboBoxDoctor.Location = new Point(782, 150);
             comboBoxDoctor.Name = "comboBoxDoctor";
             comboBoxDoctor.Size = new Size(134, 23);
             comboBoxDoctor.TabIndex = 24;
@@ -125,7 +129,7 @@
             // label20
             // 
             label20.AutoSize = true;
-            label20.Location = new Point(15, 162);
+            label20.Location = new Point(694, 158);
             label20.Name = "label20";
             label20.Size = new Size(87, 15);
             label20.TabIndex = 23;
@@ -133,9 +137,9 @@
             // 
             // txtZip
             // 
-            txtZip.Location = new Point(794, 114);
+            txtZip.Location = new Point(244, 157);
             txtZip.Name = "txtZip";
-            txtZip.Size = new Size(110, 23);
+            txtZip.Size = new Size(122, 23);
             txtZip.TabIndex = 22;
             // 
             // comboState
@@ -143,24 +147,24 @@
             comboState.DropDownStyle = ComboBoxStyle.DropDownList;
             comboState.FormattingEnabled = true;
             comboState.Items.AddRange(new object[] { "AL", "AK", "AZ", "AR", "CA", "CO", "CT", "DE", "DC", "FL", "GA", "HI", "ID", "IL", "IN", "IA", "KS", "KY", "LA", "ME", "MD", "MA", "MI", "MN", "MS", "MO", "MT", "NE", "NV", "NH", "NJ", "NM", "NY", "NC", "ND", "OH", "OK", "OR", "PA", "RI", "SC", "SD", "TN", "TX", "UT", "VT", "VA", "WA", "WV", "WI", "WY" });
-            comboState.Location = new Point(634, 115);
+            comboState.Location = new Point(84, 158);
             comboState.Name = "comboState";
             comboState.Size = new Size(83, 23);
             comboState.TabIndex = 21;
             // 
             // txtCity
             // 
-            txtCity.Location = new Point(381, 117);
+            txtCity.Location = new Point(676, 119);
             txtCity.Name = "txtCity";
             txtCity.Size = new Size(203, 23);
             txtCity.TabIndex = 20;
             // 
-            // txtAddress
+            // txtAddressLn1
             // 
-            txtAddress.Location = new Point(84, 119);
-            txtAddress.Name = "txtAddress";
-            txtAddress.Size = new Size(255, 23);
-            txtAddress.TabIndex = 19;
+            txtAddressLn1.Location = new Point(104, 119);
+            txtAddressLn1.Name = "txtAddressLn1";
+            txtAddressLn1.Size = new Size(216, 23);
+            txtAddressLn1.TabIndex = 19;
             // 
             // txtMInit
             // 
@@ -221,7 +225,7 @@
             // label11
             // 
             label11.AutoSize = true;
-            label11.Location = new Point(733, 122);
+            label11.Location = new Point(183, 165);
             label11.Name = "label11";
             label11.Size = new Size(55, 15);
             label11.TabIndex = 11;
@@ -230,7 +234,7 @@
             // label10
             // 
             label10.AutoSize = true;
-            label10.Location = new Point(595, 125);
+            label10.Location = new Point(45, 168);
             label10.Name = "label10";
             label10.Size = new Size(33, 15);
             label10.TabIndex = 10;
@@ -239,7 +243,7 @@
             // label9
             // 
             label9.AutoSize = true;
-            label9.Location = new Point(347, 125);
+            label9.Location = new Point(642, 127);
             label9.Name = "label9";
             label9.Size = new Size(28, 15);
             label9.TabIndex = 9;
@@ -248,11 +252,11 @@
             // label8
             // 
             label8.AutoSize = true;
-            label8.Location = new Point(29, 129);
+            label8.Location = new Point(15, 127);
             label8.Name = "label8";
-            label8.Size = new Size(49, 15);
+            label8.Size = new Size(83, 15);
             label8.TabIndex = 8;
-            label8.Text = "Address";
+            label8.Text = "Address Line 1";
             // 
             // label7
             // 
@@ -483,6 +487,22 @@
             panelInsurance.Size = new Size(609, 190);
             panelInsurance.TabIndex = 37;
             // 
+            // txtAddressLn2
+            // 
+            txtAddressLn2.Location = new Point(415, 119);
+            txtAddressLn2.Name = "txtAddressLn2";
+            txtAddressLn2.Size = new Size(221, 23);
+            txtAddressLn2.TabIndex = 26;
+            // 
+            // label12
+            // 
+            label12.AutoSize = true;
+            label12.Location = new Point(326, 127);
+            label12.Name = "label12";
+            label12.Size = new Size(83, 15);
+            label12.TabIndex = 25;
+            label12.Text = "Address Line 2";
+            // 
             // AddPatient
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -545,7 +565,7 @@
         private TextBox txtLName;
         private ComboBox comboState;
         private TextBox txtCity;
-        private TextBox txtAddress;
+        private TextBox txtAddressLn1;
         private TextBox txtMInit;
         private TextBox txtZip;
         private GroupBox groupBoxInsurance;
@@ -563,5 +583,7 @@
         private Button btnAddEmContact;
         private Panel panelPayment;
         private Panel panelInsurance;
+        private TextBox txtAddressLn2;
+        private Label label12;
     }
 }

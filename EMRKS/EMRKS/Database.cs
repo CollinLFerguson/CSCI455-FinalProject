@@ -108,7 +108,8 @@ namespace EMRKS
         {
             try
             {
-                string query = "INSERT INTO Patient(ssn, dob, sex, First_Name, Minit, Last_Name, Primary_Doctor_ID, Phone_Number) VALUES (" + fullPatient + ");";
+                string query = "INSERT INTO Patient(ssn, dob, sex, First_Name, Minit, Last_Name, " +
+                    "Primary_Doctor_ID, Phone_Number) VALUES (" + fullPatient + ");";
                 MySqlCommand cmd = new MySqlCommand(query, connection);
                 cmd.ExecuteNonQuery();
             }
@@ -117,6 +118,103 @@ namespace EMRKS
                 return false; //QUERY FAILED
             }
             return true;
+        }
+
+        public static Boolean addAllergy(String fullAllergy)
+        {
+            /// Adds the sent patient details to the database.
+            /// Returns TRUE if the entry was added successfully
+            /// Returns FALSE if the entry could not be added.
+            {
+                try
+                {
+                    string query = "INSERT INTO Allergies(pati_ssn, Allergy_Name) VALUES (" + fullAllergy + ");";
+                    MySqlCommand cmd = new MySqlCommand(query, connection);
+                    cmd.ExecuteNonQuery();
+                }
+                catch (MySqlException ex)
+                {
+                    return false; //QUERY FAILED
+                }
+                return true;
+            } 
+        }
+        public static Boolean addPayment(String fullPayment)
+        {
+            /// Adds the sent patient details to the database.
+            /// Returns TRUE if the entry was added successfully
+            /// Returns FALSE if the entry could not be added.
+            {
+                try
+                {
+                    string query = "INSERT INTO Payment_Card(Patients_Ssn, Name_On_Card, Card_Type, Card_Number, Ccv, Expiration_Date) VALUES (" + fullPayment + ");";
+                    MySqlCommand cmd = new MySqlCommand(query, connection);
+                    cmd.ExecuteNonQuery();
+                }
+                catch (MySqlException ex)
+                {
+                    return false; //QUERY FAILED
+                }
+                return true;
+            }
+        }
+        public static Boolean addInsurance(String fullInsurance)
+        {
+            /// Adds the sent patient details to the database.
+            /// Returns TRUE if the entry was added successfully
+            /// Returns FALSE if the entry could not be added.
+            {
+                try
+                {
+                    string query = "INSERT INTO Insurance(P_Ssn, Insurance_Name, Policy_Number, Group_Number, Policy_Holder_Name) VALUES (" + fullInsurance + ");";
+                    MySqlCommand cmd = new MySqlCommand(query, connection);
+                    cmd.ExecuteNonQuery();
+                }
+                catch (MySqlException ex)
+                {
+                    return false; //QUERY FAILED
+                }
+                return true;
+            }
+        }
+        public static Boolean addEmContact(String fullEmContact)
+        {
+            /// Adds the sent patient details to the database.
+            /// Returns TRUE if the entry was added successfully
+            /// Returns FALSE if the entry could not be added.
+            {
+                try
+                {
+                    string query = "INSERT INTO Emergency_Contact(Pa_Ssn, Contact_Name, Phone_Number, Relation_to_Patient) VALUES (" + fullEmContact + ");";
+                    MySqlCommand cmd = new MySqlCommand(query, connection);
+                    cmd.ExecuteNonQuery();
+                }
+                catch (MySqlException ex)
+                {
+                    return false; //QUERY FAILED
+                }
+                return true;
+            }
+        }
+        public static Boolean addAddress(String fullAddress)
+        {
+            /// Adds the sent patient details to the database.
+            /// Returns TRUE if the entry was added successfully
+            /// Returns FALSE if the entry could not be added.
+            {
+                try
+                {
+                    string query = "INSERT INTO Address(Ssn, Line_1, Line_2, City, State, Zip) VALUES (" + fullAddress + ");";
+                    MySqlCommand cmd = new MySqlCommand(query, connection);
+                    cmd.ExecuteNonQuery();
+                }
+                catch (MySqlException ex)
+                {
+                    Console.WriteLine(ex.Message);
+                    return false; //QUERY FAILED
+                }
+                return true;
+            }
         }
 
         public static DataTable? ViewUnprocessedFinancialReports()

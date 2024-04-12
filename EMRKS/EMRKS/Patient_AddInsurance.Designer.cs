@@ -29,13 +29,13 @@
         private void InitializeComponent()
         {
             button1 = new Button();
-            textBox7 = new TextBox();
-            textBox6 = new TextBox();
+            txtNameOnInsurance = new TextBox();
+            txtGroupNumber = new TextBox();
             label18 = new Label();
-            textBox5 = new TextBox();
+            txtPolicyNumber = new TextBox();
             label17 = new Label();
             label16 = new Label();
-            textBox4 = new TextBox();
+            txtProvider = new TextBox();
             label15 = new Label();
             SuspendLayout();
             // 
@@ -49,19 +49,19 @@
             button1.UseVisualStyleBackColor = true;
             button1.Click += button1_Click;
             // 
-            // textBox7
+            // txtNameOnInsurance
             // 
-            textBox7.Location = new Point(368, 40);
-            textBox7.Name = "textBox7";
-            textBox7.Size = new Size(165, 23);
-            textBox7.TabIndex = 48;
+            txtNameOnInsurance.Location = new Point(368, 40);
+            txtNameOnInsurance.Name = "txtNameOnInsurance";
+            txtNameOnInsurance.Size = new Size(165, 23);
+            txtNameOnInsurance.TabIndex = 48;
             // 
-            // textBox6
+            // txtGroupNumber
             // 
-            textBox6.Location = new Point(90, 40);
-            textBox6.Name = "textBox6";
-            textBox6.Size = new Size(138, 23);
-            textBox6.TabIndex = 47;
+            txtGroupNumber.Location = new Point(90, 40);
+            txtGroupNumber.Name = "txtGroupNumber";
+            txtGroupNumber.Size = new Size(138, 23);
+            txtGroupNumber.TabIndex = 47;
             // 
             // label18
             // 
@@ -72,12 +72,12 @@
             label18.TabIndex = 46;
             label18.Text = "Name on insurance";
             // 
-            // textBox5
+            // txtPolicyNumber
             // 
-            textBox5.Location = new Point(380, 8);
-            textBox5.Name = "textBox5";
-            textBox5.Size = new Size(153, 23);
-            textBox5.TabIndex = 45;
+            txtPolicyNumber.Location = new Point(380, 8);
+            txtPolicyNumber.Name = "txtPolicyNumber";
+            txtPolicyNumber.Size = new Size(153, 23);
+            txtPolicyNumber.TabIndex = 45;
             // 
             // label17
             // 
@@ -97,12 +97,12 @@
             label16.TabIndex = 42;
             label16.Text = "Policy Number";
             // 
-            // textBox4
+            // txtProvider
             // 
-            textBox4.Location = new Point(114, 8);
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(155, 23);
-            textBox4.TabIndex = 43;
+            txtProvider.Location = new Point(114, 8);
+            txtProvider.Name = "txtProvider";
+            txtProvider.Size = new Size(155, 23);
+            txtProvider.TabIndex = 43;
             // 
             // label15
             // 
@@ -118,13 +118,13 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             Controls.Add(button1);
-            Controls.Add(textBox7);
-            Controls.Add(textBox6);
+            Controls.Add(txtNameOnInsurance);
+            Controls.Add(txtGroupNumber);
             Controls.Add(label18);
-            Controls.Add(textBox5);
+            Controls.Add(txtPolicyNumber);
             Controls.Add(label17);
             Controls.Add(label16);
-            Controls.Add(textBox4);
+            Controls.Add(txtProvider);
             Controls.Add(label15);
             Name = "Patient_AddInsurance";
             Size = new Size(536, 97);
@@ -135,13 +135,13 @@
         #endregion
 
         private Button button1;
-        private TextBox textBox7;
-        private TextBox textBox6;
+        private TextBox txtNameOnInsurance;
+        private TextBox txtGroupNumber;
         private Label label18;
-        private TextBox textBox5;
+        private TextBox txtPolicyNumber;
         private Label label17;
         private Label label16;
-        private TextBox textBox4;
+        private TextBox txtProvider;
         private Label label15;
     }
 }

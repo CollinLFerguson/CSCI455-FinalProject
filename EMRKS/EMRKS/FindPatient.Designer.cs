@@ -69,6 +69,7 @@
             button6 = new Button();
             button5 = new Button();
             helpProvider1 = new HelpProvider();
+            patientEditor1 = new PatientEditor();
             patientSearchPanel.SuspendLayout();
             patientInfoPanel.SuspendLayout();
             goodPanel.SuspendLayout();
@@ -393,6 +394,7 @@
             // goodPanel
             // 
             goodPanel.BackColor = Color.SeaGreen;
+            goodPanel.Controls.Add(patientEditor1);
             goodPanel.Controls.Add(label13);
             goodPanel.Location = new Point(293, 195);
             goodPanel.Name = "goodPanel";
@@ -463,6 +465,14 @@
             button5.UseVisualStyleBackColor = true;
             button5.Click += onEditPatientPersonalInfo;
             // 
+            // patientEditor1
+            // 
+            patientEditor1.BackColor = Color.GreenYellow;
+            patientEditor1.Location = new Point(0, 0);
+            patientEditor1.Name = "patientEditor1";
+            patientEditor1.Size = new Size(711, 513);
+            patientEditor1.TabIndex = 1;
+            // 
             // FindPatient
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -531,6 +541,6 @@
         private TextBox patientInfoPrimaryDoctor;
         private TextBox patientInfoDOB;
         private TextBox patientInfoState;
-        private PatientEditor patientEditor;
+        private PatientEditor patientEditor1;
     }
 }

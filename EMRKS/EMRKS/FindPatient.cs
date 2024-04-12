@@ -24,7 +24,7 @@ namespace EMRKS
 
         private void HideSubControls()
         {
-            //patientEditor.Hide();
+            patientEditor1.Hide();
             //medication_Manager1.Hide();
         }
 
@@ -111,10 +111,8 @@ namespace EMRKS
                 patientInformation.Add(address.getZip());
             }
 
-
-            patientEditor.FillInformation(patientInformation);
-            patientEditor.Show();
-      
+            patientEditor1.FillInformation(patientInformation);
+            patientEditor1.Show();
         }
 
         private void button8_Click(object sender, EventArgs e)

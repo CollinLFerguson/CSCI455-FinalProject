@@ -308,6 +308,7 @@
             button1.TabIndex = 28;
             button1.Text = "Save Info";
             button1.UseVisualStyleBackColor = true;
+            button1.Click += onSaveInfo;
             // 
             // PatientEditor
             // 

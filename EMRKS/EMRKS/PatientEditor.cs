@@ -17,8 +17,16 @@ namespace EMRKS
             InitializeComponent();
         }
 
+        Patient patient;
+
+        string Ssn;
+
         public void FillInformation(List<string> patientInformation)
         {
+            patient = new Patient(patientInformation[0], patientInformation[5], char.Parse(patientInformation[4]), patientInformation[1], char.Parse(patientInformation[2]), patientInformation[3], patientInformation[6], patientInformation[7]);
+
+            Ssn = patientInformation[0]; //Save Ssn incase they chagne it on update so we can still find who we want to update
+
             textBox1.Text = patientInformation[0];
             textBox2.Text = patientInformation[1];
             textBox3.Text = patientInformation[2];
@@ -38,6 +46,25 @@ namespace EMRKS
             textBox11.Text = patientInformation[10];
             textBox12.Text = patientInformation[11];
             textBox13.Text = patientInformation[12];
+        }
+
+        private void GrabNewInformation()
+        {
+            patient = new Patient(textBox1.Text, textBox6.Text, char.Parse(textBox5.Text), textBox2.Text, char.Parse(textBox3.Text), textBox4.Text, textBox8.Text, textBox7.Text);
+        }
+
+        private void onSaveInfo(object sender, EventArgs e)
+        {
+            GrabNewInformation();
+            //check all fields valid
+            if (!Database.UpdatePatient(patient, Ssn))
+            {
+                MessageBox.Show("UPDATE FAILED SOMETHING WENT WRONG");
+            }
+            else
+            {
+                MessageBox.Show("UPDATE SUCCESS");
+            }
         }
     }
 }

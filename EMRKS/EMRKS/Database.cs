@@ -6,6 +6,7 @@ using System.Runtime.Intrinsics.X86;
 using System.Text;
 using System.Threading.Tasks;
 using System.Data;
+using System.Diagnostics;
 
 namespace EMRKS
 {
@@ -44,6 +45,61 @@ namespace EMRKS
                         return new Patient(reader["Ssn"].ToString(), reader["Dob"].ToString(), char.Parse(reader["Sex"].ToString()), reader["First_Name"].ToString(), char.Parse(reader["Minit"].ToString()), reader["Last_Name"].ToString(), reader["Primary_Doctor_ID"].ToString(), reader["Phone_Number"].ToString());
                     }
                 }
+            }
+            catch (MySqlException ex)
+            {
+                //QUERY FAILED
+            }
+
+            return null;
+        }
+
+        public static bool UpdatePatient(Patient patient, string Ssn)
+        {
+            var docID = patient.getPrimaryDoctorIDForUpdate();
+
+            try
+            {
+                string query = "UPDATE Patient SET Dob = '" + patient.getDOBForUpdate() + "', Sex = '" + patient.getSex() + "', First_Name = '" + patient.getFirstName() + "', Minit = '" + patient.getMiddleInit() + "', Last_Name = '" + patient.getLastName() + "', Primary_Doctor_ID = " + docID + ", Phone_Number = " + patient.getPhoneNumber() + " WHERE Ssn = " + Ssn + ";";
+                MySqlCommand cmd = new MySqlCommand(query, connection);
+                cmd.ExecuteNonQuery();
+            }
+            catch (MySqlException ex)
+            {
+                //UPDATE FAILED
+                return false;
+            }
+
+            return true;
+        }
+
+        public static string? GetDoctorID(string doctorName)
+        {
+            List<string> doctorsNameParts = doctorName.Split(" ").ToList();
+            string query;
+
+            if (doctorsNameParts.Count == 2)
+            {
+                query = "SELECT ID_Number FROM Staff WHERE Staff_First_Name = '" + doctorsNameParts[0] + "' AND Staff_Last_Name = '" + doctorsNameParts[1] + "';";
+            }
+            else
+            {
+                query = "SELECT ID_Number FROM Staff WHERE Staff_First_Name = '" + doctorsNameParts[0] + "' AND Staff_Last_Name = '" + doctorsNameParts[2] + "' AND Staff_Middle_Init = '" + doctorsNameParts[1] + "';";
+            }
+
+            try
+            {
+                MySqlCommand cmd = new MySqlCommand(query, connection);
+
+                using (MySqlDataReader reader = cmd.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        return reader["ID_Number"].ToString();
+                    }
+                }
+
+
             }
             catch (MySqlException ex)
             {

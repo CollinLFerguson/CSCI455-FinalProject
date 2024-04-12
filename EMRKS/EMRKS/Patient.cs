@@ -41,6 +41,19 @@ namespace EMRKS
         public string getFirstName() { return firstName; }
         public string getMiddleInit() { return middleInit.ToString(); }
         public string getLastName() { return lastName; }
+
+        public string? getPrimaryDoctorIDForUpdate()
+        {
+            //Set to for update becuase primaryDoctorID will just be name here TODO fix in future
+            var ID = Database.GetDoctorID(this.primaryDoctorID);
+
+            if (ID != null)
+            {
+                return ID.ToString();
+            }
+
+            return null;
+        }
         public string? getPrimaryDoctor()
         {
             var PCM = Database.GetStaff(primaryDoctorID);
@@ -54,6 +67,18 @@ namespace EMRKS
                 return primaryDoctorID;
             }
         }
+
+        public string getDOBForUpdate()
+        {
+            string year, month, day;
+            year = DOB.Year.ToString();
+            month = DOB.Month.ToString();
+            day = DOB.Day.ToString();
+
+
+            return year + "/" +  month + "/" + day;
+        }
+
         public string getPhoneNumber() { return phoneNumber; }
         public Address? getAddress() { return Database.GetAddress(SSN); }
     } 

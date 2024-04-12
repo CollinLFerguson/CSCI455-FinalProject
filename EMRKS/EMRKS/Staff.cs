@@ -28,8 +28,20 @@ namespace EMRKS
             this.staffType = staffType;
             this.yearsPracticing = yearsPracticing;
             this.specialty = specialty;
+            this.middleInitial = middleInit;
         }
 
-        public string getFullName() { return firstName + " " + middleInitial + " " + lastName; }
+        public string getFullName() 
+        {
+            if (middleInitial != "NULL")
+            {
+                return firstName + " " + middleInitial + " " + lastName;
+            }
+            else
+            {
+                MessageBox.Show("HERE");
+                return firstName + " " + lastName;
+            }
+        }
     }
 }

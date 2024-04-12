@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace EMRKS
 {
@@ -21,10 +22,10 @@ namespace EMRKS
 
         private Patient patient;
 
-
         private void HideSubControls()
         {
-            patientEditor.Hide();
+            //patientEditor.Hide();
+            //medication_Manager1.Hide();
         }
 
         private void onPatientSearch(object sender, EventArgs e)
@@ -85,12 +86,48 @@ namespace EMRKS
 
         private void onEditPatientPersonalInfo(object sender, EventArgs e)
         {
+            List<string> patientInformation = new List<string>();
+            patientInformation.Add(patient.getSsn());
+            patientInformation.Add(patient.getFirstName());
+            patientInformation.Add(patient.getMiddleInit());
+            patientInformation.Add(patient.getLastName());
+            patientInformation.Add(patient.getSex());
+            patientInformation.Add(patient.getDOB());
+            patientInformation.Add(patient.getPhoneNumber());
+            patientInformation.Add(patient.getPrimaryDoctor());
+
+            var address = patient.getAddress();
+
+            if (address != null)
+            {
+                string line1 = address.getLine1();
+                string? line2 = address.getLine2();
+
+                patientInformation.Add(line1);
+                patientInformation.Add(line2);
+
+                patientInformation.Add(address.getCity());
+                patientInformation.Add(address.getState());
+                patientInformation.Add(address.getZip());
+            }
+
+
+            patientEditor.FillInformation(patientInformation);
             patientEditor.Show();
+      
         }
 
         private void button8_Click(object sender, EventArgs e)
         {
-            //medication manager button
+            Medication_Manager mediManager = new Medication_Manager(patient);
+            mediManager.Parent = goodPanel;
+            mediManager.Location = new Point(0, 0);
+            mediManager.BringToFront();           
+            mediManager.Show();
+
+            //medication_Manager1.SetPatient(patient);
+            //medication_Manager1.Show();
+
         }
     }
 }

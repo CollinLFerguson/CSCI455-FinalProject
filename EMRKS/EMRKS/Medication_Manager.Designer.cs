@@ -35,9 +35,9 @@
             // dataGridView1
             // 
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(17, 15);
+            dataGridView1.Location = new Point(30, 27);
             dataGridView1.Name = "dataGridView1";
-            dataGridView1.Size = new Size(185, 192);
+            dataGridView1.Size = new Size(195, 226);
             dataGridView1.TabIndex = 2;
             // 
             // Medication_Manager

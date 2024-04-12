@@ -62,7 +62,6 @@
             button2 = new Button();
             button1 = new Button();
             goodPanel = new Panel();
-            patientEditor = new PatientEditor();
             label13 = new Label();
             patientOptionsPanel = new Panel();
             button8 = new Button();
@@ -394,21 +393,12 @@
             // goodPanel
             // 
             goodPanel.BackColor = Color.SeaGreen;
-            goodPanel.Controls.Add(patientEditor);
             goodPanel.Controls.Add(label13);
             goodPanel.Location = new Point(293, 195);
             goodPanel.Name = "goodPanel";
             goodPanel.Size = new Size(711, 513);
             goodPanel.TabIndex = 5;
             goodPanel.Visible = false;
-            // 
-            // patientEditor
-            // 
-            patientEditor.BackColor = Color.GreenYellow;
-            patientEditor.Location = new Point(0, 0);
-            patientEditor.Name = "patientEditor";
-            patientEditor.Size = new Size(711, 513);
-            patientEditor.TabIndex = 1;
             // 
             // label13
             // 

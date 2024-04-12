@@ -24,12 +24,8 @@ namespace EMRKS
 
         private void btnAddPatient_Click(object sender, EventArgs e)
         {
+            String sqlStatement;            
             
-            Database database = new Database();
-
-
-
-            String sqlStatement;
             sqlStatement = "'" + txtSSN.Text +    "',";
             sqlStatement += "'" + dtpDOB.Text +   "',";
             sqlStatement += "'" + comboSex.Text + "',";
@@ -37,32 +33,147 @@ namespace EMRKS
             sqlStatement += "'" + txtMInit.Text + "',";
             sqlStatement += "'" + txtLName.Text + "',";
 
-            if (comboBoxDoctor.Text == " ")
+            if (comboBoxDoctor.Text == "")
             {
                 sqlStatement += "NULL,";
             }
             else
             {
-                sqlStatement += "'" + txtLName.Text + "',";
+                sqlStatement += "'" + comboBoxDoctor.Text + "',";
             }
 
             sqlStatement += "'" + txtPhoneNumber.Text + "'";
 
             Console.WriteLine(sqlStatement);
 
-            Boolean addedCorrectly = Database.addPatient(sqlStatement);
-
-            while (!addedCorrectly){
-                addedCorrectly = Database.addPatient(sqlStatement);
+            if (Database.addPatient(sqlStatement) == false) //Adds the patient to the database.
+            {
+                this.BackColor = Color.Red;
+                return; //create a popup here.
             }
 
-            
-            //SQL add commands.
+            if (sqlAddressCanSerialize())
+            {
+                sqlStatement = "'" + txtSSN.Text + "'," + sqlAddressSerealize();
 
+                if (Database.addAddress(sqlStatement) == false) //Adds the patient to the database.
+                {
+                    this.BackColor = Color.Purple;
+                    return; //create a popup here.
+                }
+            }
+
+            for (int i = 0; i < patientAllergies.Count;i++) 
+            {
+                if (patientAllergies.ElementAt(i).sqlSerialize().Length != 0)
+                {
+
+                    sqlStatement = "'" + txtSSN.Text + "'," + patientAllergies.ElementAt(i).sqlSerialize();
+
+                    if (Database.addAllergy(sqlStatement) == false)
+                    {
+                        patientAllergies.ElementAt(i).BackColor = Color.Red;
+                        //Make a popup here
+                    }
+                }
+                else
+                {
+                    patientAllergies.ElementAt(i).BackColor = Color.Red;
+                    //Make a popup here
+                }
+            }
+
+            for (int i = 0; i < patientPayments.Count; i++)
+            {
+                if (patientPayments.ElementAt(i).sqlCanSerialize())
+                {
+                    sqlStatement = "'" + txtSSN.Text + "'," + patientPayments.ElementAt(i).sqlSerialize();
+
+                    if (Database.addPayment(sqlStatement) == false)
+                    {
+                        patientPayments.ElementAt(i).BackColor = Color.Red;
+                        //Make a popup here
+                    }
+                }
+                else
+                {
+                    patientPayments.ElementAt(i).BackColor = Color.Red;
+                    //Make a popup here
+                }
+            }
+
+            for (int i = 0; i < patientInsurances.Count; i++)
+            {
+                if (patientInsurances.ElementAt(i).sqlCanSerialize())
+                {
+                    sqlStatement = "'" + txtSSN.Text + "'," + patientInsurances.ElementAt(i).sqlSerialize();
+
+                    if (Database.addInsurance(sqlStatement) == false)
+                    {
+                        patientInsurances.ElementAt(i).BackColor = Color.Red;
+                        //Make a popup here
+                    }
+                }
+                else
+                {
+                    patientInsurances.ElementAt(i).BackColor = Color.Red;
+                    //Make a popup here
+                }
+            }
+            
+            for (int i = 0; i < patientEmergencyContacts.Count; i++)
+            {
+                if (patientEmergencyContacts.ElementAt(i).sqlCanSerialize())
+                {
+                    sqlStatement = "'" + txtSSN.Text + "'," + patientEmergencyContacts.ElementAt(i).sqlSerialize();
+
+                    if (Database.addEmContact(sqlStatement) == false)
+                    {
+                        patientEmergencyContacts.ElementAt(i).BackColor = Color.Red;
+                        //Make a popup here
+                    }
+                }
+                else
+                {
+                    patientEmergencyContacts.ElementAt(i).BackColor = Color.Red;
+                    //Make a popup here
+                }
+            }
 
             //If the add is successful, return to landing.
-            if (this.MdiParent != null) { ((MainForm)this.MdiParent).destroyCurrentPage(); } //Returns back to landing page
+            //if (this.MdiParent != null) { ((MainForm)this.MdiParent).destroyCurrentPage(); } //Returns back to landing page
         }
+
+        private Boolean sqlAddressCanSerialize()
+        {
+            if (txtAddressLn1.TextLength != 0 && txtCity.TextLength != 0 &&
+               comboState.Text.Length != 0 && txtZip.TextLength != 0)
+            { return true; }
+            else
+            {
+                return false;
+            }
+        }
+        private String sqlAddressSerealize()
+        {
+            if (txtAddressLn2.TextLength != 0)
+            {
+                return "'" + txtAddressLn1.Text + "'," +
+                        "'" + txtAddressLn2.Text + "'," +
+                        "'" + txtCity.Text + "'," +
+                        "'" + comboState.Text + "'," +
+                        "'" + txtZip.Text + "'";
+            }
+            else
+            {
+                return "'" + txtAddressLn1.Text + "'," +
+                        "NULL," +
+                        "'" + txtCity.Text + "'," +
+                        "'" + comboState.Text + "'," +
+                        "'" + txtZip.Text + "'";
+            }
+        }
+
         private void button5_Click(object sender, EventArgs e)
         {
             if (this.MdiParent != null) { ((MainForm)this.MdiParent).destroyCurrentPage(); } //Returns back to landing page

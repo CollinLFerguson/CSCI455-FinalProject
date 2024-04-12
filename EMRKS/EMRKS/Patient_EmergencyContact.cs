@@ -23,7 +23,18 @@ namespace EMRKS
             return [];
         
         }
-        
+        public String sqlSerialize()
+        {
+            return "'" + txtContactName.Text + "'," +
+                "'" + txtContactPhone.Text + "'," +
+                "'" + txtContactRelationship.Text + "'"; ;
+        }
+        public Boolean sqlCanSerialize()
+        {
+            if (txtContactName.TextLength != 0 && txtContactPhone.TextLength != 0
+                && txtContactRelationship.TextLength != 0) { return true; }
+            else return false;
+        }
         private void button1_Click(object sender, EventArgs e)
         {
             ((AddPatient)this.parentForm).removeAndReorderEmContacts(this);

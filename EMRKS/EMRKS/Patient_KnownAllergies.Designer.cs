@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             label1 = new Label();
-            textBox1 = new TextBox();
+            txtAllergy = new TextBox();
             button1 = new Button();
             SuspendLayout();
             // 
@@ -42,12 +42,12 @@
             label1.TabIndex = 0;
             label1.Text = "Allergy";
             // 
-            // textBox1
+            // txtAllergy
             // 
-            textBox1.Location = new Point(47, 13);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(227, 23);
-            textBox1.TabIndex = 1;
+            txtAllergy.Location = new Point(47, 13);
+            txtAllergy.Name = "txtAllergy";
+            txtAllergy.Size = new Size(227, 23);
+            txtAllergy.TabIndex = 1;
             // 
             // button1
             // 
@@ -64,7 +64,7 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             Controls.Add(button1);
-            Controls.Add(textBox1);
+            Controls.Add(txtAllergy);
             Controls.Add(label1);
             Name = "Patient_KnownAllergies";
             Size = new Size(277, 77);
@@ -75,7 +75,7 @@
         #endregion
 
         private Label label1;
-        private TextBox textBox1;
+        private TextBox txtAllergy;
         private Button button1;
     }
 }

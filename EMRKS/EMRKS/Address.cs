@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace EMRKS
 {
-    internal class Address
+    public class Address //TEMPORARY, return to internal
     {
         private string Ssn;
         private string Line1;

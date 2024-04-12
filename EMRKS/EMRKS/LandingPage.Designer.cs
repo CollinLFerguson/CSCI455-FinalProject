@@ -47,7 +47,7 @@
             panel1.Controls.Add(button1);
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(205, 227);
+            panel1.Size = new Size(205, 720);
             panel1.TabIndex = 0;
             // 
             // button4

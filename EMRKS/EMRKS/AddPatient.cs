@@ -141,7 +141,7 @@ namespace EMRKS
             }
 
             //If the add is successful, return to landing.
-            //if (this.MdiParent != null) { ((MainForm)this.MdiParent).destroyCurrentPage(); } //Returns back to landing page
+            if (this.MdiParent != null) { ((MainForm)this.MdiParent).destroyCurrentPage(); } //Returns back to landing page
         }
 
         private Boolean sqlAddressCanSerialize()

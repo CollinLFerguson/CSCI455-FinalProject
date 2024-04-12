@@ -17,9 +17,118 @@ namespace EMRKS
             InitializeComponent();
         }
 
+        private void btnAddStaff_Click(object sender, EventArgs e)
+        {
+            if (!sqlStaffCanSerealize()){return;}
+            
+            String sqlStatement = sqlStaffSerealize();
+
+            if (!Database.addStaff(sqlStatement))
+            {
+                this.BackColor = Color.Red;
+                return;
+            }
+            
+            if (sqlAddressCanSerialize())
+            {
+                sqlStatement = "'" + txtSSN.Text + "'," + sqlAddressSerealize();
+
+                if (Database.addAddress(sqlStatement) == false) //Adds the patient to the database.
+                {
+                    this.BackColor = Color.Purple;
+                    return; //create a popup here.
+                }
+            }
+
+            //if (this.MdiParent != null) { ((MainForm)this.MdiParent).destroyCurrentPage(); } //Returns back to landing page
+        }
+
+        private String sqlStaffSerealize()
+        {
+            if (comboStaffType.Text == "Doctor")
+            {
+                return "'" + txtIDNumber.Text + "'," +
+                    "'" + txtSSN.Text + "'," +
+                    "'" + txtPin.Text + "'," +
+                    "'" + txtFName.Text + "'," +
+                    "'" + txtLName.Text + "'," +
+                    "'" + comboStaffType.Text[0] + "'," +
+                    "'" + dtpHireDate.Text + "'," +
+                    "'" + txtDocYearsPracticing.Text + "'," +
+                    "'" + txtDocSpeciality.Text + "'," +
+                    "'" + txtMInit.Text + "'";
+            }
+            else
+            {
+                return "'" + txtIDNumber.Text + "'," +
+                    "'" + txtSSN.Text + "'," +
+                    "'" + txtPin.Text + "'," +
+                    "'" + txtFName.Text + "'," +
+                    "'" + txtLName.Text + "'," +
+                    "'" + comboStaffType.Text[0] + "'," +
+                    "'" + dtpHireDate.Text + "'," +
+                    "NULL," +
+                    "NULL," +
+                    "'" + txtMInit.Text + "'";
+            }
+        
+        }
+
+        private Boolean sqlStaffCanSerealize()
+        {
+            if (txtIDNumber.TextLength != 0 && txtSSN.TextLength != 0 && txtPin.TextLength != 0 && dtpHireDate.Text.Length !=0
+                && txtLName.TextLength != 0 && txtFName.TextLength != 0 && comboStaffType.Text.Length != 0)
+            {
+                if (comboStaffType.Text == "Doctor" && txtDocSpeciality.TextLength != 0
+                    && txtDocYearsPracticing.TextLength != 0)
+                {
+                    return true;
+                }
+                else if (comboStaffType.Text != "Doctor")
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;               
+                }
+            }
+        return false;
+        }
+
+        private Boolean sqlAddressCanSerialize()
+        {
+            if (txtAddressLn1.TextLength != 0 && txtCity.TextLength != 0 &&
+               comboState.Text.Length != 0 && txtZip.TextLength != 0)
+            { return true; }
+            else
+            {
+                return false;
+            }
+        }
+        private String sqlAddressSerealize()
+        {
+            if (txtAddressLn2.TextLength != 0)
+            {
+                return "'" + txtAddressLn1.Text + "'," +
+                        "'" + txtAddressLn2.Text + "'," +
+                        "'" + txtCity.Text + "'," +
+                        "'" + comboState.Text + "'," +
+                        "'" + txtZip.Text + "'";
+            }
+            else
+            {
+                return "'" + txtAddressLn1.Text + "'," +
+                        "NULL," +
+                        "'" + txtCity.Text + "'," +
+                        "'" + comboState.Text + "'," +
+                        "'" + txtZip.Text + "'";
+            }
+        }
+
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (comboBox1.Text == "Doctor")
+            if (comboStaffType.Text == "Doctor")
             {
                 groupBox2.Enabled = true;
             }
@@ -28,16 +137,6 @@ namespace EMRKS
                 groupBox2.Enabled = false;
             }
         }
-
-        private void button4_Click(object sender, EventArgs e)
-        {
-            //Validate the info will go cleanly into the DB
-            //SQL add commands.
-
-            //If the add is successful
-            if (this.MdiParent != null) { ((MainForm)this.MdiParent).destroyCurrentPage(); } //Returns back to landing page
-        }
-
         private void button5_Click(object sender, EventArgs e)
         {
             if (this.MdiParent != null) { ((MainForm)this.MdiParent).destroyCurrentPage(); } //Returns back to landing page

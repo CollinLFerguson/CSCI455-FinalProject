@@ -7,6 +7,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data;
 using System.Diagnostics;
+using System.Collections;
+using static System.Windows.Forms.LinkLabel;
 
 namespace EMRKS
 {
@@ -54,7 +56,7 @@ namespace EMRKS
             return null;
         }
 
-        public static bool UpdatePatient(Patient patient, string Ssn)
+        public static bool UpdatePatient(Patient patient, Address address, string Ssn)
         {
             var docID = patient.getPrimaryDoctorIDForUpdate();
 
@@ -70,14 +72,32 @@ namespace EMRKS
                 return false;
             }
 
-            return UpdatePatientAddress();
+            return UpdatePatientAddress(address, Ssn);
         }
 
-        private static bool UpdatePatientAddress()
+        private static bool UpdatePatientAddress(Address address, string Ssn)
         {
+            string query;
 
+            if (address.getLine2() != "")
+            {
+                query = "UPDATE Address SET Line_1 = '" + address.getLine1() + "', Line_2 = '" + address.getLine2() + "', City = '" + address.getCity() + "', State = '" + address.getState() + "', Zip = '" + address.getZip() + "' WHERE Ssn = " + Ssn + ";";
+            }
+            else
+            {
+                query = "UPDATE Address SET Line_1 = '" + address.getLine1() + "', Line_2 = NULL, City = '" + address.getCity() + "', State = '" + address.getState() + "', Zip = '" + address.getZip() + "' WHERE Ssn = " + Ssn + ";";
+            }
 
-
+            try
+            {
+                MySqlCommand cmd = new MySqlCommand(query, connection);
+                cmd.ExecuteNonQuery();
+            }
+            catch (MySqlException ex)
+            {
+                //UPDATE FAILED
+                return false;
+            }
 
             return true;
         }

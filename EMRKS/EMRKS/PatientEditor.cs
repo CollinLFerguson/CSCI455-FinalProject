@@ -20,6 +20,7 @@ namespace EMRKS
         }
 
         Patient patient;
+        Address address;
 
         string Ssn;
 
@@ -51,13 +52,14 @@ namespace EMRKS
         private void GrabNewInformation()
         {
             patient = new Patient(textBox1.Text, textBox6.Text, char.Parse(textBox5.Text), textBox2.Text, char.Parse(textBox3.Text), textBox4.Text, textBox8.Text, textBox7.Text);
+            address = new Address(textBox1.Text, textBox9.Text, textBox10.Text, textBox11.Text, textBox12.Text, textBox13.Text);
         }
 
         private void onSaveInfo(object sender, EventArgs e)
         {
             GrabNewInformation();
             //check all fields valid
-            if (!Database.UpdatePatient(patient, Ssn))
+            if (!Database.UpdatePatient(patient, address, Ssn))
             {
                 MessageBox.Show("UPDATE FAILED SOMETHING WENT WRONG");
             }

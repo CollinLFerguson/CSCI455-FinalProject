@@ -363,11 +363,12 @@ namespace EMRKS
                 return null; //QUERY FAILED
             }
         }
-        public static DataTable? GetMedication(string patientSSN)
+
+        public static DataTable? GetAllergies(string patientSSN)
         {
             try
             {
-                string query = "SELECT * FROM sql5679201.Prescription WHERE Patien_Ssn = \"" + patientSSN + "\"";
+                string query = "SELECT * FROM Allergies WHERE Pati_Ssn = \"" + patientSSN + "\"";
 
                 Debug.WriteLine(query);
 
@@ -379,10 +380,46 @@ namespace EMRKS
             }
             catch (MySqlException ex)
             {
-                //QUERY FAILED
                 return null;
             }
+        }
 
+        public static DataTable? GetMedication(string patientSSN)
+        {
+            try
+            {
+                string query = "SELECT * FROM Prescription WHERE Patien_Ssn = \"" + patientSSN + "\"";
+
+                //Debug.WriteLine(query);
+
+                MySqlDataAdapter sqlDa = new MySqlDataAdapter(query, connection);
+                DataTable dtbl = new DataTable();
+                sqlDa.Fill(dtbl);
+
+                return dtbl;
+            }
+            catch (MySqlException ex)
+            {
+                return null;
+            }
+        }
+
+        public static Boolean AddMedication(string fullAddMedication)
+        {
+            {
+                try
+                {
+                    string query = "INSERT INTO Medication (Medication_ID, Side_Effects, Name, Price) VALUES (" + fullAddMedication + ")";
+                    MySqlCommand cmd = new MySqlCommand(query, connection);
+                    cmd.ExecuteNonQuery();
+                }
+                catch (MySqlException ex)
+                {
+                    Console.WriteLine(ex.Message);
+                    return false;
+                }
+                return true;
+            }
         }
 
         public static DataTable? ViewAppointments( DateTime appointmentTime)

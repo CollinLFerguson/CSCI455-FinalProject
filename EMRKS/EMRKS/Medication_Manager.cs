@@ -29,6 +29,7 @@ namespace EMRKS
         {
             //Debug.WriteLine(currSSN);
             dataGridView1.DataSource = Database.GetMedication(currSSN);
+            dataGridView2.DataSource = Database.GetAllergies(currSSN);
         }
     }
 }

@@ -14,7 +14,7 @@ namespace EMRKS
 {
     public partial class Medication_Manager : UserControl
     {
-        private string currSSN;
+        private string? currSSN;
         public Medication_Manager(string currentSsn)
         {
             InitializeComponent();

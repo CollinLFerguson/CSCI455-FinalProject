@@ -117,15 +117,13 @@ namespace EMRKS
 
         private void button8_Click(object sender, EventArgs e)
         {
-            Medication_Manager mediManager = new Medication_Manager(patient);
+            // Medication Manager Button
+
+            Medication_Manager mediManager = new Medication_Manager(patient.getSsn());
             mediManager.Parent = goodPanel;
             mediManager.Location = new Point(0, 0);
             mediManager.BringToFront();           
             mediManager.Show();
-
-            //medication_Manager1.SetPatient(patient);
-            //medication_Manager1.Show();
-
         }
     }
 }

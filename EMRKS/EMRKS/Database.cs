@@ -367,7 +367,8 @@ namespace EMRKS
         {
             try
             {
-                string query = "SELECT * FROM Prescription WHERE GivenSsn = " + patientSSN;
+                string query = 'SELECT * FROM Prescription WHERE GivenSsn = "' + patientSSN +  '"';
+                Debug.WriteLine(query);
                 MySqlDataAdapter sqlDa = new MySqlDataAdapter(query, connection);
                 DataTable dtbl = new DataTable();
                 sqlDa.Fill(dtbl);

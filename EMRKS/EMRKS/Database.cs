@@ -224,6 +224,25 @@ namespace EMRKS
                 return true;
             } 
         }
+
+        public static Boolean addPrescription(String newPrescription)
+        {
+            // Adds new prescription to the database
+            // true if it was added successfully
+            // false if not
+
+            try
+            {
+                string query = "INSERT INTO PRESCRIPTION((Prescription_ID, Prescribing_Doctor_ID, Patien_Ssn, Medication_ID, Medication_Quantity, Date_Prescribed, Date_Expired) VALUES (" + newPrescription + ");";
+                MySqlCommand cmd = new MySqlCommand(query, connection);
+                cmd.ExecuteNonQuery();
+            }
+            catch (MySqlException ex)
+            {
+                return false;
+            }
+            return true;
+        }
         public static Boolean addPayment(String fullPayment)
         {
             /// Adds the sent patient details to the database.

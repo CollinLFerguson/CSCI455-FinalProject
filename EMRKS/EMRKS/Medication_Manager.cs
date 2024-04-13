@@ -32,11 +32,7 @@ namespace EMRKS
 
         private void Medication_Manager_Load(object sender, EventArgs e)
         {
-            try
-            {
-                dataGridView1.DataSource = Database.GetMedication(patient.getSsn());
-            }
-            catch { }
+            dataGridView1.DataSource = Database.GetMedication(patient.getSsn());
         }
     }
 }

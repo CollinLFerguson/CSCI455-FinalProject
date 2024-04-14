@@ -15,6 +15,10 @@ namespace EMRKS
     public partial class Medication_Manager : UserControl
     {
         private string? currSSN;
+        public Medication_Manager()
+        {
+            InitializeComponent();
+        }
         public Medication_Manager(string currentSsn)
         {
             InitializeComponent();
@@ -31,7 +35,6 @@ namespace EMRKS
         private void button1_Click(object sender, EventArgs e)
         {
             // Add Medication Button
-
             AddMedication add_medication = new AddMedication(currSSN);
             add_medication.Location = new Point(0, 0);
             add_medication.BringToFront();

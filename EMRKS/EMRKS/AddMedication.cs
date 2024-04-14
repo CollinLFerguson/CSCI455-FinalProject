@@ -13,6 +13,10 @@ namespace EMRKS
     public partial class AddMedication : UserControl
     {
         private string? currSSN;
+        public AddMedication()
+        {
+            InitializeComponent();
+        }
         public AddMedication(string currentSsn)
         {
             InitializeComponent();

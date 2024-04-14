@@ -62,6 +62,7 @@
             button2 = new Button();
             button1 = new Button();
             goodPanel = new Panel();
+            patientEditor1 = new PatientEditor();
             label13 = new Label();
             patientOptionsPanel = new Panel();
             button8 = new Button();
@@ -69,7 +70,7 @@
             button6 = new Button();
             button5 = new Button();
             helpProvider1 = new HelpProvider();
-            patientEditor1 = new PatientEditor();
+            addMedication1 = new AddMedication();
             patientSearchPanel.SuspendLayout();
             patientInfoPanel.SuspendLayout();
             goodPanel.SuspendLayout();
@@ -394,6 +395,7 @@
             // goodPanel
             // 
             goodPanel.BackColor = Color.SeaGreen;
+            goodPanel.Controls.Add(addMedication1);
             goodPanel.Controls.Add(patientEditor1);
             goodPanel.Controls.Add(label13);
             goodPanel.Location = new Point(293, 195);
@@ -401,6 +403,14 @@
             goodPanel.Size = new Size(711, 513);
             goodPanel.TabIndex = 5;
             goodPanel.Visible = false;
+            // 
+            // patientEditor1
+            // 
+            patientEditor1.BackColor = Color.GreenYellow;
+            patientEditor1.Location = new Point(0, 0);
+            patientEditor1.Name = "patientEditor1";
+            patientEditor1.Size = new Size(711, 513);
+            patientEditor1.TabIndex = 1;
             // 
             // label13
             // 
@@ -465,13 +475,13 @@
             button5.UseVisualStyleBackColor = true;
             button5.Click += onEditPatientPersonalInfo;
             // 
-            // patientEditor1
+            // addMedication1
             // 
-            patientEditor1.BackColor = Color.GreenYellow;
-            patientEditor1.Location = new Point(0, 0);
-            patientEditor1.Name = "patientEditor1";
-            patientEditor1.Size = new Size(711, 513);
-            patientEditor1.TabIndex = 1;
+            addMedication1.BackColor = Color.SeaGreen;
+            addMedication1.Location = new Point(0, 0);
+            addMedication1.Name = "addMedication1";
+            addMedication1.Size = new Size(711, 513);
+            addMedication1.TabIndex = 7;
             // 
             // FindPatient
             // 
@@ -542,5 +552,6 @@
         private TextBox patientInfoDOB;
         private TextBox patientInfoState;
         private PatientEditor patientEditor1;
+        private AddMedication addMedication1;
     }
 }

@@ -20,16 +20,22 @@ namespace EMRKS
             InitializeComponent();
             this.currSSN = currentSsn;
         }
-        public Medication_Manager()
-        {
-            InitializeComponent();
-        }
 
         private void Medication_Manager_Load(object sender, EventArgs e)
         {
             //Debug.WriteLine(currSSN);
             dataGridView1.DataSource = Database.GetMedication(currSSN);
             dataGridView2.DataSource = Database.GetAllergies(currSSN);
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            // Add Medication Button
+
+            AddMedication add_medication = new AddMedication(currSSN);
+            add_medication.Location = new Point(0, 0);
+            add_medication.BringToFront();
+            add_medication.Show();
         }
     }
 }

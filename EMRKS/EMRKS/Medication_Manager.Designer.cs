@@ -33,6 +33,7 @@
             button1 = new Button();
             label1 = new Label();
             label2 = new Label();
+            addMedication1 = new AddMedication();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView2).BeginInit();
             SuspendLayout();
@@ -87,11 +88,20 @@
             label2.TabIndex = 6;
             label2.Text = "Patient's Prescriptions";
             // 
+            // addMedication1
+            // 
+            addMedication1.BackColor = Color.SeaGreen;
+            addMedication1.Location = new Point(0, 0);
+            addMedication1.Name = "addMedication1";
+            addMedication1.Size = new Size(711, 513);
+            addMedication1.TabIndex = 7;
+            // 
             // Medication_Manager
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.SeaGreen;
+            Controls.Add(addMedication1);
             Controls.Add(label2);
             Controls.Add(label1);
             Controls.Add(button1);
@@ -112,5 +122,6 @@
         private Button button1;
         private Label label1;
         private Label label2;
+        private AddMedication addMedication1;
     }
 }

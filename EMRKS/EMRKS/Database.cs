@@ -364,13 +364,34 @@ namespace EMRKS
             }
         }
 
+        public static DataTable? GetListMedication()
+        {
+            // list of all possible prescriptions
+            try
+            {
+                string query = "SELECT * FROM sql5679201.Medication;";
+
+                //Debug.WriteLine(query);
+
+                MySqlDataAdapter sqlDa = new MySqlDataAdapter(query, connection);
+                DataTable dtbl = new DataTable();
+                sqlDa.Fill(dtbl);
+
+                return dtbl;
+            }
+            catch (MySqlException ex)
+            {
+                return null;
+            }
+        }
+
         public static DataTable? GetAllergies(string patientSSN)
         {
             try
             {
                 string query = "SELECT * FROM Allergies WHERE Pati_Ssn = \"" + patientSSN + "\"";
 
-                Debug.WriteLine(query);
+                //Debug.WriteLine(query);
 
                 MySqlDataAdapter sqlDa = new MySqlDataAdapter(query, connection);
                 DataTable dtbl = new DataTable();

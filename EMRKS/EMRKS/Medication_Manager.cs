@@ -18,11 +18,13 @@ namespace EMRKS
         public Medication_Manager()
         {
             InitializeComponent();
+            addMedication1.Hide();
         }
         public Medication_Manager(string currentSsn)
         {
             InitializeComponent();
             this.currSSN = currentSsn;
+            addMedication1.Hide();
         }
 
         private void Medication_Manager_Load(object sender, EventArgs e)
@@ -35,10 +37,10 @@ namespace EMRKS
         private void button1_Click(object sender, EventArgs e)
         {
             // Add Medication Button
-            AddMedication add_medication = new AddMedication(currSSN);
-            add_medication.Location = new Point(0, 0);
-            add_medication.BringToFront();
-            add_medication.Show();
+            AddMedication addMedication1 = new AddMedication(currSSN);
+            addMedication1.Location = new Point(0, 0);
+            addMedication1.BringToFront();
+            addMedication1.Show();
         }
     }
 }

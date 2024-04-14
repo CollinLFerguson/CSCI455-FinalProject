@@ -70,7 +70,6 @@
             button6 = new Button();
             button5 = new Button();
             helpProvider1 = new HelpProvider();
-            addMedication1 = new AddMedication();
             patientSearchPanel.SuspendLayout();
             patientInfoPanel.SuspendLayout();
             goodPanel.SuspendLayout();
@@ -395,7 +394,6 @@
             // goodPanel
             // 
             goodPanel.BackColor = Color.SeaGreen;
-            goodPanel.Controls.Add(addMedication1);
             goodPanel.Controls.Add(patientEditor1);
             goodPanel.Controls.Add(label13);
             goodPanel.Location = new Point(293, 195);
@@ -475,14 +473,6 @@
             button5.UseVisualStyleBackColor = true;
             button5.Click += onEditPatientPersonalInfo;
             // 
-            // addMedication1
-            // 
-            addMedication1.BackColor = Color.SeaGreen;
-            addMedication1.Location = new Point(0, 0);
-            addMedication1.Name = "addMedication1";
-            addMedication1.Size = new Size(711, 513);
-            addMedication1.TabIndex = 7;
-            // 
             // FindPatient
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -552,6 +542,5 @@
         private TextBox patientInfoDOB;
         private TextBox patientInfoState;
         private PatientEditor patientEditor1;
-        private AddMedication addMedication1;
     }
 }

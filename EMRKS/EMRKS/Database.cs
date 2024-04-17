@@ -518,6 +518,24 @@ namespace EMRKS
             }
 
         }
+        public static DataTable? AddPatientAppointment(string patientSSN, char status, string Notes, DateTime Date_Time)
+        {
+            try
+            {
+                string query = "INSERT INTO Appointment VALUES ('" + patientSSN + "','" + status + "','" + Notes + "','" + Date_Time + "')";
+
+                MySqlDataAdapter sqlDa = new MySqlDataAdapter(query, connection);
+                DataTable dtbl = new DataTable();
+                sqlDa.Fill(dtbl);
+
+                return dtbl;
+            }
+            catch (MySqlException ex)
+            {
+                return null;
+            }
+
+        }
         public static DataTable? ViewPatientFinancials(string patientSSN)
         {
             try

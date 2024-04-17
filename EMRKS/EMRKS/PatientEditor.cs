@@ -6,8 +6,10 @@ using System.Drawing;
 using System.Linq;
 using System.Runtime.Intrinsics.X86;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Net.Mime.MediaTypeNames;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace EMRKS
@@ -21,6 +23,8 @@ namespace EMRKS
 
         Patient patient;
         Address address;
+
+        string errorMessage;
 
         string Ssn;
 
@@ -58,6 +62,13 @@ namespace EMRKS
         private void onSaveInfo(object sender, EventArgs e)
         {
             GrabNewInformation();
+            
+            if (!CheckInformationValid())
+            {
+                MessageBox.Show(errorMessage);
+                return;
+            }
+
             //check all fields valid
             if (!Database.UpdatePatient(patient, address, Ssn))
             {
@@ -67,6 +78,113 @@ namespace EMRKS
             {
                 MessageBox.Show("UPDATE SUCCESS");
             }
+        }
+
+        private bool CheckInformationValid()
+        {
+            string firstName = patient.getFirstName();
+            string lastName = patient.getLastName();
+            string minit = patient.getMiddleInit();
+            string sex = patient.getSex();
+            string DOB = patient.getDOB();
+            bool dobFail = patient.dateFailed;
+            string phoneNumber = patient.getPhoneNumber();
+            string pcmID = patient.getPrimaryDoctorIDForUpdate();
+            string addyLine1 = address.getLine1();
+            string addyLine2 = address.getLine2();
+            string city = address.getCity();
+            string state = address.getState();
+            string zip = address.getZip(); 
+
+            if (firstName.Length > 20)
+            {
+                errorMessage = "First name too long.  Must be under 20 characters.";
+
+                return false;
+            }
+
+            if (lastName.Length > 20)
+            {
+                errorMessage = "Last name too long.  Must be under 20 characters.";
+
+                return false;
+            }
+
+            if (minit.Length > 1)
+            {
+                errorMessage = "Middle initial too long.  Must be 1 character.";
+
+                return false;
+            }
+
+            if (sex.ToLower() != "m" || sex.ToLower() != "f")
+            {
+                errorMessage = "Invalid sex.  Must be M or F";
+
+                return false;
+            }
+
+            if (dobFail)
+            {
+                errorMessage = "Invalid date.  Must be of form YYYY/MM/DD";
+
+                return false;
+            }
+
+            const string MatchPhonePattern = "\\(?\\d{3}\\)?-? *\\d{3}-? *-?\\d{4}\r\n\r\n";
+            Regex rx = new Regex(MatchPhonePattern, RegexOptions.Compiled | RegexOptions.IgnoreCase);
+            MatchCollection matches = rx.Matches(phoneNumber);
+
+            if (matches.Count == 0)
+            {
+                errorMessage = "Invalid phone.  Must be 10 digit US Phone number";
+
+                return false;
+            }
+
+            if (pcmID == null)
+            {
+                errorMessage = "Could not find PCM with name " + patient.getPrimaryDoctor();
+
+                return false;
+            }
+
+            if (addyLine1.Length > 100)
+            {
+                errorMessage = "Address line 1 must be under 101 characters.";
+
+                return false;
+            }
+
+            if (addyLine2 != null && addyLine2.Length > 100)
+            {
+                errorMessage = "Address line 2 must be under 101 characters.";
+
+                return false;
+            }
+
+            if (city.Length > 100)
+            {
+                errorMessage = "City must be under 101 characters.";
+
+                return false;
+            }
+
+            if (state.Length > 2)
+            {
+                errorMessage = "State must be your states 2 letter abreviation.";
+
+                return false;
+            }
+
+            if (zip.Length > 2)
+            {
+                errorMessage = "Zip code must be under 10 characters.";
+
+                return false;
+            }
+
+            return true;
         }
     }
 }

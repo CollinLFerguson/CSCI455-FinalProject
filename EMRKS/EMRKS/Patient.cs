@@ -18,13 +18,22 @@ namespace EMRKS
         private string lastName;
         private string primaryDoctorID;
         private string phoneNumber;
-
+        public bool dateFailed = false;
         public Patient(string SSN, string DOB, char sex, string firstName, char middleInit, string lastName, string primaryDoctorID, string phoneNumber) { 
             this.SSN = SSN;
-            this.DOB = DateTime.Parse(DOB);
-            DateTime now = DateTime.Today;
-            this.age = now.Year - this.DOB.Year;
-            if (this.DOB > now.AddYears(-age)) age--;
+
+            try
+            {
+                this.DOB = DateTime.Parse(DOB);
+                DateTime now = DateTime.Today;
+                this.age = now.Year - this.DOB.Year;
+                if (this.DOB > now.AddYears(-age)) age--;
+            }
+            catch (Exception ex)
+            {
+                this.DOB = DateTime.Today;
+                 dateFailed = true;
+            }
 
             this.sex = sex;
             this.firstName = firstName;

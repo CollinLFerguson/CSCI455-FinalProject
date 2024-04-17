@@ -30,6 +30,8 @@
         {
             dataGridView1 = new DataGridView();
             label1 = new Label();
+            button1 = new Button();
+            button2 = new Button();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
@@ -50,15 +52,36 @@
             label1.TabIndex = 1;
             label1.Text = "Available Medications";
             // 
+            // button1
+            // 
+            button1.Location = new Point(517, 473);
+            button1.Name = "button1";
+            button1.Size = new Size(75, 23);
+            button1.TabIndex = 2;
+            button1.Text = "Cancel";
+            button1.UseVisualStyleBackColor = true;
+            // 
+            // button2
+            // 
+            button2.Location = new Point(609, 473);
+            button2.Name = "button2";
+            button2.Size = new Size(75, 23);
+            button2.TabIndex = 3;
+            button2.Text = "Continue";
+            button2.UseVisualStyleBackColor = true;
+            // 
             // AddMedication
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.SeaGreen;
+            Controls.Add(button2);
+            Controls.Add(button1);
             Controls.Add(label1);
             Controls.Add(dataGridView1);
             Name = "AddMedication";
             Size = new Size(711, 513);
+            Load += Medications_Load;
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
             PerformLayout();
@@ -68,5 +91,7 @@
 
         private DataGridView dataGridView1;
         private Label label1;
+        private Button button1;
+        private Button button2;
     }
 }

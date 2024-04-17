@@ -42,6 +42,7 @@
             appointStatusComboBox = new ComboBox();
             dateTimePicker1 = new DateTimePicker();
             saveAppointment = new Button();
+            addAppoint = new Button();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
@@ -179,11 +180,22 @@
             saveAppointment.Text = "Save";
             saveAppointment.UseVisualStyleBackColor = true;
             // 
+            // addAppoint
+            // 
+            addAppoint.Location = new Point(44, 405);
+            addAppoint.Name = "addAppoint";
+            addAppoint.Size = new Size(130, 27);
+            addAppoint.TabIndex = 17;
+            addAppoint.Text = "+ Appointment";
+            addAppoint.UseVisualStyleBackColor = true;
+            addAppoint.Click += button1_Click;
+            // 
             // Appointment_Manager
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.DarkSeaGreen;
+            Controls.Add(addAppoint);
             Controls.Add(saveAppointment);
             Controls.Add(dateTimePicker1);
             Controls.Add(appointStatusComboBox);
@@ -222,5 +234,6 @@
         private ComboBox appointStatusComboBox;
         private DateTimePicker dateTimePicker1;
         private Button saveAppointment;
+        private Button addAppoint;
     }
 }

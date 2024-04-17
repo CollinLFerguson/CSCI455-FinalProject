@@ -84,11 +84,10 @@
             dtpDOB.CustomFormat = "yyyy-MM-dd";
             dtpDOB.Format = DateTimePickerFormat.Custom;
             dtpDOB.Location = new Point(108, 106);
-            dtpDOB.MaxDate = new DateTime(2024, 4, 11, 0, 0, 0, 0);
             dtpDOB.Name = "dtpDOB";
             dtpDOB.Size = new Size(216, 23);
             dtpDOB.TabIndex = 16;
-            dtpDOB.Value = new DateTime(2024, 4, 11, 0, 0, 0, 0);
+            dtpDOB.Value = new DateTime(2014, 4, 11, 0, 0, 0, 0);
             // 
             // ViewAppointments
             // 

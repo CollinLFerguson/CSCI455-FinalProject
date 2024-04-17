@@ -37,6 +37,20 @@ namespace EMRKS
 
 
         }
+        private void Add_Appointment_Click(object sender, EventArgs e)
+        {
+            // this will add an appoinment for a specific patient
+
+            //Financial_Manager finManager = new Financial_Manager(currSSN);
+            //finManager.Parent = goodPanel;
+            //finManager.Location = new Point(0, 0);
+            //finManager.BringToFront();
+            //finManager.Show();
+
+            //Database.AddPatientAppointment(currSSN, status, Notes, Date_Time);
+
+
+        }
 
         private void label1_Click(object sender, EventArgs e)
         {
@@ -58,6 +72,11 @@ namespace EMRKS
         }
 
         private void label6_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
         {
 
         }

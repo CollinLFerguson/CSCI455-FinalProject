@@ -399,12 +399,12 @@ namespace EMRKS
             }
         }
 
-        public static DataTable? GetListMedication()
+        public static DataTable? ViewMedication()
         {
             // list of all possible prescriptions
             try
             {
-                string query = "SELECT * FROM sql5679201.Medication;";
+                string query = "SELECT * FROM Medication;";
 
                 //Debug.WriteLine(query);
 

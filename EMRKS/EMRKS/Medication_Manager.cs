@@ -38,6 +38,7 @@ namespace EMRKS
         {
             // Add Medication Button
             AddMedication addMedication1 = new AddMedication(currSSN);
+            addMedication1.Parent = this;
             addMedication1.Location = new Point(0, 0);
             addMedication1.BringToFront();
             addMedication1.Show();

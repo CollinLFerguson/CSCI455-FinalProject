@@ -113,7 +113,6 @@
             dtpExp.CustomFormat = "yyyy/MM";
             dtpExp.Format = DateTimePickerFormat.Custom;
             dtpExp.Location = new Point(516, 10);
-            dtpExp.MaxDate = new DateTime(2024, 4, 11, 0, 0, 0, 0);
             dtpExp.MinDate = new DateTime(2024, 4, 11, 0, 0, 0, 0);
             dtpExp.Name = "dtpExp";
             dtpExp.Size = new Size(67, 23);

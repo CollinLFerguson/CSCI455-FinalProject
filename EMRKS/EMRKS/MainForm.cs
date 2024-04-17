@@ -8,6 +8,7 @@ namespace EMRKS
         NoForm noFormPage;
         Form? currentPage; //is expected to be null at some points, holds the currently loaded page.
         Database DB = new Database();
+        String? staffID;
 
         public MainForm()
         {
@@ -26,13 +27,15 @@ namespace EMRKS
             loginForm.Show();
         }
 
-        public void loadLanding()
+        public void loadLanding(string staffID)
         {
             LandingPage landingPage = new LandingPage();
             landingPage.MdiParent = this;
             
             noFormPage.Show();
             landingPage.Show();
+
+            this.staffID = staffID;
 
         }
         public void loadAddPatient(){
@@ -58,7 +61,7 @@ namespace EMRKS
         public void loadFindPatient()
         {
             if (currentPage != null) { destroyCurrentPage(); }
-            Form findPatientPage = new FindPatient();
+            Form findPatientPage = new FindPatient(this.staffID);
             findPatientPage.MdiParent = this;
             currentPage = findPatientPage;
 

@@ -14,10 +14,13 @@ namespace EMRKS
 {
     public partial class FindPatient : Form
     {
-        public FindPatient()
+        private string? staffID;
+
+        public FindPatient(string staffID)
         {
             InitializeComponent();
             HideSubControls();
+            this.staffID = staffID;
         }
 
         private Patient patient;
@@ -119,7 +122,7 @@ namespace EMRKS
         {
             // Medication Manager Button
 
-            Medication_Manager mediManager = new Medication_Manager(patient.getSsn());
+            Medication_Manager mediManager = new Medication_Manager(patient.getSsn(), staffID);
             mediManager.Parent = goodPanel;
             mediManager.Location = new Point(0, 0);
             mediManager.BringToFront();           

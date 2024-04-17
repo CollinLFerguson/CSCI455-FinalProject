@@ -467,6 +467,31 @@ namespace EMRKS
 
         }
 
+        public static bool ValidateUser(string ID, string pin)
+        {
+            try
+            {
+                string query = "SELECT * FROM Staff WHERE ID_Number = " + ID + " AND Pin = " + pin;
+                MySqlCommand cmd = new MySqlCommand(query, connection);
+
+                using (MySqlDataReader reader = cmd.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        return true;
+                    }
+                }
+            }
+            catch (MySqlException ex)
+            {
+                //QUERY FAILED
+                return false;
+            }
+
+
+            return false;
+        }
+
     }
 
 }

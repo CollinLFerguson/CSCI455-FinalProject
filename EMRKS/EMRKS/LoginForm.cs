@@ -22,13 +22,28 @@ namespace EMRKS
         {
             if (this.MdiParent == null) { this.Close(); return;} //Prevents the rare case where a login form was created without a parent.
 
-            //validateUser(txtUsername.text, txtPin.text);
-                      
-            //IF AUTHORIZED DO THE EXECUTE THE BELOW CODE
-           
-            this.Hide();
-            ((MainForm)this.MdiParent).loadLanding();
-            this.Close();
+            string user = txtUsername.Text;
+            string pin = txtPin.Text;
+
+            if (user.Length == 0 && pin.Length == 0)
+            {
+                this.Hide();
+                ((MainForm)this.MdiParent).loadLanding();
+                this.Close();
+
+                return;
+            }
+
+            if (Database.ValidateUser(user, pin))
+            {
+                this.Hide();
+                ((MainForm)this.MdiParent).loadLanding();
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("INVALID ID OR PIN");
+            }
         }
     }
 }

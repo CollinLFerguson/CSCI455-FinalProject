@@ -126,6 +126,7 @@
             // textBox3
             // 
             textBox3.Location = new Point(368, 50);
+            textBox3.MaxLength = 1;
             textBox3.Name = "textBox3";
             textBox3.Size = new Size(24, 23);
             textBox3.TabIndex = 7;
@@ -160,6 +161,7 @@
             // textBox5
             // 
             textBox5.Location = new Point(614, 50);
+            textBox5.MaxLength = 1;
             textBox5.Name = "textBox5";
             textBox5.Size = new Size(24, 23);
             textBox5.TabIndex = 11;
@@ -194,6 +196,7 @@
             // textBox7
             // 
             textBox7.Location = new Point(265, 96);
+            textBox7.MaxLength = 10;
             textBox7.Name = "textBox7";
             textBox7.Size = new Size(100, 23);
             textBox7.TabIndex = 15;

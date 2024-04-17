@@ -117,7 +117,13 @@ namespace EMRKS
                 return false;
             }
 
-            if (sex.ToLower() != "m" || sex.ToLower() != "f")
+            string sexTest = sex.ToLower();
+
+            if (sexTest == "m" || sexTest == "f")
+            {
+
+            }
+            else
             {
                 errorMessage = "Invalid sex.  Must be M or F";
 
@@ -131,13 +137,9 @@ namespace EMRKS
                 return false;
             }
 
-            const string MatchPhonePattern = "\\(?\\d{3}\\)?-? *\\d{3}-? *-?\\d{4}\r\n\r\n";
-            Regex rx = new Regex(MatchPhonePattern, RegexOptions.Compiled | RegexOptions.IgnoreCase);
-            MatchCollection matches = rx.Matches(phoneNumber);
-
-            if (matches.Count == 0)
+            if (phoneNumber.Length != 10)
             {
-                errorMessage = "Invalid phone.  Must be 10 digit US Phone number";
+                errorMessage = "Invalid phone.  Must be 10 digit US Phone number of form 77723255555";
 
                 return false;
             }
@@ -177,7 +179,7 @@ namespace EMRKS
                 return false;
             }
 
-            if (zip.Length > 2)
+            if (zip.Length > 10)
             {
                 errorMessage = "Zip code must be under 10 characters.";
 

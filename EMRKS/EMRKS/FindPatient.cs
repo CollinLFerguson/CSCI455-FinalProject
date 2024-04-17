@@ -125,5 +125,27 @@ namespace EMRKS
             mediManager.BringToFront();           
             mediManager.Show();
         }
+
+        private void appointmentManager_Click(object sender, EventArgs e)
+        {
+            // Appointment Manager Button
+
+            Appointment_Manager appointManager = new Appointment_Manager(patient.getSsn());
+            appointManager.Parent = goodPanel;
+            appointManager.Location = new Point(0, 0);
+            appointManager.BringToFront();
+            appointManager.Show();
+        }
+
+        private void financialManager_Click(object sender, EventArgs e)
+        {
+            // Appointment Manager Button
+
+            Financial_Manager finManager = new Financial_Manager(patient.getSsn());
+            finManager.Parent = goodPanel;
+            finManager.Location = new Point(0, 0);
+            finManager.BringToFront();
+            finManager.Show();
+        }
     }
 }

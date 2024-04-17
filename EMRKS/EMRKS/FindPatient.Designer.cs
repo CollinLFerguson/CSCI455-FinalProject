@@ -451,6 +451,7 @@
             button7.TabIndex = 2;
             button7.Text = "Financials Manager";
             button7.UseVisualStyleBackColor = true;
+            button7.Click += financialManager_Click;
             // 
             // button6
             // 
@@ -461,6 +462,7 @@
             button6.TabIndex = 1;
             button6.Text = "Appointment Manager";
             button6.UseVisualStyleBackColor = true;
+            button6.Click += appointmentManager_Click;
             // 
             // button5
             // 
@@ -469,7 +471,7 @@
             button5.Name = "button5";
             button5.Size = new Size(170, 41);
             button5.TabIndex = 0;
-            button5.Text = "Edit Personl Info";
+            button5.Text = "Edit Personal Info";
             button5.UseVisualStyleBackColor = true;
             button5.Click += onEditPatientPersonalInfo;
             // 

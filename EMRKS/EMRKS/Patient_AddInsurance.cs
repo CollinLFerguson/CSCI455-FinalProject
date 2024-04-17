@@ -48,5 +48,10 @@ namespace EMRKS
             ((AddPatient)this.parentForm).removeAndReorderInsurance(this);
 
         }
+
+        private void Patient_AddInsurance_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

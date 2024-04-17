@@ -128,6 +128,7 @@
             Controls.Add(label15);
             Name = "Patient_AddInsurance";
             Size = new Size(536, 97);
+            Load += Patient_AddInsurance_Load;
             ResumeLayout(false);
             PerformLayout();
         }

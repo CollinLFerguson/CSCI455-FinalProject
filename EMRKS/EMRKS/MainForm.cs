@@ -87,6 +87,17 @@ namespace EMRKS
             noFormPage.Hide();
         }
 
+        public void loadAddMedicationForm()
+        {
+            if (currentPage != null) { destroyCurrentPage(); }
+            Form addMedicationPage = new addMedicationForm();
+            addMedicationPage.MdiParent = this;
+            currentPage = addMedicationPage;
+
+            addMedicationPage.Show();
+            noFormPage.Hide();
+        }
+
         public void destroyCurrentPage(){
             //** Destroys the currently loaded page.
             //   This function should be called whenever one of the side menu buttons are hit.

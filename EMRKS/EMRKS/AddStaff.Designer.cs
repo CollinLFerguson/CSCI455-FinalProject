@@ -29,9 +29,7 @@
         private void InitializeComponent()
         {
             groupBox1 = new GroupBox();
-            txtIDNumber = new TextBox();
             dtpHireDate = new DateTimePicker();
-            label15 = new Label();
             txtAddressLn2 = new TextBox();
             comboStaffType = new ComboBox();
             label8 = new Label();
@@ -69,9 +67,7 @@
             // 
             // groupBox1
             // 
-            groupBox1.Controls.Add(txtIDNumber);
             groupBox1.Controls.Add(dtpHireDate);
-            groupBox1.Controls.Add(label15);
             groupBox1.Controls.Add(txtAddressLn2);
             groupBox1.Controls.Add(comboStaffType);
             groupBox1.Controls.Add(label8);
@@ -98,37 +94,21 @@
             groupBox1.Controls.Add(label1);
             groupBox1.Location = new Point(12, 58);
             groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(917, 254);
+            groupBox1.Size = new Size(723, 254);
             groupBox1.TabIndex = 1;
             groupBox1.TabStop = false;
             groupBox1.Text = "Staff Info";
-            // 
-            // txtIDNumber
-            // 
-            txtIDNumber.Location = new Point(84, 22);
-            txtIDNumber.Name = "txtIDNumber";
-            txtIDNumber.Size = new Size(153, 23);
-            txtIDNumber.TabIndex = 48;
             // 
             // dtpHireDate
             // 
             dtpHireDate.CustomFormat = "yyyy/MM/dd";
             dtpHireDate.Format = DateTimePickerFormat.Custom;
-            dtpHireDate.Location = new Point(619, 22);
+            dtpHireDate.Location = new Point(379, 22);
             dtpHireDate.MaxDate = new DateTime(2024, 4, 11, 0, 0, 0, 0);
             dtpHireDate.Name = "dtpHireDate";
             dtpHireDate.Size = new Size(85, 23);
             dtpHireDate.TabIndex = 46;
             dtpHireDate.Value = new DateTime(2024, 4, 11, 0, 0, 0, 0);
-            // 
-            // label15
-            // 
-            label15.AutoSize = true;
-            label15.Location = new Point(16, 30);
-            label15.Name = "label15";
-            label15.Size = new Size(65, 15);
-            label15.TabIndex = 47;
-            label15.Text = "ID Number";
             // 
             // txtAddressLn2
             // 
@@ -141,7 +121,7 @@
             // 
             comboStaffType.FormattingEnabled = true;
             comboStaffType.Items.AddRange(new object[] { "Administration", "Doctor", "Nurse" });
-            comboStaffType.Location = new Point(790, 22);
+            comboStaffType.Location = new Point(550, 22);
             comboStaffType.Name = "comboStaffType";
             comboStaffType.Size = new Size(121, 23);
             comboStaffType.TabIndex = 24;
@@ -159,7 +139,7 @@
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(560, 30);
+            label4.Location = new Point(320, 30);
             label4.Name = "label4";
             label4.Size = new Size(56, 15);
             label4.TabIndex = 3;
@@ -213,7 +193,7 @@
             // 
             // txtZip
             // 
-            txtZip.Location = new Point(210, 133);
+            txtZip.Location = new Point(475, 127);
             txtZip.Name = "txtZip";
             txtZip.Size = new Size(122, 23);
             txtZip.TabIndex = 43;
@@ -221,7 +201,7 @@
             // label7
             // 
             label7.AutoSize = true;
-            label7.Location = new Point(726, 30);
+            label7.Location = new Point(486, 30);
             label7.Name = "label7";
             label7.Size = new Size(58, 15);
             label7.TabIndex = 23;
@@ -232,7 +212,7 @@
             comboState.DropDownStyle = ComboBoxStyle.DropDownList;
             comboState.FormattingEnabled = true;
             comboState.Items.AddRange(new object[] { "AL", "AK", "AZ", "AR", "CA", "CO", "CT", "DE", "DC", "FL", "GA", "HI", "ID", "IL", "IN", "IA", "KS", "KY", "LA", "ME", "MD", "MA", "MI", "MN", "MS", "MO", "MT", "NE", "NV", "NH", "NJ", "NM", "NY", "NC", "ND", "OH", "OK", "OR", "PA", "RI", "SC", "SD", "TN", "TX", "UT", "VT", "VA", "WA", "WV", "WI", "WY" });
-            comboState.Location = new Point(55, 134);
+            comboState.Location = new Point(320, 128);
             comboState.Name = "comboState";
             comboState.Size = new Size(83, 23);
             comboState.TabIndex = 42;
@@ -246,7 +226,7 @@
             // 
             // txtCity
             // 
-            txtCity.Location = new Point(677, 95);
+            txtCity.Location = new Point(66, 128);
             txtCity.Name = "txtCity";
             txtCity.Size = new Size(203, 23);
             txtCity.TabIndex = 41;
@@ -268,7 +248,7 @@
             // label11
             // 
             label11.AutoSize = true;
-            label11.Location = new Point(149, 141);
+            label11.Location = new Point(414, 135);
             label11.Name = "label11";
             label11.Size = new Size(55, 15);
             label11.TabIndex = 39;
@@ -284,7 +264,7 @@
             // label10
             // 
             label10.AutoSize = true;
-            label10.Location = new Point(16, 141);
+            label10.Location = new Point(281, 135);
             label10.Name = "label10";
             label10.Size = new Size(33, 15);
             label10.TabIndex = 38;
@@ -293,7 +273,7 @@
             // label9
             // 
             label9.AutoSize = true;
-            label9.Location = new Point(643, 103);
+            label9.Location = new Point(32, 136);
             label9.Name = "label9";
             label9.Size = new Size(28, 15);
             label9.TabIndex = 37;
@@ -301,7 +281,7 @@
             // 
             // txtPin
             // 
-            txtPin.Location = new Point(475, 22);
+            txtPin.Location = new Point(235, 22);
             txtPin.Name = "txtPin";
             txtPin.Size = new Size(79, 23);
             txtPin.TabIndex = 13;
@@ -317,7 +297,7 @@
             // 
             // txtSSN
             // 
-            txtSSN.Location = new Point(286, 22);
+            txtSSN.Location = new Point(46, 22);
             txtSSN.Name = "txtSSN";
             txtSSN.Size = new Size(153, 23);
             txtSSN.TabIndex = 12;
@@ -334,7 +314,7 @@
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new Point(445, 30);
+            label5.Location = new Point(205, 30);
             label5.Name = "label5";
             label5.Size = new Size(24, 15);
             label5.TabIndex = 4;
@@ -361,7 +341,7 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(252, 30);
+            label1.Location = new Point(12, 30);
             label1.Name = "label1";
             label1.Size = new Size(28, 15);
             label1.TabIndex = 0;
@@ -379,7 +359,7 @@
             // 
             // button5
             // 
-            button5.Location = new Point(794, 318);
+            button5.Location = new Point(600, 318);
             button5.Name = "button5";
             button5.Size = new Size(135, 23);
             button5.TabIndex = 35;
@@ -455,7 +435,5 @@
         private Label label9;
         private Label label14;
         private DateTimePicker dtpHireDate;
-        private TextBox txtIDNumber;
-        private Label label15;
     }
 }

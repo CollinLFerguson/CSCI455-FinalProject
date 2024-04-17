@@ -19,7 +19,7 @@ namespace EMRKS
 
         private void button2_Click(object sender, EventArgs e)
         {
-            if (this.MdiParent != null) { ((MainForm)this.MdiParent).loadAddPatient();}
+            if (this.MdiParent != null) { ((MainForm)this.MdiParent).loadAddPatient(); }
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -39,6 +39,11 @@ namespace EMRKS
         private void button6_Click(object sender, EventArgs e) // the click functions don't correspond to the correct buttons
         {
             if (this.MdiParent != null) { ((MainForm)this.MdiParent).loadViewAppointments(); }
+        }
+
+        private void btnAddMedication_Click(object sender, EventArgs e)
+        {
+            if (this.MdiParent != null) { ((MainForm)this.MdiParent).loadAddMedicationForm(); }
         }
     }
 }

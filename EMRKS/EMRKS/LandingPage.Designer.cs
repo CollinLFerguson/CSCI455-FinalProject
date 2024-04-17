@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             panel1 = new Panel();
+            btnAddMedication = new Button();
+            button5 = new Button();
             button4 = new Button();
             button3 = new Button();
             button2 = new Button();
             button1 = new Button();
-            button5 = new Button();
-            btnAddMedication = new Button();
             panel1.SuspendLayout();
             SuspendLayout();
             // 
@@ -53,10 +53,32 @@
             panel1.Size = new Size(205, 720);
             panel1.TabIndex = 0;
             // 
+            // btnAddMedication
+            // 
+            btnAddMedication.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
+            btnAddMedication.Location = new Point(0, 162);
+            btnAddMedication.Name = "btnAddMedication";
+            btnAddMedication.Size = new Size(200, 55);
+            btnAddMedication.TabIndex = 5;
+            btnAddMedication.Text = "Add Medication";
+            btnAddMedication.UseVisualStyleBackColor = true;
+            btnAddMedication.Click += btnAddMedication_Click;
+            // 
+            // button5
+            // 
+            button5.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
+            button5.Location = new Point(-1, 270);
+            button5.Name = "button5";
+            button5.Size = new Size(200, 58);
+            button5.TabIndex = 4;
+            button5.Text = "View Appointments";
+            button5.UseVisualStyleBackColor = true;
+            button5.Click += button6_Click;
+            // 
             // button4
             // 
             button4.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
-            button4.Location = new Point(-1, 303);
+            button4.Location = new Point(0, 216);
             button4.Name = "button4";
             button4.Size = new Size(200, 55);
             button4.TabIndex = 3;
@@ -96,28 +118,6 @@
             button1.Text = "Find Patient";
             button1.UseVisualStyleBackColor = true;
             button1.Click += button4_Click;
-            // 
-            // button5
-            // 
-            button5.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
-            button5.Location = new Point(-2, 357);
-            button5.Name = "button5";
-            button5.Size = new Size(200, 58);
-            button5.TabIndex = 4;
-            button5.Text = "View Appointments";
-            button5.UseVisualStyleBackColor = true;
-            button5.Click += button6_Click;
-            // 
-            // btnAddMedication
-            // 
-            btnAddMedication.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
-            btnAddMedication.Location = new Point(0, 162);
-            btnAddMedication.Name = "btnAddMedication";
-            btnAddMedication.Size = new Size(200, 55);
-            btnAddMedication.TabIndex = 5;
-            btnAddMedication.Text = "Add Medication";
-            btnAddMedication.UseVisualStyleBackColor = true;
-            btnAddMedication.Click += btnAddMedication_Click;
             // 
             // LandingPage
             // 

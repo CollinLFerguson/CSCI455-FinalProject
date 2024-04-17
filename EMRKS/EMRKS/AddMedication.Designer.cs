@@ -60,6 +60,7 @@
             button1.TabIndex = 2;
             button1.Text = "Cancel";
             button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
             // 
             // button2
             // 

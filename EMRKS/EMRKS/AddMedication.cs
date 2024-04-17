@@ -29,5 +29,10 @@ namespace EMRKS
         {
             dataGridView1.DataSource = Database.ViewMedication();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
+        }
     }
 }

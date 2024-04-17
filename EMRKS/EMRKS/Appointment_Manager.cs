@@ -18,7 +18,8 @@ namespace EMRKS
         private char status;
         private string Notes;
         private DateTime Date_Time;
-
+        public static DataGridView dgv = new DataGridView();
+        
         public Appointment_Manager()
         {
             InitializeComponent();
@@ -34,8 +35,8 @@ namespace EMRKS
         private void Appointment_Manager_Load(object sender, EventArgs e)
         {
             // this will populate the datagridview for the scheduled appoinments for a specific patient
-
-            dataGridView1.DataSource = Database.ViewPatientAppointments(currSSN);
+            dgv = dataGridView1;
+            dgv.DataSource = Database.ViewPatientAppointments(currSSN);
 
         }
         private void Edit_Appointment_Click(object sender, EventArgs e)

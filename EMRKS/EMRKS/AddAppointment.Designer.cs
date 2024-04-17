@@ -28,22 +28,22 @@
         /// </summary>
         private void InitializeComponent()
         {
-            dateTimePicker1 = new DateTimePicker();
+            AddAppointDTP = new DateTimePicker();
             appointmentDateTime = new Label();
             saveAppointment = new Button();
             label5 = new Label();
-            textBox2 = new TextBox();
+            AppointNotes = new TextBox();
             CancelNewAppointment = new Button();
             SuspendLayout();
             // 
-            // dateTimePicker1
+            // AddAppointDTP
             // 
-            dateTimePicker1.CustomFormat = "yyyy-MM-dd HH:mm:ss";
-            dateTimePicker1.Format = DateTimePickerFormat.Custom;
-            dateTimePicker1.Location = new Point(14, 29);
-            dateTimePicker1.Name = "dateTimePicker1";
-            dateTimePicker1.Size = new Size(146, 23);
-            dateTimePicker1.TabIndex = 17;
+            AddAppointDTP.CustomFormat = "yyyy-MM-dd HH:mm:ss";
+            AddAppointDTP.Format = DateTimePickerFormat.Custom;
+            AddAppointDTP.Location = new Point(14, 29);
+            AddAppointDTP.Name = "AddAppointDTP";
+            AddAppointDTP.Size = new Size(146, 23);
+            AddAppointDTP.TabIndex = 17;
             // 
             // appointmentDateTime
             // 
@@ -62,6 +62,7 @@
             saveAppointment.TabIndex = 20;
             saveAppointment.Text = "Save";
             saveAppointment.UseVisualStyleBackColor = true;
+            saveAppointment.Click += save_Click;
             // 
             // label5
             // 
@@ -72,14 +73,14 @@
             label5.TabIndex = 19;
             label5.Text = "Appointment Notes";
             // 
-            // textBox2
+            // AppointNotes
             // 
-            textBox2.AcceptsTab = true;
-            textBox2.Location = new Point(185, 29);
-            textBox2.Multiline = true;
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(368, 76);
-            textBox2.TabIndex = 18;
+            AppointNotes.AcceptsTab = true;
+            AppointNotes.Location = new Point(185, 29);
+            AppointNotes.Multiline = true;
+            AppointNotes.Name = "AppointNotes";
+            AppointNotes.Size = new Size(368, 76);
+            AppointNotes.TabIndex = 18;
             // 
             // CancelNewAppointment
             // 
@@ -89,7 +90,7 @@
             CancelNewAppointment.TabIndex = 21;
             CancelNewAppointment.Text = "Cancel";
             CancelNewAppointment.UseVisualStyleBackColor = true;
-            CancelNewAppointment.Click += button1_Click;
+            CancelNewAppointment.Click += cancel_Click;
             // 
             // AddAppointment
             // 
@@ -99,8 +100,8 @@
             Controls.Add(CancelNewAppointment);
             Controls.Add(saveAppointment);
             Controls.Add(label5);
-            Controls.Add(textBox2);
-            Controls.Add(dateTimePicker1);
+            Controls.Add(AppointNotes);
+            Controls.Add(AddAppointDTP);
             Controls.Add(appointmentDateTime);
             Location = new Point(20, 20);
             Name = "AddAppointment";
@@ -111,11 +112,11 @@
 
         #endregion
 
-        private DateTimePicker dateTimePicker1;
+        private DateTimePicker AddAppointDTP;
         private Label appointmentDateTime;
         private Button saveAppointment;
         private Label label5;
-        private TextBox textBox2;
+        private TextBox AppointNotes;
         private Button CancelNewAppointment;
     }
 }

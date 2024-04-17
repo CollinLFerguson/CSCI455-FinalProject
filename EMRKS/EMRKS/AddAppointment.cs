@@ -31,14 +31,30 @@ namespace EMRKS
 
         }
 
-        private void save_Click()
+        private void save_Click(object sender, EventArgs e)
         {
-            Database.AddPatientAppointment(currSSN, status, Notes, Date_Time);
+            status = 'A';
+            Notes = AppointNotes.Text;
+            Date_Time = AddAppointDTP.Value;
+            // automatically setting status to active upon appointment creation
+            if (!Database.AddPatientAppointment(currSSN, status, Notes, Date_Time))
+            {
+                MessageBox.Show("this did not update");
+            }
+            else 
+            {
+                this.Dispose();
+            }
+            
+            Appointment_Manager.dgv.Update();
+            Appointment_Manager.dgv.Refresh();
+
+            Appointment_Manager.dgv.DataSource = Database.ViewPatientAppointments(currSSN);
 
         }
-
-        private void button1_Click(object sender, EventArgs e)
+        private void cancel_Click(object sender, EventArgs e)
         {
+            this.Dispose();
 
         }
     }

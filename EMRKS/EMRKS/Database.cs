@@ -518,21 +518,22 @@ namespace EMRKS
             }
 
         }
-        public static DataTable? AddPatientAppointment(string patientSSN, char status, string Notes, DateTime Date_Time)
+        public static Boolean AddPatientAppointment(string patientSSN, char status, string Notes, DateTime Date_Time)
         {
             try
             {
-                string query = "INSERT INTO Appointment VALUES ('" + patientSSN + "','" + status + "','" + Notes + "','" + Date_Time + "')";
+                
+                string query = "INSERT INTO Appointment (The_Patients_Ssn, Status, Notes, Date_Time) VALUES ('" + patientSSN + "','" + status + "','" + Notes + "','" + Date_Time.Year + "-" + Date_Time.Month + "-" + Date_Time.Day + " " + Date_Time.Hour + ":" + Date_Time.Minute + ":" + Date_Time.Second +"')";
 
                 MySqlDataAdapter sqlDa = new MySqlDataAdapter(query, connection);
                 DataTable dtbl = new DataTable();
                 sqlDa.Fill(dtbl);
+                return true;
 
-                return dtbl;
             }
             catch (MySqlException ex)
             {
-                return null;
+                return false;
             }
 
         }

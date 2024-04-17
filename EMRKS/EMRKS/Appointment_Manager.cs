@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Org.BouncyCastle.Utilities;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -7,20 +8,27 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace EMRKS
 {
     public partial class Appointment_Manager : UserControl
     {
         private string? currSSN;
+        private char status;
+        private string Notes;
+        private DateTime Date_Time;
+
         public Appointment_Manager()
         {
             InitializeComponent();
+            //addAppointm.Hide();
         }
         public Appointment_Manager(string currentSsn)
         {
             InitializeComponent();
             this.currSSN = currentSsn;
+            //addAppointm.Hide();
         }
 
         private void Appointment_Manager_Load(object sender, EventArgs e)
@@ -41,13 +49,12 @@ namespace EMRKS
         {
             // this will add an appoinment for a specific patient
 
-            //Financial_Manager finManager = new Financial_Manager(currSSN);
-            //finManager.Parent = goodPanel;
-            //finManager.Location = new Point(0, 0);
-            //finManager.BringToFront();
-            //finManager.Show();
-
-            //Database.AddPatientAppointment(currSSN, status, Notes, Date_Time);
+            // will trigger the panel with the text fields to add appointment information
+            AddAppointment addAppointm = new AddAppointment(currSSN, status, Notes, Date_Time);
+            addAppointm.Parent = this;
+            addAppointm.Location = new Point(43, 375);
+            addAppointm.BringToFront();
+            addAppointm.Show();
 
 
         }
@@ -72,11 +79,6 @@ namespace EMRKS
         }
 
         private void label6_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button1_Click(object sender, EventArgs e)
         {
 
         }

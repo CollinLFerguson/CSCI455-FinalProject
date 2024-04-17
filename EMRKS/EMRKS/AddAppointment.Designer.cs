@@ -33,6 +33,7 @@
             saveAppointment = new Button();
             label5 = new Label();
             textBox2 = new TextBox();
+            CancelNewAppointment = new Button();
             SuspendLayout();
             // 
             // dateTimePicker1
@@ -55,9 +56,9 @@
             // 
             // saveAppointment
             // 
-            saveAppointment.Location = new Point(51, 73);
+            saveAppointment.Location = new Point(14, 73);
             saveAppointment.Name = "saveAppointment";
-            saveAppointment.Size = new Size(66, 32);
+            saveAppointment.Size = new Size(49, 32);
             saveAppointment.TabIndex = 20;
             saveAppointment.Text = "Save";
             saveAppointment.UseVisualStyleBackColor = true;
@@ -80,16 +81,28 @@
             textBox2.Size = new Size(368, 76);
             textBox2.TabIndex = 18;
             // 
+            // CancelNewAppointment
+            // 
+            CancelNewAppointment.Location = new Point(88, 73);
+            CancelNewAppointment.Name = "CancelNewAppointment";
+            CancelNewAppointment.Size = new Size(56, 32);
+            CancelNewAppointment.TabIndex = 21;
+            CancelNewAppointment.Text = "Cancel";
+            CancelNewAppointment.UseVisualStyleBackColor = true;
+            CancelNewAppointment.Click += button1_Click;
+            // 
             // AddAppointment
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.DarkSeaGreen;
+            Controls.Add(CancelNewAppointment);
             Controls.Add(saveAppointment);
             Controls.Add(label5);
             Controls.Add(textBox2);
             Controls.Add(dateTimePicker1);
             Controls.Add(appointmentDateTime);
+            Location = new Point(20, 20);
             Name = "AddAppointment";
             Size = new Size(567, 120);
             ResumeLayout(false);
@@ -103,5 +116,6 @@
         private Button saveAppointment;
         private Label label5;
         private TextBox textBox2;
+        private Button CancelNewAppointment;
     }
 }

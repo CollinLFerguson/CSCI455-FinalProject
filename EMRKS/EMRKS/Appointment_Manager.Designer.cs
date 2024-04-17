@@ -43,6 +43,7 @@
             dateTimePicker1 = new DateTimePicker();
             saveAppointment = new Button();
             addAppoint = new Button();
+            addAppointment1 = new AddAppointment();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
@@ -51,7 +52,7 @@
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView1.Location = new Point(43, 33);
             dataGridView1.Name = "dataGridView1";
-            dataGridView1.Size = new Size(626, 143);
+            dataGridView1.Size = new Size(626, 126);
             dataGridView1.TabIndex = 0;
             // 
             // label1
@@ -69,7 +70,7 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 12F);
-            label2.Location = new Point(43, 188);
+            label2.Location = new Point(42, 174);
             label2.Name = "label2";
             label2.Size = new Size(131, 21);
             label2.TabIndex = 2;
@@ -80,7 +81,7 @@
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI", 9F);
-            label3.Location = new Point(43, 218);
+            label3.Location = new Point(42, 204);
             label3.Name = "label3";
             label3.Size = new Size(181, 15);
             label3.TabIndex = 3;
@@ -88,14 +89,14 @@
             // 
             // appointmentIDBox
             // 
-            appointmentIDBox.Location = new Point(231, 215);
+            appointmentIDBox.Location = new Point(230, 201);
             appointmentIDBox.Name = "appointmentIDBox";
             appointmentIDBox.Size = new Size(132, 23);
             appointmentIDBox.TabIndex = 4;
             // 
             // searchAppointmentID
             // 
-            searchAppointmentID.Location = new Point(391, 216);
+            searchAppointmentID.Location = new Point(390, 202);
             searchAppointmentID.Name = "searchAppointmentID";
             searchAppointmentID.Size = new Size(75, 23);
             searchAppointmentID.TabIndex = 5;
@@ -107,7 +108,7 @@
             // 
             label4.AutoSize = true;
             label4.Font = new Font("Segoe UI", 12F);
-            label4.Location = new Point(41, 381);
+            label4.Location = new Point(40, 342);
             label4.Name = "label4";
             label4.Size = new Size(133, 21);
             label4.TabIndex = 7;
@@ -117,7 +118,7 @@
             // textBox2
             // 
             textBox2.AcceptsTab = true;
-            textBox2.Location = new Point(269, 267);
+            textBox2.Location = new Point(268, 253);
             textBox2.Multiline = true;
             textBox2.Name = "textBox2";
             textBox2.Size = new Size(377, 67);
@@ -126,7 +127,7 @@
             // appointmentStatusBox
             // 
             appointmentStatusBox.AutoSize = true;
-            appointmentStatusBox.Location = new Point(43, 249);
+            appointmentStatusBox.Location = new Point(42, 235);
             appointmentStatusBox.Name = "appointmentStatusBox";
             appointmentStatusBox.Size = new Size(113, 15);
             appointmentStatusBox.TabIndex = 11;
@@ -136,7 +137,7 @@
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new Point(269, 249);
+            label5.Location = new Point(268, 235);
             label5.Name = "label5";
             label5.Size = new Size(112, 15);
             label5.TabIndex = 12;
@@ -145,7 +146,7 @@
             // appointmentDateTime
             // 
             appointmentDateTime.AutoSize = true;
-            appointmentDateTime.Location = new Point(41, 293);
+            appointmentDateTime.Location = new Point(40, 279);
             appointmentDateTime.Name = "appointmentDateTime";
             appointmentDateTime.Size = new Size(157, 15);
             appointmentDateTime.TabIndex = 13;
@@ -156,7 +157,7 @@
             // 
             appointStatusComboBox.FormattingEnabled = true;
             appointStatusComboBox.Items.AddRange(new object[] { "C", "M", "R", " " });
-            appointStatusComboBox.Location = new Point(43, 267);
+            appointStatusComboBox.Location = new Point(42, 253);
             appointStatusComboBox.MaxDropDownItems = 4;
             appointStatusComboBox.Name = "appointStatusComboBox";
             appointStatusComboBox.Size = new Size(121, 23);
@@ -166,14 +167,14 @@
             // 
             dateTimePicker1.CustomFormat = "yyyy-MM-dd HH:mm:ss";
             dateTimePicker1.Format = DateTimePickerFormat.Custom;
-            dateTimePicker1.Location = new Point(43, 311);
+            dateTimePicker1.Location = new Point(42, 297);
             dateTimePicker1.Name = "dateTimePicker1";
             dateTimePicker1.Size = new Size(200, 23);
             dateTimePicker1.TabIndex = 15;
             // 
             // saveAppointment
             // 
-            saveAppointment.Location = new Point(306, 349);
+            saveAppointment.Location = new Point(499, 202);
             saveAppointment.Name = "saveAppointment";
             saveAppointment.Size = new Size(75, 23);
             saveAppointment.TabIndex = 16;
@@ -182,19 +183,29 @@
             // 
             // addAppoint
             // 
-            addAppoint.Location = new Point(44, 405);
+            addAppoint.Location = new Point(179, 342);
             addAppoint.Name = "addAppoint";
             addAppoint.Size = new Size(130, 27);
             addAppoint.TabIndex = 17;
             addAppoint.Text = "+ Appointment";
             addAppoint.UseVisualStyleBackColor = true;
-            addAppoint.Click += button1_Click;
+            addAppoint.Click += Add_Appointment_Click;
+            // 
+            // addAppointment1
+            // 
+            addAppointment1.BackColor = Color.DarkSeaGreen;
+            addAppointment1.Location = new Point(43, 375);
+            addAppointment1.Name = "addAppointment1";
+            addAppointment1.Size = new Size(567, 120);
+            addAppointment1.TabIndex = 18;
+            addAppointment1.Visible = false;
             // 
             // Appointment_Manager
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.DarkSeaGreen;
+            Controls.Add(addAppointment1);
             Controls.Add(addAppoint);
             Controls.Add(saveAppointment);
             Controls.Add(dateTimePicker1);
@@ -235,5 +246,6 @@
         private DateTimePicker dateTimePicker1;
         private Button saveAppointment;
         private Button addAppoint;
+        private AddAppointment addAppointment1;
     }
 }

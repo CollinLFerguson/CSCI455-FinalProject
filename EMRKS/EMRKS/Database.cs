@@ -330,7 +330,7 @@ namespace EMRKS
             {
                 try
                 {
-                    string query = "INSERT INTO Staff(ID_Number, Ssn, Pin, Staff_First_Name, Staff_Last_Name, Staff_Type, Hire_Date, Years_Practicing, Specialty, Staff_Middle_Init) VALUES (" + fullStaff + ");";
+                    string query = "INSERT INTO Staff(Ssn, Pin, Staff_First_Name, Staff_Last_Name, Staff_Type, Hire_Date, Years_Practicing, Specialty, Staff_Middle_Init) VALUES (" + fullStaff + ");";
                     MySqlCommand cmd = new MySqlCommand(query, connection);
                     cmd.ExecuteNonQuery();
                 }
@@ -343,6 +343,40 @@ namespace EMRKS
             }
         }
 
+        public static Boolean addMedication(string fullMedication)
+        /// Adds the sent medication details to the database.
+        /// Returns TRUE if the entry was added successfully
+        /// Returns FALSE if the entry could not be added.
+        {
+            try
+            {
+                string query = "INSERT INTO Medication(Medication_ID, Name, Price, Side_Effects) VALUES (" + fullMedication + ");";
+                MySqlCommand cmd = new MySqlCommand(query, connection);
+                cmd.ExecuteNonQuery();
+            }
+            catch (MySqlException ex)
+            {
+                return false; //QUERY FAILED
+            }
+            return true;
+        }
+        public static Boolean addMedicationIngredients(string fullIngredients)
+        /// Adds the sent medication details to the database.
+        /// Returns TRUE if the entry was added successfully
+        /// Returns FALSE if the entry could not be added.
+        {
+            try
+            {
+                string query = "INSERT INTO Ingredients(Med_ID, Ingredient_Name) VALUES (" + fullIngredients + ");";
+                MySqlCommand cmd = new MySqlCommand(query, connection);
+                cmd.ExecuteNonQuery();
+            }
+            catch (MySqlException ex)
+            {
+                return false; //QUERY FAILED
+            }
+            return true;
+        }
 
         public static DataTable? ViewUnprocessedFinancialReports()
         {

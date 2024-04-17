@@ -30,18 +30,18 @@
         {
             label19 = new Label();
             groupBox1 = new GroupBox();
-            textBox3 = new TextBox();
+            txtSideEffects = new TextBox();
             label4 = new Label();
-            textBox2 = new TextBox();
+            txtMedicationPrice = new TextBox();
             label3 = new Label();
-            textBox1 = new TextBox();
+            txtMedicationName = new TextBox();
             label2 = new Label();
-            txtSSN = new TextBox();
+            txtMedicationID = new TextBox();
             label1 = new Label();
             groupBoxIngredients = new GroupBox();
             btnMedicationSideEffect = new Button();
-            button5 = new Button();
-            btnAddPatient = new Button();
+            btnCancelMedication = new Button();
+            btnAddMedication = new Button();
             panelIngredients = new Panel();
             groupBox1.SuspendLayout();
             groupBoxIngredients.SuspendLayout();
@@ -60,13 +60,13 @@
             // 
             // groupBox1
             // 
-            groupBox1.Controls.Add(textBox3);
+            groupBox1.Controls.Add(txtSideEffects);
             groupBox1.Controls.Add(label4);
-            groupBox1.Controls.Add(textBox2);
+            groupBox1.Controls.Add(txtMedicationPrice);
             groupBox1.Controls.Add(label3);
-            groupBox1.Controls.Add(textBox1);
+            groupBox1.Controls.Add(txtMedicationName);
             groupBox1.Controls.Add(label2);
-            groupBox1.Controls.Add(txtSSN);
+            groupBox1.Controls.Add(txtMedicationID);
             groupBox1.Controls.Add(label1);
             groupBox1.Location = new Point(14, 57);
             groupBox1.Name = "groupBox1";
@@ -75,13 +75,14 @@
             groupBox1.TabStop = false;
             groupBox1.Text = "Medication Info";
             // 
-            // textBox3
+            // txtSideEffects
             // 
-            textBox3.Location = new Point(6, 133);
-            textBox3.Multiline = true;
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(261, 81);
-            textBox3.TabIndex = 20;
+            txtSideEffects.Location = new Point(6, 133);
+            txtSideEffects.Multiline = true;
+            txtSideEffects.Name = "txtSideEffects";
+            txtSideEffects.PlaceholderText = "Headache, nausea, etc..";
+            txtSideEffects.Size = new Size(261, 81);
+            txtSideEffects.TabIndex = 20;
             // 
             // label4
             // 
@@ -92,12 +93,13 @@
             label4.TabIndex = 19;
             label4.Text = "Medication Side Effects";
             // 
-            // textBox2
+            // txtMedicationPrice
             // 
-            textBox2.Location = new Point(114, 80);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(153, 23);
-            textBox2.TabIndex = 18;
+            txtMedicationPrice.Location = new Point(114, 80);
+            txtMedicationPrice.Name = "txtMedicationPrice";
+            txtMedicationPrice.PlaceholderText = "(EX:10.20)";
+            txtMedicationPrice.Size = new Size(153, 23);
+            txtMedicationPrice.TabIndex = 18;
             // 
             // label3
             // 
@@ -108,12 +110,13 @@
             label3.TabIndex = 17;
             label3.Text = "Medication Price";
             // 
-            // textBox1
+            // txtMedicationName
             // 
-            textBox1.Location = new Point(114, 51);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(153, 23);
-            textBox1.TabIndex = 16;
+            txtMedicationName.Location = new Point(114, 51);
+            txtMedicationName.Name = "txtMedicationName";
+            txtMedicationName.PlaceholderText = "Tylenol";
+            txtMedicationName.Size = new Size(153, 23);
+            txtMedicationName.TabIndex = 16;
             // 
             // label2
             // 
@@ -124,12 +127,13 @@
             label2.TabIndex = 15;
             label2.Text = "Medication Name";
             // 
-            // txtSSN
+            // txtMedicationID
             // 
-            txtSSN.Location = new Point(114, 22);
-            txtSSN.Name = "txtSSN";
-            txtSSN.Size = new Size(153, 23);
-            txtSSN.TabIndex = 14;
+            txtMedicationID.Location = new Point(114, 22);
+            txtMedicationID.Name = "txtMedicationID";
+            txtMedicationID.PlaceholderText = "123456789012";
+            txtMedicationID.Size = new Size(153, 23);
+            txtMedicationID.TabIndex = 14;
             // 
             // label1
             // 
@@ -159,29 +163,29 @@
             btnMedicationSideEffect.Name = "btnMedicationSideEffect";
             btnMedicationSideEffect.Size = new Size(135, 23);
             btnMedicationSideEffect.TabIndex = 27;
-            btnMedicationSideEffect.Text = "+ Add Side Effect";
+            btnMedicationSideEffect.Text = "+ Add Ingredient";
             btnMedicationSideEffect.UseVisualStyleBackColor = true;
             btnMedicationSideEffect.Click += btnMedicationSideEffect_Click;
             // 
-            // button5
+            // btnCancelMedication
             // 
-            button5.Location = new Point(626, 300);
-            button5.Name = "button5";
-            button5.Size = new Size(135, 23);
-            button5.TabIndex = 35;
-            button5.Text = "Cancel Add Patient";
-            button5.UseVisualStyleBackColor = true;
-            button5.Click += button5_Click;
+            btnCancelMedication.Location = new Point(620, 300);
+            btnCancelMedication.Name = "btnCancelMedication";
+            btnCancelMedication.Size = new Size(141, 23);
+            btnCancelMedication.TabIndex = 35;
+            btnCancelMedication.Text = "Cancel Add Medication";
+            btnCancelMedication.UseVisualStyleBackColor = true;
+            btnCancelMedication.Click += button5_Click;
             // 
-            // btnAddPatient
+            // btnAddMedication
             // 
-            btnAddPatient.Location = new Point(12, 300);
-            btnAddPatient.Name = "btnAddPatient";
-            btnAddPatient.Size = new Size(135, 23);
-            btnAddPatient.TabIndex = 34;
-            btnAddPatient.Text = "Add Patient";
-            btnAddPatient.UseVisualStyleBackColor = true;
-            btnAddPatient.Click += btnAddPatient_Click;
+            btnAddMedication.Location = new Point(12, 300);
+            btnAddMedication.Name = "btnAddMedication";
+            btnAddMedication.Size = new Size(135, 23);
+            btnAddMedication.TabIndex = 34;
+            btnAddMedication.Text = "Add Medication";
+            btnAddMedication.UseVisualStyleBackColor = true;
+            btnAddMedication.Click += btnAddMedication_Click;
             // 
             // panelIngredients
             // 
@@ -201,8 +205,8 @@
             ClientSize = new Size(1062, 681);
             ControlBox = false;
             Controls.Add(panelIngredients);
-            Controls.Add(button5);
-            Controls.Add(btnAddPatient);
+            Controls.Add(btnCancelMedication);
+            Controls.Add(btnAddMedication);
             Controls.Add(label19);
             Controls.Add(groupBox1);
             FormBorderStyle = FormBorderStyle.None;
@@ -223,18 +227,18 @@
 
         private Label label19;
         private GroupBox groupBox1;
-        private TextBox txtSSN;
+        private TextBox txtMedicationID;
         private Label label1;
-        private TextBox textBox2;
+        private TextBox txtMedicationPrice;
         private Label label3;
-        private TextBox textBox1;
+        private TextBox txtMedicationName;
         private Label label2;
-        private TextBox textBox3;
+        private TextBox txtSideEffects;
         private Label label4;
         private GroupBox groupBoxIngredients;
         private Button btnMedicationSideEffect;
-        private Button button5;
-        private Button btnAddPatient;
+        private Button btnCancelMedication;
+        private Button btnAddMedication;
         private Panel panelIngredients;
     }
 }

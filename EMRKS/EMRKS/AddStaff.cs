@@ -19,8 +19,8 @@ namespace EMRKS
 
         private void btnAddStaff_Click(object sender, EventArgs e)
         {
-            if (!sqlStaffCanSerealize()){return;}
-            
+            if (!sqlStaffCanSerealize()) { return; }
+
             String sqlStatement = sqlStaffSerealize();
 
             if (!Database.addStaff(sqlStatement))
@@ -28,7 +28,7 @@ namespace EMRKS
                 this.BackColor = Color.Red;
                 return;
             }
-            
+
             if (sqlAddressCanSerialize())
             {
                 sqlStatement = "'" + txtSSN.Text + "'," + sqlAddressSerealize();
@@ -40,15 +40,14 @@ namespace EMRKS
                 }
             }
 
-            //if (this.MdiParent != null) { ((MainForm)this.MdiParent).destroyCurrentPage(); } //Returns back to landing page
+            if (this.MdiParent != null) { ((MainForm)this.MdiParent).destroyCurrentPage(); } //Returns back to landing page
         }
 
         private String sqlStaffSerealize()
         {
             if (comboStaffType.Text == "Doctor")
             {
-                return "'" + txtIDNumber.Text + "'," +
-                    "'" + txtSSN.Text + "'," +
+                return "'" + txtSSN.Text + "'," +
                     "'" + txtPin.Text + "'," +
                     "'" + txtFName.Text + "'," +
                     "'" + txtLName.Text + "'," +
@@ -60,8 +59,7 @@ namespace EMRKS
             }
             else
             {
-                return "'" + txtIDNumber.Text + "'," +
-                    "'" + txtSSN.Text + "'," +
+                return "'" + txtSSN.Text + "'," +
                     "'" + txtPin.Text + "'," +
                     "'" + txtFName.Text + "'," +
                     "'" + txtLName.Text + "'," +
@@ -71,12 +69,12 @@ namespace EMRKS
                     "NULL," +
                     "'" + txtMInit.Text + "'";
             }
-        
+
         }
 
         private Boolean sqlStaffCanSerealize()
         {
-            if (txtIDNumber.TextLength != 0 && txtSSN.TextLength != 0 && txtPin.TextLength != 0 && dtpHireDate.Text.Length !=0
+            if (txtSSN.TextLength != 0 && txtPin.TextLength != 0 && dtpHireDate.Text.Length != 0
                 && txtLName.TextLength != 0 && txtFName.TextLength != 0 && comboStaffType.Text.Length != 0)
             {
                 if (comboStaffType.Text == "Doctor" && txtDocSpeciality.TextLength != 0
@@ -90,10 +88,10 @@ namespace EMRKS
                 }
                 else
                 {
-                    return false;               
+                    return false;
                 }
             }
-        return false;
+            return false;
         }
 
         private Boolean sqlAddressCanSerialize()

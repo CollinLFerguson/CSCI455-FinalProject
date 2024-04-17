@@ -24,14 +24,14 @@ namespace EMRKS
             ((addMedicationForm)this.parentForm).removeAndReorderIngredients(this);
         }
 
-        public String sqlSerealize()
+        public String sqlSerialize()
         {
             return "'" + txtIngredient.Text + "'";
         }
-        /*public String sqlCanSerealize()
+        public bool sqlCanSerealize()
         {
+            return txtIngredient.TextLength > 0;
         
-        
-        }*/
+        }
     }
 }

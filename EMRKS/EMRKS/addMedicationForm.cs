@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MySqlX.XDevAPI.Relational;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -45,13 +46,63 @@ namespace EMRKS
             if (this.MdiParent != null) { ((MainForm)this.MdiParent).destroyCurrentPage(); } //Returns back to landing page
         }
 
-        private void btnAddPatient_Click(object sender, EventArgs e)
+        private void btnAddMedication_Click(object sender, EventArgs e)
         {
-            //Code to add a new medication.
+            ///Code to add medication
+            if (!sqlCanSerealize())
+            {
+                //need popup for bad entry.
+                return;
+            }
+            if (!Database.addMedication(sqlSerealize())) 
+            {
+                //need popup for bad entry.
+                return;
+            }
+
+            String sqlStatement;
+
+            for (int i = 0; i < medicationIngredients.Count; i++)
+            {
+                if (medicationIngredients.ElementAt(i).sqlSerialize().Length != 0)
+                {
+
+                    sqlStatement = "'" + txtMedicationID.Text + "'," + medicationIngredients.ElementAt(i).sqlSerialize();
+
+                    if (Database.addMedicationIngredients(sqlStatement) == false)
+                    {
+                        medicationIngredients.ElementAt(i).BackColor = Color.Red;
+                        //Make a popup here
+                    }
+                }
+                else
+                {
+                    medicationIngredients.ElementAt(i).BackColor = Color.Red;
+                    //Make a popup here
+                }
+            }
 
 
 
             if (this.MdiParent != null) { ((MainForm)this.MdiParent).destroyCurrentPage(); } //Returns back to landing page
         }
+        private bool sqlCanSerealize() 
+        {
+            if(txtMedicationID.TextLength > 0 && txtMedicationName.TextLength > 0 
+                && txtMedicationPrice.TextLength > 0 && txtSideEffects.TextLength > 0)
+            {
+                return true;
+            
+            }
+            return false;
+        }
+        private String sqlSerealize()
+        {
+            return "'" + txtMedicationID.Text + "'," +
+                "'" + txtMedicationName.Text + "'," +
+                "'" + txtMedicationPrice.Text + "'," +
+                "'" + txtSideEffects.Text + "'";
+        }
+
     }
 }

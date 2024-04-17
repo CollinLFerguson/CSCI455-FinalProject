@@ -40,17 +40,18 @@ namespace EMRKS
             textBox6.Text = patientInformation[5];
             textBox7.Text = patientInformation[6];
             textBox8.Text = patientInformation[7];
+            if (patientInformation.Count > 8) {
+                textBox9.Text = patientInformation[8]; //Address could be null.           
 
-            textBox9.Text = patientInformation[8];
+                if (patientInformation[9] != "NULL")
+                {
+                    textBox10.Text = patientInformation[9];
+                }
 
-            if (patientInformation[9] != "NULL")
-            {
-                textBox10.Text = patientInformation[9];
+                textBox11.Text = patientInformation[10];
+                textBox12.Text = patientInformation[11];
+                textBox13.Text = patientInformation[12];
             }
-
-            textBox11.Text = patientInformation[10];
-            textBox12.Text = patientInformation[11];
-            textBox13.Text = patientInformation[12];
         }
 
         private void GrabNewInformation()

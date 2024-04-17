@@ -466,7 +466,42 @@ namespace EMRKS
             }
 
         }
+        public static DataTable? ViewPatientAppointments(string patientSSN)
+        {
+            try
+            {
+                string query = "SELECT * FROM Appointment WHERE The_Patients_Ssn = '" + patientSSN + "'";
 
+                MySqlDataAdapter sqlDa = new MySqlDataAdapter(query, connection);
+                DataTable dtbl = new DataTable();
+                sqlDa.Fill(dtbl);
+
+                return dtbl;
+            }
+            catch (MySqlException ex)
+            {
+                return null;
+            }
+
+        }
+        public static DataTable? ViewPatientFinancials(string patientSSN)
+        {
+            try
+            {
+                string query = "SELECT * FROM Financial_Report WHERE Pat_Ssn = '" + patientSSN + "'";
+
+                MySqlDataAdapter sqlDa = new MySqlDataAdapter(query, connection);
+                DataTable dtbl = new DataTable();
+                sqlDa.Fill(dtbl);
+
+                return dtbl;
+            }
+            catch (MySqlException ex)
+            {
+                return null;
+            }
+
+        }
         public static bool ValidateUser(string ID, string pin)
         {
             try

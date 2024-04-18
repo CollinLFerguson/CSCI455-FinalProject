@@ -460,6 +460,23 @@ namespace EMRKS
                 return null;
             }
         }
+        public static Boolean CheckAllergy(string patientSSN, string medicationID)
+        {
+            // checking to see if patient has an allergy to a medication.
+            // true = yes the patient is allergic, false = not allergic.
+            try
+            {
+                string query = "";
+                MySqlCommand cmd = new MySqlCommand(query, connection);
+                cmd.ExecuteNonQuery();
+            }
+            catch (MySqlException ex)
+            {
+                Console.WriteLine(ex.Message);
+                return true;
+            }
+            return false;
+        }
 
         public static Boolean AddMedication(string fullAddMedication)
         {
@@ -467,6 +484,23 @@ namespace EMRKS
                 try
                 {
                     string query = "INSERT INTO Medication (Medication_ID, Side_Effects, Name, Price) VALUES (" + fullAddMedication + ")";
+                    MySqlCommand cmd = new MySqlCommand(query, connection);
+                    cmd.ExecuteNonQuery();
+                }
+                catch (MySqlException ex)
+                {
+                    Console.WriteLine(ex.Message);
+                    return false;
+                }
+                return true;
+            }
+        }
+        public static Boolean AddPrescription(string fullAddMedication)
+        {
+            {
+                try
+                {
+                    string query = "INSERT INTO Prescription (Prescribing_Doctor_ID, Patien_Ssn, Medicat_ID, Medication_Quantity, Date_Prescribed, Date_Expired) VALUES (" + fullAddMedication + ")";
                     MySqlCommand cmd = new MySqlCommand(query, connection);
                     cmd.ExecuteNonQuery();
                 }

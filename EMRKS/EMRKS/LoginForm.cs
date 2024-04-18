@@ -28,7 +28,7 @@ namespace EMRKS
             if (user.Length == 0 && pin.Length == 0)
             {
                 this.Hide();
-                ((MainForm)this.MdiParent).loadLanding();
+                ((MainForm)this.MdiParent).loadLanding(user);
                 this.Close();
 
                 return;
@@ -37,7 +37,7 @@ namespace EMRKS
             if (Database.ValidateUser(user, pin))
             {
                 this.Hide();
-                ((MainForm)this.MdiParent).loadLanding();
+                ((MainForm)this.MdiParent).loadLanding(user);
                 this.Close();
             }
             else

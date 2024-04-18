@@ -74,7 +74,7 @@
             dataGridView1.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
             dataGridView1.Location = new Point(108, 159);
             dataGridView1.Name = "dataGridView1";
-            dataGridView1.RightToLeft = RightToLeft.Yes;
+            dataGridView1.RightToLeft = RightToLeft.No;
             dataGridView1.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.AutoSizeToDisplayedHeaders;
             dataGridView1.Size = new Size(866, 389);
             dataGridView1.TabIndex = 12;
@@ -87,7 +87,7 @@
             dtpDOB.Name = "dtpDOB";
             dtpDOB.Size = new Size(216, 23);
             dtpDOB.TabIndex = 16;
-            dtpDOB.Value = new DateTime(2014, 4, 11, 0, 0, 0, 0);
+            dtpDOB.Value = new DateTime(2024, 4, 18, 0, 0, 0, 0);
             // 
             // ViewAppointments
             // 

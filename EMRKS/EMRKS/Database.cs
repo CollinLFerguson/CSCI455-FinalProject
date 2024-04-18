@@ -9,6 +9,7 @@ using System.Data;
 using System.Diagnostics;
 using System.Collections;
 using static System.Windows.Forms.LinkLabel;
+using Mysqlx.Crud;
 
 namespace EMRKS
 {
@@ -482,9 +483,8 @@ namespace EMRKS
         {
             try
             {
-                
+                String query = "SELECT * FROM Appointment WHERE Status = 'A' AND Date_Time BETWEEN '" + appointmentTime.Year + "-" + appointmentTime.Month + "-" + appointmentTime.Day + " 00:00:01' AND '" + appointmentTime.Year + "-" + appointmentTime.Month + "-" + appointmentTime.Day + " 23:59:59'";
 
-                String query = "SELECT * FROM Appointment WHERE Date_Time BETWEEN '" + appointmentTime.Year + "-" + appointmentTime.Month + "-" + appointmentTime.Day + " 00:00:00' AND '" + appointmentTime.Year + "-" + appointmentTime.Month + "-" + appointmentTime.Day + " 24:00:00'";
 
                 MySqlDataAdapter sqlDa = new MySqlDataAdapter(query, connection);
                 DataTable dtbl = new DataTable();
@@ -525,6 +525,23 @@ namespace EMRKS
                 
                 string query = "INSERT INTO Appointment (The_Patients_Ssn, Status, Notes, Date_Time) VALUES ('" + patientSSN + "','" + status + "','" + Notes + "','" + Date_Time.Year + "-" + Date_Time.Month + "-" + Date_Time.Day + " " + Date_Time.Hour + ":" + Date_Time.Minute + ":" + Date_Time.Second +"')";
 
+                MySqlDataAdapter sqlDa = new MySqlDataAdapter(query, connection);
+                DataTable dtbl = new DataTable();
+                sqlDa.Fill(dtbl);
+                return true;
+
+            }
+            catch (MySqlException ex)
+            {
+                return false;
+            }
+
+        }
+        public static Boolean EditPatientAppointmentStatus(string patientSSN, int appointmentID, char status)
+        {
+            try
+            {
+                string query = "UPDATE Appointment SET Status = '" + status + "' WHERE Appointment_ID = " + appointmentID;
                 MySqlDataAdapter sqlDa = new MySqlDataAdapter(query, connection);
                 DataTable dtbl = new DataTable();
                 sqlDa.Fill(dtbl);

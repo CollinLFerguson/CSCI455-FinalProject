@@ -12,6 +12,7 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace EMRKS
 {
+    
     public partial class Appointment_Manager : UserControl
     {
         private string? currSSN;
@@ -19,7 +20,13 @@ namespace EMRKS
         private string Notes;
         private DateTime Date_Time;
         public static DataGridView dgv = new DataGridView();
-        
+        int appointmentID;
+        public static RescheduleAppointment resched = new RescheduleAppointment();
+        public static EditAppointmentStatus editAppoint = new EditAppointmentStatus();
+
+
+
+
         public Appointment_Manager()
         {
             InitializeComponent();
@@ -59,6 +66,28 @@ namespace EMRKS
 
 
         }
+        private void Edit_Appointment_Click1(object sender, EventArgs e)
+        {
+            // this will add an appoinment for a specific patient
+
+            // will trigger the panel with the text fields to add appointment information
+            // edit appointment status
+           
+            appointmentID= int.Parse(appointmentIDBox.Text);
+            editAppoint = new EditAppointmentStatus(currSSN, appointmentID);
+            editAppoint.Parent = this;
+            editAppoint.Location = new Point(45, 238);
+            editAppoint.BringToFront();
+            editAppoint.Show();
+
+            
+
+            // edit appointment notes
+
+
+
+
+        }
 
         private void label1_Click(object sender, EventArgs e)
         {
@@ -80,6 +109,11 @@ namespace EMRKS
         }
 
         private void label6_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label5_Click_1(object sender, EventArgs e)
         {
 
         }

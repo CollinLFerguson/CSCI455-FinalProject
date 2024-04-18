@@ -25,10 +25,28 @@ namespace EMRKS
 
         private Patient patient;
 
+        private Medication_Manager medManager;
+        private Financial_Manager financialManager;
+        private Appointment_Manager appointmentManager;
+
         private void HideSubControls()
         {
             patientEditor1.Hide();
-            //medication_Manager1.Hide();
+
+            if (medManager != null)
+            {
+                medManager.Hide();
+            }
+
+            if (financialManager != null)
+            {
+                financialManager.Hide();
+            }
+
+            if (appointmentManager != null)
+            {
+                appointmentManager.Hide();
+            }
         }
 
         private void onPatientSearch(object sender, EventArgs e)
@@ -89,6 +107,9 @@ namespace EMRKS
 
         private void onEditPatientPersonalInfo(object sender, EventArgs e)
         {
+            HideSubControls();
+            patientEditor1.Show();
+
             List<string> patientInformation = new List<string>();
             patientInformation.Add(patient.getSsn());
             patientInformation.Add(patient.getFirstName());
@@ -122,33 +143,39 @@ namespace EMRKS
         {
             // Medication Manager Button
 
-            Medication_Manager mediManager = new Medication_Manager(patient.getSsn(), staffID);
-            mediManager.Parent = goodPanel;
-            mediManager.Location = new Point(0, 0);
-            mediManager.BringToFront();           
-            mediManager.Show();
+            HideSubControls();
+
+            medManager = new Medication_Manager(patient.getSsn(), staffID);
+            medManager.Parent = goodPanel;
+            medManager.Location = new Point(0, 0);
+            medManager.BringToFront();
+            medManager.Show();
         }
 
         private void appointmentManager_Click(object sender, EventArgs e)
         {
             // Appointment Manager Button
 
-            Appointment_Manager appointManager = new Appointment_Manager(patient.getSsn());
-            appointManager.Parent = goodPanel;
-            appointManager.Location = new Point(0, 0);
-            appointManager.BringToFront();
-            appointManager.Show();
+            HideSubControls();
+
+            appointmentManager = new Appointment_Manager(patient.getSsn());
+            appointmentManager.Parent = goodPanel;
+            appointmentManager.Location = new Point(0, 0);
+            appointmentManager.BringToFront();
+            appointmentManager.Show();
         }
 
         private void financialManager_Click(object sender, EventArgs e)
         {
             // Appointment Manager Button
+            HideSubControls();
 
-            Financial_Manager finManager = new Financial_Manager(patient.getSsn());
-            finManager.Parent = goodPanel;
-            finManager.Location = new Point(0, 0);
-            finManager.BringToFront();
-            finManager.Show();
+
+            financialManager = new Financial_Manager(patient.getSsn());
+            financialManager.Parent = goodPanel;
+            financialManager.Location = new Point(0, 0);
+            financialManager.BringToFront();
+            financialManager.Show();
         }
     }
 }

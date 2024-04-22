@@ -10,6 +10,8 @@ using System.Diagnostics;
 using System.Collections;
 using static System.Windows.Forms.LinkLabel;
 using Mysqlx.Crud;
+using static System.ComponentModel.Design.ObjectSelectorEditor;
+using System.Windows.Forms;
 
 namespace EMRKS
 {
@@ -466,16 +468,34 @@ namespace EMRKS
             // true = yes the patient is allergic, false = not allergic.
             try
             {
-                string query = "";
-                MySqlCommand cmd = new MySqlCommand(query, connection);
-                cmd.ExecuteNonQuery();
+                string query =
+                    "SELECT Pati_Ssn, Allergy_Name\n" +
+                    "FROM Allergies\n" +
+                    "LEFT JOIN Medication ON Allergies.Allergy_Name = Medication.Name\n" +
+                    "WHERE Medication.Medication_ID = " + medicationID + " AND Allergies.Pati_Ssn = " + patientSSN;
+                
+                    MySqlCommand cmd = new MySqlCommand(query, connection);
+                    cmd.Parameters.AddWithValue("@medicationID", medicationID);
+                    cmd.Parameters.AddWithValue("@patientSSN", patientSSN);
+
+                    using (MySqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        if (reader.HasRows)
+                        {
+                            return true;
+                        }
+                        else
+                        {
+                            return false;
+                        }
+                    }
             }
             catch (MySqlException ex)
             {
                 Console.WriteLine(ex.Message);
+                // if error happens, assume patient is allergic
                 return true;
             }
-            return false;
         }
 
         public static Boolean AddMedication(string fullAddMedication)

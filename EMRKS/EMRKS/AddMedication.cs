@@ -78,11 +78,11 @@ namespace EMRKS
                 MessageBox.Show("You need to enter in the Medication ID to continue.");
                 return;
             }
-            //else if (Database.CheckAllergy())
-            //{
-            //    MessageBox.Show("This patient has an allergy to this medication.");
-            //    return;
-            //}
+            else if (Database.CheckAllergy(currSSN, medID))
+            {
+                MessageBox.Show("This patient has an allergy to this medication.");
+                return;
+            }
             else if (Database.AddPrescription(fullInsert))
             {
                 this.Dispose();

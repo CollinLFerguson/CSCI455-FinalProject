@@ -407,7 +407,7 @@ namespace EMRKS
             // list of all possible prescriptions
             try
             {
-                string query = "SELECT * FROM Medication;";
+                string query = "SELECT Medication_ID, Name, Side_Effects, Price FROM Medication;";
 
                 //Debug.WriteLine(query);
 
@@ -427,7 +427,7 @@ namespace EMRKS
         {
             try
             {
-                string query = "SELECT * FROM Allergies WHERE Pati_Ssn = \"" + patientSSN + "\"";
+                string query = "SELECT Allergy_Name FROM Allergies WHERE Pati_Ssn = \"" + patientSSN + "\"";
 
                 //Debug.WriteLine(query);
 
@@ -447,7 +447,19 @@ namespace EMRKS
         {
             try
             {
-                string query = "SELECT * FROM Prescription WHERE Patien_Ssn = \"" + patientSSN + "\"";
+                string query = 
+                    "SELECT Prescription_ID, " +
+                        "CONCAT(Staff_First_Name, \' \', Staff_Last_name) AS Prescribing_Doctor, " +
+                        "Medicat_ID AS Medication_ID, " +
+                        "Name AS Medication_Name, " +
+                        "Medication_Quantity, " +
+                        "Side_Effects, " +
+                        "Date_Prescribed, " +
+                        "Date_Expired " +
+                    "FROM Prescription " +
+                    "LEFT JOIN Staff ON Prescription.Prescribing_Doctor_ID = Staff.ID_Number " +
+                    "LEFT JOIN Medication ON Prescription.Medicat_ID = Medication.Medication_ID " +
+                    "WHERE Patien_Ssn = " + patientSSN;
 
                 //Debug.WriteLine(query);
 

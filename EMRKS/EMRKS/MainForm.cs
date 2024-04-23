@@ -10,6 +10,8 @@ namespace EMRKS
         Database DB = new Database();
         String? staffID;
 
+        public static string staffType;
+
         public MainForm()
         {
             InitializeComponent();
@@ -27,13 +29,15 @@ namespace EMRKS
             loginForm.Show();
         }
 
-        public void loadLanding(string staffID)
+        public void loadLanding(string staffID, string ST)
         {
             LandingPage landingPage = new LandingPage();
             landingPage.MdiParent = this;
             
             noFormPage.Show();
             landingPage.Show();
+
+            staffType = staffID;
 
             this.staffID = staffID;
 

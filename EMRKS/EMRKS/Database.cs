@@ -638,7 +638,7 @@ namespace EMRKS
             }
 
         }
-        public static bool ValidateUser(string ID, string pin)
+        public static string? ValidateUser(string ID, string pin)
         {
             try
             {
@@ -649,18 +649,18 @@ namespace EMRKS
                 {
                     while (reader.Read())
                     {
-                        return true;
+                        return reader["Staff_Type"].ToString();
                     }
                 }
             }
             catch (MySqlException ex)
             {
                 //QUERY FAILED
-                return false;
+                return null;
             }
 
 
-            return false;
+            return null;
         }
 
     }

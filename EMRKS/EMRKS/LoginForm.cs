@@ -28,16 +28,18 @@ namespace EMRKS
             if (user.Length == 0 && pin.Length == 0)
             {
                 this.Hide();
-                ((MainForm)this.MdiParent).loadLanding(user);
+                ((MainForm)this.MdiParent).loadLanding(user, "S");
                 this.Close();
 
                 return;
             }
 
-            if (Database.ValidateUser(user, pin))
+            string? staffType = Database.ValidateUser(user, pin);
+
+            if (staffType != null)
             {
                 this.Hide();
-                ((MainForm)this.MdiParent).loadLanding(user);
+                ((MainForm)this.MdiParent).loadLanding(user, staffType);
                 this.Close();
             }
             else

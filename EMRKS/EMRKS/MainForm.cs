@@ -37,7 +37,7 @@ namespace EMRKS
             noFormPage.Show();
             landingPage.Show();
 
-            staffType = staffID;
+            staffType = ST;
 
             this.staffID = staffID;
 

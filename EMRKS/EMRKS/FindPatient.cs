@@ -107,7 +107,7 @@ namespace EMRKS
 
         private void onEditPatientPersonalInfo(object sender, EventArgs e)
         {
-            if (MainForm.staffType != "A" || MainForm.staffType != "S")
+            if (MainForm.staffType == "D" || MainForm.staffType == "N")
             {
                 MessageBox.Show("Invalid permissions.  Only administrators can edit patient information");
                 return;
@@ -148,7 +148,7 @@ namespace EMRKS
         private void button8_Click(object sender, EventArgs e)
         {
             // Medication Manager Button
-            if (MainForm.staffType != "S" || MainForm.staffType != "D" || MainForm.staffType != "N")
+            if (MainForm.staffType == "A")
             {
                 MessageBox.Show("Invalid permissions.");
                 return;
@@ -166,11 +166,6 @@ namespace EMRKS
         private void appointmentManager_Click(object sender, EventArgs e)
         {
             // Appointment Manager Button
-            if (MainForm.staffType != "A" || MainForm.staffType != "S" || MainForm.staffType != "D" || MainForm.staffType != "N")
-            {
-                MessageBox.Show("Invalid permissions.");
-                return;
-            }
 
             HideSubControls();
 
@@ -184,9 +179,9 @@ namespace EMRKS
         private void financialManager_Click(object sender, EventArgs e)
         {
             // Appointment Manager Button
-            if (MainForm.staffType != "A" || MainForm.staffType != "S")
+            if (MainForm.staffType == "D" || MainForm.staffType == "N")
             {
-                MessageBox.Show("Invalid permissions.  Only admins can view financial information.");
+                MessageBox.Show("Invalid permissions.  Only administrators can edit patient information");
                 return;
             }
 

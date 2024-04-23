@@ -19,9 +19,9 @@ namespace EMRKS
 
         private void button2_Click(object sender, EventArgs e)
         {
-            if (MainForm.staffType != "A" || MainForm.staffType != "S")
+            if (MainForm.staffType == "D" || MainForm.staffType == "N")
             {
-                MessageBox.Show("Only administrators can add patients.");
+                MessageBox.Show("Invalid permissions. Only administrators can add patients.");
                 return;
             }
 
@@ -30,9 +30,9 @@ namespace EMRKS
 
         private void button3_Click(object sender, EventArgs e)
         {
-            if (MainForm.staffType != "A" || MainForm.staffType != "S")
+            if (MainForm.staffType == "D" || MainForm.staffType == "N")
             {
-                MessageBox.Show("Only administrators can add staff.");
+                MessageBox.Show("Invalid permissions. Only administrators can add staff.");
                 return;
             }
 
@@ -46,9 +46,9 @@ namespace EMRKS
 
         private void button5_Click(object sender, EventArgs e) // the click functions don't correspond to the correct buttons
         {
-            if (MainForm.staffType != "A" || MainForm.staffType != "S")
+            if (MainForm.staffType == "D" || MainForm.staffType == "N")
             {
-                MessageBox.Show("Only administrators can add medication to the system.");
+                MessageBox.Show("Invalid permissions. Only administrators can view unprocessed reports.");
                 return;
             }
 
@@ -56,9 +56,9 @@ namespace EMRKS
         }
         private void button6_Click(object sender, EventArgs e) // the click functions don't correspond to the correct buttons
         {
-            if (MainForm.staffType != "A" || MainForm.staffType != "S")
+            if (MainForm.staffType == "D" || MainForm.staffType == "N")
             {
-                MessageBox.Show("Only administrators can add medication to the system.");
+                MessageBox.Show("Invalid permissions. Only administrators can view appointments.");
                 return;
             }
 
@@ -67,9 +67,9 @@ namespace EMRKS
 
         private void btnAddMedication_Click(object sender, EventArgs e)
         {
-            if (MainForm.staffType != "A" || MainForm.staffType != "S")
+            if (MainForm.staffType == "D" || MainForm.staffType == "N")
             {
-                MessageBox.Show("Only administrators can add view patient appointments.");
+                MessageBox.Show("Only administrators can add medications.");
                 return;
             }
 

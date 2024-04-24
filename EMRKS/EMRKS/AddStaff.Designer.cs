@@ -107,7 +107,7 @@
             dtpHireDate.MaxDate = new DateTime(2024, 4, 11, 0, 0, 0, 0);
             dtpHireDate.Name = "dtpHireDate";
             dtpHireDate.Size = new Size(85, 23);
-            dtpHireDate.TabIndex = 46;
+            dtpHireDate.TabIndex = 14;
             dtpHireDate.Value = new DateTime(2024, 4, 11, 0, 0, 0, 0);
             // 
             // txtAddressLn2
@@ -115,7 +115,7 @@
             txtAddressLn2.Location = new Point(416, 95);
             txtAddressLn2.Name = "txtAddressLn2";
             txtAddressLn2.Size = new Size(221, 23);
-            txtAddressLn2.TabIndex = 45;
+            txtAddressLn2.TabIndex = 21;
             // 
             // comboStaffType
             // 
@@ -124,7 +124,7 @@
             comboStaffType.Location = new Point(550, 22);
             comboStaffType.Name = "comboStaffType";
             comboStaffType.Size = new Size(121, 23);
-            comboStaffType.TabIndex = 24;
+            comboStaffType.TabIndex = 16;
             comboStaffType.SelectedIndexChanged += comboBox1_SelectedIndexChanged;
             // 
             // label8
@@ -180,7 +180,7 @@
             txtDocSpeciality.Location = new Point(70, 21);
             txtDocSpeciality.Name = "txtDocSpeciality";
             txtDocSpeciality.Size = new Size(153, 23);
-            txtDocSpeciality.TabIndex = 28;
+            txtDocSpeciality.TabIndex = 25;
             // 
             // label12
             // 
@@ -196,7 +196,7 @@
             txtZip.Location = new Point(475, 127);
             txtZip.Name = "txtZip";
             txtZip.Size = new Size(122, 23);
-            txtZip.TabIndex = 43;
+            txtZip.TabIndex = 24;
             // 
             // label7
             // 
@@ -215,35 +215,35 @@
             comboState.Location = new Point(320, 128);
             comboState.Name = "comboState";
             comboState.Size = new Size(83, 23);
-            comboState.TabIndex = 42;
+            comboState.TabIndex = 23;
             // 
             // txtMInit
             // 
             txtMInit.Location = new Point(575, 58);
             txtMInit.Name = "txtMInit";
             txtMInit.Size = new Size(134, 23);
-            txtMInit.TabIndex = 18;
+            txtMInit.TabIndex = 19;
             // 
             // txtCity
             // 
             txtCity.Location = new Point(66, 128);
             txtCity.Name = "txtCity";
             txtCity.Size = new Size(203, 23);
-            txtCity.TabIndex = 41;
+            txtCity.TabIndex = 22;
             // 
             // txtFName
             // 
             txtFName.Location = new Point(339, 58);
             txtFName.Name = "txtFName";
             txtFName.Size = new Size(145, 23);
-            txtFName.TabIndex = 17;
+            txtFName.TabIndex = 18;
             // 
             // txtAddressLn1
             // 
             txtAddressLn1.Location = new Point(105, 95);
             txtAddressLn1.Name = "txtAddressLn1";
             txtAddressLn1.Size = new Size(216, 23);
-            txtAddressLn1.TabIndex = 40;
+            txtAddressLn1.TabIndex = 20;
             // 
             // label11
             // 
@@ -259,7 +259,7 @@
             txtLName.Location = new Point(84, 58);
             txtLName.Name = "txtLName";
             txtLName.Size = new Size(153, 23);
-            txtLName.TabIndex = 16;
+            txtLName.TabIndex = 17;
             // 
             // label10
             // 
@@ -362,7 +362,7 @@
             button5.Location = new Point(600, 318);
             button5.Name = "button5";
             button5.Size = new Size(135, 23);
-            button5.TabIndex = 35;
+            button5.TabIndex = 29;
             button5.Text = "Cancel Add Staff";
             button5.UseVisualStyleBackColor = true;
             button5.Click += button5_Click;
@@ -372,7 +372,7 @@
             btnAddStaff.Location = new Point(10, 318);
             btnAddStaff.Name = "btnAddStaff";
             btnAddStaff.Size = new Size(135, 23);
-            btnAddStaff.TabIndex = 34;
+            btnAddStaff.TabIndex = 28;
             btnAddStaff.Text = "Add Staff";
             btnAddStaff.UseVisualStyleBackColor = true;
             btnAddStaff.Click += btnAddStaff_Click;

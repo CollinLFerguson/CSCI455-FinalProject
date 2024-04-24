@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             groupBox1 = new GroupBox();
+            txtAddressLn2 = new TextBox();
+            label12 = new Label();
             comboBoxDoctor = new ComboBox();
             label20 = new Label();
             txtZip = new TextBox();
@@ -68,8 +70,6 @@
             btnAddEmContact = new Button();
             panelPayment = new Panel();
             panelInsurance = new Panel();
-            txtAddressLn2 = new TextBox();
-            label12 = new Label();
             groupBox1.SuspendLayout();
             groupBoxPayment.SuspendLayout();
             groupBoxAllergies.SuspendLayout();
@@ -116,6 +116,22 @@
             groupBox1.TabStop = false;
             groupBox1.Text = "Patient Info";
             // 
+            // txtAddressLn2
+            // 
+            txtAddressLn2.Location = new Point(415, 119);
+            txtAddressLn2.Name = "txtAddressLn2";
+            txtAddressLn2.Size = new Size(221, 23);
+            txtAddressLn2.TabIndex = 20;
+            // 
+            // label12
+            // 
+            label12.AutoSize = true;
+            label12.Location = new Point(326, 127);
+            label12.Name = "label12";
+            label12.Size = new Size(83, 15);
+            label12.TabIndex = 25;
+            label12.Text = "Address Line 2";
+            // 
             // comboBoxDoctor
             // 
             comboBoxDoctor.DropDownStyle = ComboBoxStyle.DropDownList;
@@ -146,6 +162,7 @@
             // 
             comboState.DropDownStyle = ComboBoxStyle.DropDownList;
             comboState.FormattingEnabled = true;
+            comboState.ItemHeight = 15;
             comboState.Items.AddRange(new object[] { "AL", "AK", "AZ", "AR", "CA", "CO", "CT", "DE", "DC", "FL", "GA", "HI", "ID", "IL", "IN", "IA", "KS", "KY", "LA", "ME", "MD", "MA", "MI", "MN", "MS", "MO", "MT", "NE", "NV", "NH", "NJ", "NM", "NY", "NC", "ND", "OH", "OK", "OR", "PA", "RI", "SC", "SD", "TN", "TX", "UT", "VT", "VA", "WA", "WV", "WI", "WY" });
             comboState.Location = new Point(84, 158);
             comboState.Name = "comboState";
@@ -157,7 +174,7 @@
             txtCity.Location = new Point(676, 119);
             txtCity.Name = "txtCity";
             txtCity.Size = new Size(203, 23);
-            txtCity.TabIndex = 20;
+            txtCity.TabIndex = 21;
             // 
             // txtAddressLn1
             // 
@@ -202,6 +219,7 @@
             // 
             comboSex.DropDownStyle = ComboBoxStyle.DropDownList;
             comboSex.FormattingEnabled = true;
+            comboSex.ItemHeight = 15;
             comboSex.Items.AddRange(new object[] { "M", "F" });
             comboSex.Location = new Point(575, 33);
             comboSex.Name = "comboSex";
@@ -340,7 +358,7 @@
             btnPatientAddPayment.Location = new Point(6, 22);
             btnPatientAddPayment.Name = "btnPatientAddPayment";
             btnPatientAddPayment.Size = new Size(135, 23);
-            btnPatientAddPayment.TabIndex = 26;
+            btnPatientAddPayment.TabIndex = 22;
             btnPatientAddPayment.Text = "+ Add Payment";
             btnPatientAddPayment.UseVisualStyleBackColor = true;
             btnPatientAddPayment.Click += btnPatientAddPayment_Click;
@@ -364,7 +382,7 @@
             btnAddPatientAllergy.Location = new Point(6, 22);
             btnAddPatientAllergy.Name = "btnAddPatientAllergy";
             btnAddPatientAllergy.Size = new Size(135, 23);
-            btnAddPatientAllergy.TabIndex = 28;
+            btnAddPatientAllergy.TabIndex = 23;
             btnAddPatientAllergy.Text = "+Add Allergy";
             btnAddPatientAllergy.UseVisualStyleBackColor = true;
             btnAddPatientAllergy.Click += btnAddPatientAllergy_Click;
@@ -388,7 +406,7 @@
             btnAddInsurance.Location = new Point(6, 22);
             btnAddInsurance.Name = "btnAddInsurance";
             btnAddInsurance.Size = new Size(135, 23);
-            btnAddInsurance.TabIndex = 27;
+            btnAddInsurance.TabIndex = 24;
             btnAddInsurance.Text = "+ Add Insurance";
             btnAddInsurance.UseVisualStyleBackColor = true;
             btnAddInsurance.Click += btnAddInsurance_Click;
@@ -408,7 +426,7 @@
             btnAddPatient.Location = new Point(10, 618);
             btnAddPatient.Name = "btnAddPatient";
             btnAddPatient.Size = new Size(135, 23);
-            btnAddPatient.TabIndex = 32;
+            btnAddPatient.TabIndex = 26;
             btnAddPatient.Text = "Add Patient";
             btnAddPatient.UseVisualStyleBackColor = true;
             btnAddPatient.Click += btnAddPatient_Click;
@@ -418,7 +436,7 @@
             button5.Location = new Point(794, 618);
             button5.Name = "button5";
             button5.Size = new Size(135, 23);
-            button5.TabIndex = 33;
+            button5.TabIndex = 27;
             button5.Text = "Cancel Add Patient";
             button5.UseVisualStyleBackColor = true;
             button5.Click += button5_Click;
@@ -462,7 +480,7 @@
             btnAddEmContact.Location = new Point(6, 22);
             btnAddEmContact.Name = "btnAddEmContact";
             btnAddEmContact.Size = new Size(162, 23);
-            btnAddEmContact.TabIndex = 29;
+            btnAddEmContact.TabIndex = 25;
             btnAddEmContact.Text = "+Add Emergency Contact";
             btnAddEmContact.UseVisualStyleBackColor = true;
             btnAddEmContact.Click += btnAddEmContact_Click;
@@ -486,22 +504,6 @@
             panelInsurance.Name = "panelInsurance";
             panelInsurance.Size = new Size(609, 190);
             panelInsurance.TabIndex = 37;
-            // 
-            // txtAddressLn2
-            // 
-            txtAddressLn2.Location = new Point(415, 119);
-            txtAddressLn2.Name = "txtAddressLn2";
-            txtAddressLn2.Size = new Size(221, 23);
-            txtAddressLn2.TabIndex = 26;
-            // 
-            // label12
-            // 
-            label12.AutoSize = true;
-            label12.Location = new Point(326, 127);
-            label12.Name = "label12";
-            label12.Size = new Size(83, 15);
-            label12.TabIndex = 25;
-            label12.Text = "Address Line 2";
             // 
             // AddPatient
             // 

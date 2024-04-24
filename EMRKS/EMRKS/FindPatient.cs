@@ -194,5 +194,10 @@ namespace EMRKS
             financialManager.BringToFront();
             financialManager.Show();
         }
+
+        private void btnReturn_Click(object sender, EventArgs e)
+        {
+            if (this.MdiParent != null) { ((MainForm)this.MdiParent).destroyCurrentPage(); } //Returns back to landing page
+        }
     }
 }

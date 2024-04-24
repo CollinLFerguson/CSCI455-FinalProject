@@ -1,4 +1,6 @@
-﻿using System;
+﻿using MySqlX.XDevAPI.Relational;
+using Org.BouncyCastle.Asn1.X509.Qualified;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -24,10 +26,135 @@ namespace EMRKS
 
         private void btnAddPatient_Click(object sender, EventArgs e)
         {
-            String sqlStatement;            
+            if (!sqlCanSerealize())
+            {
+                MessageBox.Show("The patient can not be added. Verify all necessary items are present and the patient does not already exist.");
+                return;
+
+            }
+
+            String sqlStatement = sqlSerealize();            
             
-            sqlStatement = "'" + txtSSN.Text +    "',";
-            sqlStatement += "'" + dtpDOB.Text +   "',";
+
+            if (Database.addPatient(sqlStatement) == false) //Adds the patient to the database.
+            {
+                MessageBox.Show("The patient can not be added. Verify all necessary items are present and the patient does not already exist.");
+                return; //create a popup here.
+            }
+
+            if (sqlAddressCanSerialize())
+            {
+                sqlStatement = "'" + txtSSN.Text + "'," + sqlAddressSerealize();
+
+                if (Database.addAddress(sqlStatement) == false) //Adds the patient to the database.
+                {
+                    MessageBox.Show("The patient can not be added. Verify all necessary items are present.");
+                    return;
+                }
+            }
+
+            for (int i = 0; i < patientAllergies.Count;i++) 
+            {
+                if (patientAllergies.ElementAt(i).sqlSerialize().Length != 0)
+                {
+
+                    sqlStatement = "'" + txtSSN.Text + "'," + patientAllergies.ElementAt(i).sqlSerialize();
+
+                    if (Database.addAllergy(sqlStatement) == false)
+                    {
+                        patientAllergies.ElementAt(i).BackColor = Color.Red;
+                        MessageBox.Show("Could not add one or more allergies.");
+                    }
+                }
+                else
+                {
+                    patientAllergies.ElementAt(i).BackColor = Color.Red;
+                    MessageBox.Show("Could not add one or more allergies.");
+                }
+            }
+
+            for (int i = 0; i < patientPayments.Count; i++)
+            {
+                if (patientPayments.ElementAt(i).sqlCanSerialize())
+                {
+                    sqlStatement = "'" + txtSSN.Text + "'," + patientPayments.ElementAt(i).sqlSerialize();
+
+                    if (Database.addPayment(sqlStatement) == false)
+                    {
+                        patientPayments.ElementAt(i).BackColor = Color.Red;
+                        MessageBox.Show("Could not add one or more payment methods.");
+                    }
+                }
+                else
+                {
+                    patientPayments.ElementAt(i).BackColor = Color.Red;
+                    MessageBox.Show("Could not add one or more payment methods.");
+                }
+            }
+
+            for (int i = 0; i < patientInsurances.Count; i++)
+            {
+                if (patientInsurances.ElementAt(i).sqlCanSerialize())
+                {
+                    sqlStatement = "'" + txtSSN.Text + "'," + patientInsurances.ElementAt(i).sqlSerialize();
+
+                    if (Database.addInsurance(sqlStatement) == false)
+                    {
+                        patientInsurances.ElementAt(i).BackColor = Color.Red;
+                        MessageBox.Show("Could not add one or more patient insurances.");
+                    }
+                }
+                else
+                {
+                    patientInsurances.ElementAt(i).BackColor = Color.Red;
+                    MessageBox.Show("Could not add one or more patient insurances.");
+                }
+            }
+            
+            for (int i = 0; i < patientEmergencyContacts.Count; i++)
+            {
+                if (patientEmergencyContacts.ElementAt(i).sqlCanSerialize())
+                {
+                    sqlStatement = "'" + txtSSN.Text + "'," + patientEmergencyContacts.ElementAt(i).sqlSerialize();
+
+                    if (Database.addEmContact(sqlStatement) == false)
+                    {
+                        patientEmergencyContacts.ElementAt(i).BackColor = Color.Red;
+                        MessageBox.Show("Could not add one or more emergency contacts.");
+                    }
+                }
+                else
+                {
+                    patientEmergencyContacts.ElementAt(i).BackColor = Color.Red;
+                    MessageBox.Show("Could not add one or more emergency contacts.");
+                }
+            }
+
+            //If the add is successful, return to landing.
+            if (this.MdiParent != null) { ((MainForm)this.MdiParent).destroyCurrentPage(); } //Returns back to landing page
+        }
+
+        private bool sqlCanSerealize()
+        {
+            if (txtSSN.TextLength > 8 &&
+            dtpDOB.Text.Length > 0 &&
+            comboSex.Text.Length > 0 &&
+            txtFName.TextLength > 0 &&
+            txtMInit.TextLength > 0 &&
+            txtLName.TextLength > 0)
+            {
+                return true;
+            }
+            else 
+            {
+                return false;            
+            }
+        }
+
+        private String sqlSerealize()
+        {
+            String sqlStatement = "'" + txtSSN.Text + "',";
+            sqlStatement += "'" + dtpDOB.Text + "',";
             sqlStatement += "'" + comboSex.Text + "',";
             sqlStatement += "'" + txtFName.Text + "',";
             sqlStatement += "'" + txtMInit.Text + "',";
@@ -44,104 +171,8 @@ namespace EMRKS
 
             sqlStatement += "'" + txtPhoneNumber.Text + "'";
 
-            Console.WriteLine(sqlStatement);
 
-            if (Database.addPatient(sqlStatement) == false) //Adds the patient to the database.
-            {
-                this.BackColor = Color.Red;
-                return; //create a popup here.
-            }
-
-            if (sqlAddressCanSerialize())
-            {
-                sqlStatement = "'" + txtSSN.Text + "'," + sqlAddressSerealize();
-
-                if (Database.addAddress(sqlStatement) == false) //Adds the patient to the database.
-                {
-                    this.BackColor = Color.Purple;
-                    return; //create a popup here.
-                }
-            }
-
-            for (int i = 0; i < patientAllergies.Count;i++) 
-            {
-                if (patientAllergies.ElementAt(i).sqlSerialize().Length != 0)
-                {
-
-                    sqlStatement = "'" + txtSSN.Text + "'," + patientAllergies.ElementAt(i).sqlSerialize();
-
-                    if (Database.addAllergy(sqlStatement) == false)
-                    {
-                        patientAllergies.ElementAt(i).BackColor = Color.Red;
-                        //Make a popup here
-                    }
-                }
-                else
-                {
-                    patientAllergies.ElementAt(i).BackColor = Color.Red;
-                    //Make a popup here
-                }
-            }
-
-            for (int i = 0; i < patientPayments.Count; i++)
-            {
-                if (patientPayments.ElementAt(i).sqlCanSerialize())
-                {
-                    sqlStatement = "'" + txtSSN.Text + "'," + patientPayments.ElementAt(i).sqlSerialize();
-
-                    if (Database.addPayment(sqlStatement) == false)
-                    {
-                        patientPayments.ElementAt(i).BackColor = Color.Red;
-                        //Make a popup here
-                    }
-                }
-                else
-                {
-                    patientPayments.ElementAt(i).BackColor = Color.Red;
-                    //Make a popup here
-                }
-            }
-
-            for (int i = 0; i < patientInsurances.Count; i++)
-            {
-                if (patientInsurances.ElementAt(i).sqlCanSerialize())
-                {
-                    sqlStatement = "'" + txtSSN.Text + "'," + patientInsurances.ElementAt(i).sqlSerialize();
-
-                    if (Database.addInsurance(sqlStatement) == false)
-                    {
-                        patientInsurances.ElementAt(i).BackColor = Color.Red;
-                        //Make a popup here
-                    }
-                }
-                else
-                {
-                    patientInsurances.ElementAt(i).BackColor = Color.Red;
-                    //Make a popup here
-                }
-            }
-            
-            for (int i = 0; i < patientEmergencyContacts.Count; i++)
-            {
-                if (patientEmergencyContacts.ElementAt(i).sqlCanSerialize())
-                {
-                    sqlStatement = "'" + txtSSN.Text + "'," + patientEmergencyContacts.ElementAt(i).sqlSerialize();
-
-                    if (Database.addEmContact(sqlStatement) == false)
-                    {
-                        patientEmergencyContacts.ElementAt(i).BackColor = Color.Red;
-                        //Make a popup here
-                    }
-                }
-                else
-                {
-                    patientEmergencyContacts.ElementAt(i).BackColor = Color.Red;
-                    //Make a popup here
-                }
-            }
-
-            //If the add is successful, return to landing.
-            if (this.MdiParent != null) { ((MainForm)this.MdiParent).destroyCurrentPage(); } //Returns back to landing page
+            return sqlStatement;
         }
 
         private Boolean sqlAddressCanSerialize()

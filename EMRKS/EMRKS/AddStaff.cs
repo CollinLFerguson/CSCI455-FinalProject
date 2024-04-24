@@ -19,13 +19,17 @@ namespace EMRKS
 
         private void btnAddStaff_Click(object sender, EventArgs e)
         {
-            if (!sqlStaffCanSerealize()) { return; }
+            if (!sqlStaffCanSerealize())
+            { 
+                MessageBox.Show("The staff member can not be added. Verify all necessary items are present."); 
+                return; 
+            }
 
             String sqlStatement = sqlStaffSerealize();
 
             if (!Database.addStaff(sqlStatement))
             {
-                this.BackColor = Color.Red;
+                MessageBox.Show("The staff member can not be added. Verify all necessary items are present.");
                 return;
             }
 
@@ -35,7 +39,7 @@ namespace EMRKS
 
                 if (Database.addAddress(sqlStatement) == false) //Adds the patient to the database.
                 {
-                    this.BackColor = Color.Purple;
+                    MessageBox.Show("The staff member can not be added. Verify all necessary items are present."); 
                     return; //create a popup here.
                 }
             }

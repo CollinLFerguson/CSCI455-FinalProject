@@ -70,6 +70,7 @@
             button6 = new Button();
             button5 = new Button();
             helpProvider1 = new HelpProvider();
+            btnReturn = new Button();
             patientSearchPanel.SuspendLayout();
             patientInfoPanel.SuspendLayout();
             goodPanel.SuspendLayout();
@@ -475,12 +476,23 @@
             button5.UseVisualStyleBackColor = true;
             button5.Click += onEditPatientPersonalInfo;
             // 
+            // btnReturn
+            // 
+            btnReturn.Location = new Point(104, 685);
+            btnReturn.Name = "btnReturn";
+            btnReturn.Size = new Size(75, 23);
+            btnReturn.TabIndex = 7;
+            btnReturn.Text = "Return";
+            btnReturn.UseVisualStyleBackColor = true;
+            btnReturn.Click += btnReturn_Click;
+            // 
             // FindPatient
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.DarkSeaGreen;
             ClientSize = new Size(1078, 720);
+            Controls.Add(btnReturn);
             Controls.Add(patientOptionsPanel);
             Controls.Add(goodPanel);
             Controls.Add(patientInfoPanel);
@@ -544,5 +556,6 @@
         private TextBox patientInfoDOB;
         private TextBox patientInfoState;
         private PatientEditor patientEditor1;
+        private Button btnReturn;
     }
 }

@@ -82,7 +82,7 @@
             txtSideEffects.Name = "txtSideEffects";
             txtSideEffects.PlaceholderText = "Headache, nausea, etc..";
             txtSideEffects.Size = new Size(261, 81);
-            txtSideEffects.TabIndex = 20;
+            txtSideEffects.TabIndex = 4;
             // 
             // label4
             // 
@@ -99,7 +99,7 @@
             txtMedicationPrice.Name = "txtMedicationPrice";
             txtMedicationPrice.PlaceholderText = "(EX:10.20)";
             txtMedicationPrice.Size = new Size(153, 23);
-            txtMedicationPrice.TabIndex = 18;
+            txtMedicationPrice.TabIndex = 3;
             // 
             // label3
             // 
@@ -116,7 +116,7 @@
             txtMedicationName.Name = "txtMedicationName";
             txtMedicationName.PlaceholderText = "Tylenol";
             txtMedicationName.Size = new Size(153, 23);
-            txtMedicationName.TabIndex = 16;
+            txtMedicationName.TabIndex = 2;
             // 
             // label2
             // 
@@ -133,7 +133,7 @@
             txtMedicationID.Name = "txtMedicationID";
             txtMedicationID.PlaceholderText = "123456789012";
             txtMedicationID.Size = new Size(153, 23);
-            txtMedicationID.TabIndex = 14;
+            txtMedicationID.TabIndex = 1;
             // 
             // label1
             // 
@@ -162,7 +162,7 @@
             btnMedicationSideEffect.Location = new Point(6, 21);
             btnMedicationSideEffect.Name = "btnMedicationSideEffect";
             btnMedicationSideEffect.Size = new Size(135, 23);
-            btnMedicationSideEffect.TabIndex = 27;
+            btnMedicationSideEffect.TabIndex = 5;
             btnMedicationSideEffect.Text = "+ Add Ingredient";
             btnMedicationSideEffect.UseVisualStyleBackColor = true;
             btnMedicationSideEffect.Click += btnMedicationSideEffect_Click;
@@ -172,7 +172,7 @@
             btnCancelMedication.Location = new Point(620, 300);
             btnCancelMedication.Name = "btnCancelMedication";
             btnCancelMedication.Size = new Size(141, 23);
-            btnCancelMedication.TabIndex = 35;
+            btnCancelMedication.TabIndex = 7;
             btnCancelMedication.Text = "Cancel Add Medication";
             btnCancelMedication.UseVisualStyleBackColor = true;
             btnCancelMedication.Click += button5_Click;
@@ -182,7 +182,7 @@
             btnAddMedication.Location = new Point(12, 300);
             btnAddMedication.Name = "btnAddMedication";
             btnAddMedication.Size = new Size(135, 23);
-            btnAddMedication.TabIndex = 34;
+            btnAddMedication.TabIndex = 6;
             btnAddMedication.Text = "Add Medication";
             btnAddMedication.UseVisualStyleBackColor = true;
             btnAddMedication.Click += btnAddMedication_Click;

@@ -491,27 +491,41 @@ namespace EMRKS
             // true = yes the patient is allergic, false = not allergic.
             try
             {
-                string query =
+                string query1 =
                     "SELECT Pati_Ssn, Allergy_Name\n" +
                     "FROM Allergies\n" +
                     "LEFT JOIN Medication ON Allergies.Allergy_Name = Medication.Name\n" +
                     "WHERE Medication.Medication_ID = " + medicationID + " AND Allergies.Pati_Ssn = " + patientSSN;
-                
-                    MySqlCommand cmd = new MySqlCommand(query, connection);
-                    cmd.Parameters.AddWithValue("@medicationID", medicationID);
-                    cmd.Parameters.AddWithValue("@patientSSN", patientSSN);
 
-                    using (MySqlDataReader reader = cmd.ExecuteReader())
+                string query2 =
+                    "SELECT Pati_Ssn, Allergy_Name\n" +
+                    "FROM Allergies\n" +
+                    "LEFT JOIN Ingredients ON Allergies.Allergy_Name = Ingredients.Ingredient_Name\n" +
+                    "WHERE Ingredients.Med_ID = " + medicationID + " AND Allergies.Pati_Ssn = " + patientSSN;
+
+                MySqlCommand cmd1 = new MySqlCommand(query1, connection);
+                MySqlCommand cmd2 = new MySqlCommand(query2, connection);
+
+                cmd1.Parameters.AddWithValue("@medicationID", medicationID);
+                cmd1.Parameters.AddWithValue("@patientSSN", patientSSN);
+
+                cmd2.Parameters.AddWithValue("@medicationID", medicationID);
+                cmd2.Parameters.AddWithValue("@patientSSN", patientSSN);
+
+                using (MySqlDataReader reader = cmd1.ExecuteReader())
+                {
+                    if (reader.HasRows)
                     {
-                        if (reader.HasRows)
-                        {
-                            return true;
-                        }
-                        else
-                        {
-                            return false;
-                        }
+                        return true;
                     }
+                }
+                using (MySqlDataReader reader = cmd2.ExecuteReader())
+                {
+                    if (reader.HasRows)
+                    {
+                        return true;
+                    }
+                }
             }
             catch (MySqlException ex)
             {
@@ -519,6 +533,7 @@ namespace EMRKS
                 // if error happens, assume patient is allergic
                 return true;
             }
+            return false;
         }
 
         public static Boolean AddMedication(string fullAddMedication)

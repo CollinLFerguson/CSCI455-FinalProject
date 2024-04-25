@@ -80,7 +80,7 @@ namespace EMRKS
             }
             else if (Database.CheckAllergy(currSSN, medID))
             {
-                MessageBox.Show("This patient has an allergy to this medication.");
+                MessageBox.Show("This patient has an allergy to this medication or an ingredient in this medication.");
                 return;
             }
             else if (Database.AddPrescription(fullInsert))

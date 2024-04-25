@@ -105,6 +105,37 @@ namespace EMRKS
             noFormPage.Hide();
         }
 
+        public void loadviewPatientDoctor()
+        {
+            if (currentPage != null) { destroyCurrentPage(); }
+            Form viewPatientDoctor = new viewPatientDoctor();
+            viewPatientDoctor.MdiParent = this;
+            currentPage = viewPatientDoctor;
+
+            viewPatientDoctor.Show();
+            noFormPage.Hide();
+        }
+        public void loadviewPatientAdmin()
+        {
+            if (currentPage != null) { destroyCurrentPage(); }
+            Form viewPatientAdmin = new viewPatientAdmin();
+            viewPatientAdmin.MdiParent = this;
+            currentPage = viewPatientAdmin;
+
+            viewPatientAdmin.Show();
+            noFormPage.Hide();
+        }
+        public void loadviewMedications()
+        {
+            if (currentPage != null) { destroyCurrentPage(); }
+            Form viewMedication = new viewMedicine();
+            viewMedication.MdiParent = this;
+            currentPage = viewMedication;
+
+            viewMedication.Show();
+            noFormPage.Hide();
+        }
+
         public void destroyCurrentPage(){
             //** Destroys the currently loaded page.
             //   This function should be called whenever one of the side menu buttons are hit.

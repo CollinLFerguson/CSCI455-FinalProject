@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             panel1 = new Panel();
+            viewMedButton = new Button();
+            viewPatientButton = new Button();
             btnAddMedication = new Button();
             button5 = new Button();
             button4 = new Button();
@@ -42,6 +44,8 @@
             // 
             panel1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
             panel1.BorderStyle = BorderStyle.FixedSingle;
+            panel1.Controls.Add(viewMedButton);
+            panel1.Controls.Add(viewPatientButton);
             panel1.Controls.Add(btnAddMedication);
             panel1.Controls.Add(button5);
             panel1.Controls.Add(button4);
@@ -52,6 +56,28 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(205, 720);
             panel1.TabIndex = 0;
+            // 
+            // viewMedButton
+            // 
+            viewMedButton.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
+            viewMedButton.Location = new Point(0, 378);
+            viewMedButton.Name = "viewMedButton";
+            viewMedButton.Size = new Size(200, 55);
+            viewMedButton.TabIndex = 7;
+            viewMedButton.Text = "View Medications";
+            viewMedButton.UseVisualStyleBackColor = true;
+            viewMedButton.Click += viewMedButton_Click;
+            // 
+            // viewPatientButton
+            // 
+            viewPatientButton.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
+            viewPatientButton.Location = new Point(0, 324);
+            viewPatientButton.Name = "viewPatientButton";
+            viewPatientButton.Size = new Size(200, 55);
+            viewPatientButton.TabIndex = 6;
+            viewPatientButton.Text = "View Patients";
+            viewPatientButton.UseVisualStyleBackColor = true;
+            viewPatientButton.Click += viewPatientButton_Click;
             // 
             // btnAddMedication
             // 
@@ -67,9 +93,9 @@
             // button5
             // 
             button5.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
-            button5.Location = new Point(-1, 270);
+            button5.Location = new Point(0, 270);
             button5.Name = "button5";
-            button5.Size = new Size(200, 58);
+            button5.Size = new Size(200, 55);
             button5.TabIndex = 4;
             button5.Text = "View Appointments";
             button5.UseVisualStyleBackColor = true;
@@ -145,5 +171,8 @@
         private Button button4;
         private Button button5;
         private Button btnAddMedication;
+        private Button button8;
+        private Button viewMedButton;
+        private Button viewPatientButton;
     }
 }

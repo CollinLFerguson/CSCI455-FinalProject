@@ -75,5 +75,30 @@ namespace EMRKS
 
             if (this.MdiParent != null) { ((MainForm)this.MdiParent).loadAddMedicationForm(); }
         }
+
+        private void viewPatientButton_Click(object sender, EventArgs e)
+        {
+            if (MainForm.staffType == "D")
+            {
+
+                // open viewPatientDoctor
+                if (this.MdiParent != null) { ((MainForm)this.MdiParent).loadviewPatientDoctor(); }
+            }
+            else if (MainForm.staffType == "A")
+            {
+                // open viewPatientAdmin
+                if (this.MdiParent != null) { ((MainForm)this.MdiParent).loadviewPatientAdmin(); }
+            }
+            else
+            {
+                MessageBox.Show("Only administrators and doctors can view patients.");
+                return;
+            }
+        }
+
+        private void viewMedButton_Click(object sender, EventArgs e)
+        {
+            if (this.MdiParent != null) { ((MainForm)this.MdiParent).loadviewMedications(); }
+        }
     }
 }

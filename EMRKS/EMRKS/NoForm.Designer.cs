@@ -47,9 +47,10 @@
             // pictureBox1
             // 
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(300, 100);
+            pictureBox1.Location = new Point(194, 10);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(500, 500);
+            pictureBox1.Size = new Size(700, 700);
+            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox1.TabIndex = 8;
             pictureBox1.TabStop = false;
             // 

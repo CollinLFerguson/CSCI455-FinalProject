@@ -10,11 +10,16 @@ using System.Windows.Forms;
 
 namespace EMRKS
 {
-    public partial class viewPatientDoctor : UserControl
+    public partial class viewPatientsAdmin : Form
     {
-        public viewPatientDoctor()
+        public viewPatientsAdmin()
         {
             InitializeComponent();
         }
+    }
+
+    private void loadviewPatientAdmin(string staffID)
+    {
+        dataGridView1.DataSource = Database.GetPatientsAdmin(staffID);
     }
 }

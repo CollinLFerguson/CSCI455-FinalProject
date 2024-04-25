@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace EMRKS
 {
-    public partial class viewMedicine : UserControl
+    public partial class viewMedications : Form
     {
-        public viewMedicine()
+        public viewMedications()
         {
             InitializeComponent();
         }

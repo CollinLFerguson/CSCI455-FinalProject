@@ -18,6 +18,18 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Update="viewPatientsDoctor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="viewPatientsAdmin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="ViewPatientsAdmin.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="ViewPatientsDoctor.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
   </ItemGroup>
 
   <ItemGroup>

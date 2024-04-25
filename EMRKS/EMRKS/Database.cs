@@ -454,6 +454,61 @@ namespace EMRKS
             }
         }
 
+        public static DataTable? GetPatientsDoctor(string staffID)
+        {
+            try
+            {
+                string query =
+                    "SELECT * FROM Patient WHERE Primary_Doctor_ID = \"" + staffID + "\"";
+
+                MySqlDataAdapter sqlDa = new MySqlDataAdapter(query, connection);
+                DataTable dtbl = new DataTable();
+                sqlDa.Fill(dtbl);
+
+                return dtbl;
+            }
+            catch (MySqlException ex)
+            {
+                return null;
+            }
+        }
+        public static DataTable? GetPatientsAdmin()
+        {
+            try
+            {
+                string query =
+                    "SELECT * FROM Patient";
+
+                MySqlDataAdapter sqlDa = new MySqlDataAdapter(query, connection);
+                DataTable dtbl = new DataTable();
+                sqlDa.Fill(dtbl);
+
+                return dtbl;
+            }
+            catch (MySqlException ex)
+            {
+                return null;
+            }
+        }
+        public static DataTable? viewMedications()
+        {
+            try
+            {
+                string query =
+                    "SELECT * FROM Medication";
+
+                MySqlDataAdapter sqlDa = new MySqlDataAdapter(query, connection);
+                DataTable dtbl = new DataTable();
+                sqlDa.Fill(dtbl);
+
+                return dtbl;
+            }
+            catch (MySqlException ex)
+            {
+                return null;
+            }
+        }
+
         public static DataTable? GetMedication(string patientSSN)
         {
             try

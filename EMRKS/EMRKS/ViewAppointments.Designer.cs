@@ -93,7 +93,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.DarkSeaGreen;
+            BackColor = Color.FromArgb(106, 167, 119);
             ClientSize = new Size(1078, 720);
             Controls.Add(dtpDOB);
             Controls.Add(dataGridView1);

@@ -72,17 +72,23 @@ namespace EMRKS
 
             // will trigger the panel with the text fields to add appointment information
             // edit appointment status
-           
-            appointmentID= int.Parse(appointmentIDBox.Text);
-            editAppoint = new EditAppointmentStatus(currSSN, appointmentID);
-            editAppoint.Parent = this;
-            editAppoint.Location = new Point(45, 238);
-            editAppoint.BringToFront();
-            editAppoint.Show();
+
+            try
+            {
+                appointmentID = int.Parse(appointmentIDBox.Text);
+                editAppoint = new EditAppointmentStatus(currSSN, appointmentID);
+                editAppoint.Parent = this;
+                editAppoint.Location = new Point(45, 238);
+                editAppoint.BringToFront();
+                editAppoint.Show();
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("An appointment ID must be specified.");
+            }
 
             
-
-            // edit appointment notes
 
 
 

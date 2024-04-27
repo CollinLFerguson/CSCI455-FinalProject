@@ -60,8 +60,11 @@
             Controls.Add(dataGridView1);
             Controls.Add(label19);
             FormBorderStyle = FormBorderStyle.None;
+            Location = new Point(202, 0);
             Name = "viewPatientsAdmin";
+            StartPosition = FormStartPosition.Manual;
             Text = "viewMedications";
+            Load += viewPatientsAdmin_Load;
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
             PerformLayout();

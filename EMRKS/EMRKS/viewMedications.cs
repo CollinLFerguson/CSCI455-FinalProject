@@ -17,7 +17,7 @@ namespace EMRKS
             InitializeComponent();
         }
 
-        private void loadviewMedication(string staffID)
+        private void viewMedications_Load(object sender, EventArgs e)
         {
             dataGridView1.DataSource = Database.ViewMedication();
         }

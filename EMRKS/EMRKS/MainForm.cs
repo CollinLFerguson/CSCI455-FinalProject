@@ -24,6 +24,15 @@ namespace EMRKS
         }
         private void MainForm_Load(object sender, EventArgs e)
         {
+            loadLogin();
+        }
+        public void destroyLanding()
+        {
+            landingPage.Close();
+            noFormPage.Close();        
+        }
+        public void loadLogin()
+        {
             LoginForm loginForm = new LoginForm();
             loginForm.MdiParent = this;
             loginForm.Show();

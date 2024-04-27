@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             panel1 = new Panel();
+            button6 = new Button();
             viewMedButton = new Button();
             viewPatientButton = new Button();
             btnAddMedication = new Button();
@@ -44,6 +45,7 @@
             // 
             panel1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
             panel1.BorderStyle = BorderStyle.FixedSingle;
+            panel1.Controls.Add(button6);
             panel1.Controls.Add(viewMedButton);
             panel1.Controls.Add(viewPatientButton);
             panel1.Controls.Add(btnAddMedication);
@@ -56,6 +58,17 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(205, 720);
             panel1.TabIndex = 0;
+            // 
+            // button6
+            // 
+            button6.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
+            button6.Location = new Point(1, 641);
+            button6.Name = "button6";
+            button6.Size = new Size(200, 55);
+            button6.TabIndex = 8;
+            button6.Text = "Logout";
+            button6.UseVisualStyleBackColor = true;
+            button6.Click += button6_Click_1;
             // 
             // viewMedButton
             // 
@@ -174,5 +187,6 @@
         private Button button8;
         private Button viewMedButton;
         private Button viewPatientButton;
+        private Button button6;
     }
 }

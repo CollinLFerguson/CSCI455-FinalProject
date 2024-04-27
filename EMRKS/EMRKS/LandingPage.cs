@@ -56,11 +56,12 @@ namespace EMRKS
         }
         private void button6_Click(object sender, EventArgs e) // the click functions don't correspond to the correct buttons
         {
-            if (MainForm.staffType == "D" || MainForm.staffType == "N")
-            {
-                MessageBox.Show("Invalid permissions. Only administrators can view appointments.");
-                return;
-            }
+            // we think everyone should see appointments
+            //if (MainForm.staffType == "D" || MainForm.staffType == "N")
+            //{
+            //    MessageBox.Show("Invalid permissions. Only administrators can view appointments.");
+            //    return;
+            //}
 
             if (this.MdiParent != null) { ((MainForm)this.MdiParent).loadViewAppointments(); }
         }

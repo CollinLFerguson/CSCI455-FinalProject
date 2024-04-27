@@ -26,7 +26,7 @@ namespace EMRKS
             InitializeComponent();
         }
 
-        private void loadviewPatientDoctor(string staffID)
+        private void viewPatientsDoctor_Load(object sender, EventArgs e)
         {
             dataGridView1.DataSource = Database.GetPatientsDoctor(staffID);
         }

@@ -16,10 +16,10 @@ namespace EMRKS
         {
             InitializeComponent();
         }
-    }
 
-    private void loadviewPatientAdmin(string staffID)
-    {
-        dataGridView1.DataSource = Database.GetPatientsAdmin(staffID);
+        private void loadviewPatientAdmin(string staffID)
+        {
+            dataGridView1.DataSource = Database.GetPatientsAdmin(staffID);
+        }
     }
 }

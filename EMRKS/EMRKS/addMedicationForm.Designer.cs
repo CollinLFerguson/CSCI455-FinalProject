@@ -202,7 +202,7 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.DarkSeaGreen;
-            ClientSize = new Size(1062, 681);
+            ClientSize = new Size(1078, 720);
             ControlBox = false;
             Controls.Add(panelIngredients);
             Controls.Add(btnCancelMedication);

@@ -90,7 +90,7 @@
             // 
             // addMedication1
             // 
-            addMedication1.BackColor = Color.SeaGreen;
+            addMedication1.BackColor = Color.FromArgb(106, 167, 119);
             addMedication1.Location = new Point(0, 0);
             addMedication1.Name = "addMedication1";
             addMedication1.Size = new Size(711, 513);
@@ -100,7 +100,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.SeaGreen;
+            BackColor = Color.FromArgb(106, 167, 119);
             Controls.Add(addMedication1);
             Controls.Add(label2);
             Controls.Add(label1);

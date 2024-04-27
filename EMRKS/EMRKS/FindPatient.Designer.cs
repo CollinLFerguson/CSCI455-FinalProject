@@ -405,7 +405,7 @@
             // 
             // patientEditor1
             // 
-            patientEditor1.BackColor = Color.GreenYellow;
+            patientEditor1.BackColor = Color.FromArgb(106, 167, 119);
             patientEditor1.Location = new Point(0, 0);
             patientEditor1.Name = "patientEditor1";
             patientEditor1.Size = new Size(711, 513);

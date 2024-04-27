@@ -15,11 +15,6 @@ namespace EMRKS
         public MainForm()
         {
             InitializeComponent();
-            landingPage = new LandingPage();
-            landingPage.MdiParent = this;
-
-            noFormPage = new NoForm();
-            noFormPage.MdiParent = this;
 
         }
         private void MainForm_Load(object sender, EventArgs e)
@@ -42,7 +37,10 @@ namespace EMRKS
         {
             LandingPage landingPage = new LandingPage();
             landingPage.MdiParent = this;
-            
+
+            noFormPage = new NoForm();
+            noFormPage.MdiParent = this;
+
             noFormPage.Show();
             landingPage.Show();
 

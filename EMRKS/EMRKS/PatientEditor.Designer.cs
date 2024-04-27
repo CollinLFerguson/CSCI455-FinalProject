@@ -318,7 +318,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.DarkSeaGreen;
+            BackColor = Color.SeaGreen;
             Controls.Add(button1);
             Controls.Add(textBox13);
             Controls.Add(label15);

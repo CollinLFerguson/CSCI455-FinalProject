@@ -152,7 +152,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.DarkSeaGreen;
+            BackColor = Color.FromArgb(106, 167, 119);
             Controls.Add(rescheduleAppointment1);
             Controls.Add(addAppointment1);
             Controls.Add(addAppoint);

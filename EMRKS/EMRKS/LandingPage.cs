@@ -107,7 +107,6 @@ namespace EMRKS
             if (this.MdiParent != null) { ((MainForm)this.MdiParent).destroyCurrentPage(); }
             //if (this.MdiParent != null) { ((MainForm)this.MdiParent).destroyLanding(); }
             if (this.MdiParent != null) { ((MainForm)this.MdiParent).loadLogin(); }
-
         }
     }
 }

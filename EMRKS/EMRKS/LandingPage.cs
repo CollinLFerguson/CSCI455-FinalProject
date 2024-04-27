@@ -104,9 +104,9 @@ namespace EMRKS
 
         private void button6_Click_1(object sender, EventArgs e)
         {
-            if (this.MdiParent != null) { ((MainForm)this.MdiParent).loadLogin();}
-            if (this.MdiParent != null) { ((MainForm)this.MdiParent).destroyLanding(); }
-
+            if (this.MdiParent != null) { ((MainForm)this.MdiParent).destroyCurrentPage(); }
+            //if (this.MdiParent != null) { ((MainForm)this.MdiParent).destroyLanding(); }
+            if (this.MdiParent != null) { ((MainForm)this.MdiParent).loadLogin(); }
         }
     }
 }

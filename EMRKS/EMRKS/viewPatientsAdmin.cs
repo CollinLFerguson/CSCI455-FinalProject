@@ -21,5 +21,10 @@ namespace EMRKS
         {
             dataGridView1.DataSource = Database.GetPatientsAdmin();
         }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            if (this.MdiParent != null) { ((MainForm)this.MdiParent).destroyCurrentPage(); } //Returns back to landing page
+        }
     }
 }

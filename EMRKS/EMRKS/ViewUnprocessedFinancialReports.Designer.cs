@@ -31,6 +31,7 @@
             label1 = new Label();
             label19 = new Label();
             dataGridView1 = new DataGridView();
+            button5 = new Button();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
@@ -58,9 +59,19 @@
             dataGridView1.Location = new Point(36, 69);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.AutoSizeToDisplayedHeaders;
-            dataGridView1.Size = new Size(1006, 629);
+            dataGridView1.Size = new Size(1006, 614);
             dataGridView1.TabIndex = 5;
             dataGridView1.CellContentClick += dataGridView1_CellContentClick;
+            // 
+            // button5
+            // 
+            button5.Location = new Point(36, 689);
+            button5.Name = "button5";
+            button5.Size = new Size(135, 23);
+            button5.TabIndex = 28;
+            button5.Text = "Return";
+            button5.UseVisualStyleBackColor = true;
+            button5.Click += button5_Click;
             // 
             // ViewUnprocessedFinancialReports
             // 
@@ -68,6 +79,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(106, 167, 119);
             ClientSize = new Size(1078, 720);
+            Controls.Add(button5);
             Controls.Add(dataGridView1);
             Controls.Add(label19);
             Controls.Add(label1);
@@ -87,5 +99,6 @@
         private Label label1;
         private Label label19;
         private DataGridView dataGridView1;
+        private Button button5;
     }
 }

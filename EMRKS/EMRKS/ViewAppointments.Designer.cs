@@ -33,6 +33,7 @@
             label1 = new Label();
             dataGridView1 = new DataGridView();
             dtpDOB = new DateTimePicker();
+            button5 = new Button();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
@@ -89,12 +90,23 @@
             dtpDOB.TabIndex = 16;
             dtpDOB.Value = new DateTime(2024, 4, 18, 0, 0, 0, 0);
             // 
+            // button5
+            // 
+            button5.Location = new Point(108, 554);
+            button5.Name = "button5";
+            button5.Size = new Size(135, 23);
+            button5.TabIndex = 99;
+            button5.Text = "Return";
+            button5.UseVisualStyleBackColor = true;
+            button5.Click += button5_Click;
+            // 
             // ViewAppointments
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(106, 167, 119);
             ClientSize = new Size(1078, 720);
+            Controls.Add(button5);
             Controls.Add(dtpDOB);
             Controls.Add(dataGridView1);
             Controls.Add(label1);
@@ -118,5 +130,6 @@
         private Label label1;
         private DataGridView dataGridView1;
         private DateTimePicker dtpDOB;
+        private Button button5;
     }
 }

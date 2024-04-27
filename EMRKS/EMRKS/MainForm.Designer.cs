@@ -67,7 +67,7 @@
             IsMdiContainer = true;
             MainMenuStrip = menuStrip1;
             Name = "MainForm";
-            Text = "EMRK System - Group 07";
+            Text = "Astra Care Digital Journal - Group 07 EMRK System";
             Load += MainForm_Load;
             menuStrip1.ResumeLayout(false);
             menuStrip1.PerformLayout();

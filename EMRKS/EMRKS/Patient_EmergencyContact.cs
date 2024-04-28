@@ -17,6 +17,9 @@ namespace EMRKS
         public string name;
         public string phone;
         public string relation;
+        public bool nameModified;
+        public bool phoneModified;
+        public bool relationModified;
 
         //for use inside patient editor
         UserControl parent;
@@ -60,7 +63,7 @@ namespace EMRKS
         public String[] getInfo()
         {
             return [];
-        
+
         }
         public String sqlSerialize()
         {
@@ -84,6 +87,21 @@ namespace EMRKS
             }
 
             ((AddPatient)this.parentForm).removeAndReorderEmContacts(this);
+        }
+
+        private void onTextChangedName(object sender, EventArgs e)
+        {
+            nameModified = true;
+        }
+
+        private void onPhoneModified(object sender, EventArgs e)
+        {
+            phoneModified = true;
+        }
+
+        private void onRelationModified(object sender, EventArgs e)
+        {
+            relationModified = true;
         }
     }
 }

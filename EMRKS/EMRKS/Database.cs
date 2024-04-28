@@ -97,8 +97,7 @@ namespace EMRKS
 
                     try
                     {
-                        string query = "UPDATE Emergency_Contact (Pa_Ssn, Contact_name, Phone_Number, Relation_to_Patient) VALUES ('" + Ssn + "', '" + name + "', '" + phone + "', '" + relation + "');";
-                        Debug.WriteLine(query);
+                        string query = "INTSET INTO Emergency_Contact (Pa_Ssn, Contact_name, Phone_Number, Relation_to_Patient) VALUES ('" + Ssn + "', '" + name + "', '" + phone + "', '" + relation + "');";
                         MySqlCommand cmd = new MySqlCommand(query, connection);
                         cmd.ExecuteNonQuery();
                     }

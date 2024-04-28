@@ -53,6 +53,7 @@
             txtContactName.Name = "txtContactName";
             txtContactName.Size = new Size(206, 23);
             txtContactName.TabIndex = 4;
+            txtContactName.TextChanged += onTextChangedName;
             // 
             // label1
             // 
@@ -69,6 +70,7 @@
             txtContactPhone.Name = "txtContactPhone";
             txtContactPhone.Size = new Size(194, 23);
             txtContactPhone.TabIndex = 6;
+            txtContactPhone.TextChanged += onPhoneModified;
             // 
             // label2
             // 
@@ -94,6 +96,7 @@
             txtContactRelationship.Name = "txtContactRelationship";
             txtContactRelationship.Size = new Size(173, 23);
             txtContactRelationship.TabIndex = 9;
+            txtContactRelationship.TextChanged += onRelationModified;
             // 
             // Patient_EmergencyContact
             // 

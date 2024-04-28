@@ -99,10 +99,14 @@ namespace EMRKS
                 string name = (control as Patient_EmergencyContact).GetName();
                 string phone = (control as Patient_EmergencyContact).GetPhone();
                 string relation = (control as Patient_EmergencyContact).GetRelation();
+                bool nameModify = (control as Patient_EmergencyContact).nameModified;
+                bool phoneModified = (control as Patient_EmergencyContact).phoneModified;
+                bool relationModified = (control as Patient_EmergencyContact).relationModified;
+
 
                 if (name != "" && phone != "" && relation != "")
                 {
-                    EmergencyContact contact = new EmergencyContact(name, phone, relation);
+                    EmergencyContact contact = new EmergencyContact(name, phone, relation, nameModify, phoneModified, relationModified);
                     contacts.Add(contact);
                 }
             }

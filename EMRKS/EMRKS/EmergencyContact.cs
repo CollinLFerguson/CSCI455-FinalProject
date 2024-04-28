@@ -12,12 +12,18 @@ namespace EMRKS
         public string name;
         public string phone;
         public string relationship;
+        public bool nameModified = false;
+        public bool phoneModified = false;
+        public bool relationshipModified = false;
 
-        public EmergencyContact(string name, string phone, string relationship)
+        public EmergencyContact(string name, string phone, string relationship, bool nameModified, bool phoneModified, bool relationshipModified)
         {
             this.name = name;
             this.phone = phone;
             this.relationship = relationship;
+            this.nameModified = nameModified;
+            this.phoneModified = phoneModified;
+            this.relationshipModified = relationshipModified;
         }
     }
 }

@@ -19,6 +19,12 @@ namespace EMRKS
         public PatientEditor()
         {
             InitializeComponent();
+
+            panel2.AutoScroll = false;
+            panel2.HorizontalScroll.Enabled = false;
+            panel2.HorizontalScroll.Visible = false;
+            panel2.HorizontalScroll.Maximum = 0;
+            panel2.AutoScroll = true;
         }
 
         Patient patient;
@@ -28,9 +34,14 @@ namespace EMRKS
 
         string Ssn;
 
-        public void FillInformation(List<string> patientInformation)
+        List<EmergencyContact> contacts = new List<EmergencyContact>();
+
+        int numberOfContacts;
+
+        public void FillInformation(List<string> patientInformation, List<string> contactInformation)
         {
             Ssn = patientInformation[0]; //Save Ssn incase they chagne it on update so we can still find who we want to update
+
 
             textBox1.Text = patientInformation[0];
             textBox2.Text = patientInformation[1];
@@ -40,7 +51,9 @@ namespace EMRKS
             textBox6.Text = patientInformation[5];
             textBox7.Text = patientInformation[6];
             textBox8.Text = patientInformation[7];
-            if (patientInformation.Count > 8) {
+
+            if (patientInformation.Count > 8)
+            {
                 textBox9.Text = patientInformation[8]; //Address could be null.           
 
                 if (patientInformation[9] != "NULL")
@@ -52,18 +65,56 @@ namespace EMRKS
                 textBox12.Text = patientInformation[11];
                 textBox13.Text = patientInformation[12];
             }
+
+            if (contactInformation.Count != 0)
+            {
+                for (int i = 0; i < contactInformation.Count - 1; i += 3)
+                {
+                    EmergencyContact contact = new EmergencyContact(contactInformation[i], contactInformation[i + 1], contactInformation[i + 2]);
+                    contacts.Add(contact);
+                }
+
+                foreach (EmergencyContact contact in contacts)
+                {
+                    numberOfContacts++;
+                }
+
+                //need to add these as controls
+            }
+            else
+            {
+                //no contacts
+            }
+
+
         }
 
         private void GrabNewInformation()
         {
             patient = new Patient(textBox1.Text, textBox6.Text, char.Parse(textBox5.Text), textBox2.Text, char.Parse(textBox3.Text), textBox4.Text, textBox8.Text, textBox7.Text);
             address = new Address(textBox1.Text, textBox9.Text, textBox10.Text, textBox11.Text, textBox12.Text, textBox13.Text);
+
+            contacts.Clear();
+
+            foreach (Control control in panel2.Controls)
+            {
+                //go through each control creating objects to send to database
+                string name = (control as Patient_EmergencyContact).GetName();
+                string phone = (control as Patient_EmergencyContact).GetPhone();
+                string relation = (control as Patient_EmergencyContact).GetRelation();
+
+                if (name != "" && phone != "" && relation != "")
+                {
+                    EmergencyContact contact = new EmergencyContact(name, phone, relation);
+                    contacts.Add(contact);
+                }
+            }
         }
 
         private void onSaveInfo(object sender, EventArgs e)
         {
             GrabNewInformation();
-            
+
             if (!CheckInformationValid())
             {
                 MessageBox.Show(errorMessage);
@@ -71,13 +122,35 @@ namespace EMRKS
             }
 
             //check all fields valid
-            if (!Database.UpdatePatient(patient, address, Ssn))
+            if (!Database.UpdatePatient(patient, address, Ssn, contacts))
             {
                 MessageBox.Show("UPDATE FAILED SOMETHING WENT WRONG");
             }
             else
             {
                 MessageBox.Show("UPDATE SUCCESS");
+            }
+        }
+
+        private void onAddContact(object sender, EventArgs e)
+        {
+            numberOfContacts++;
+            Patient_EmergencyContact contact = new Patient_EmergencyContact(this);
+            contact.Location = new Point(5, 132 * (numberOfContacts - 1));
+            panel2.Controls.Add(contact);
+        }
+
+        public void removeControl(UserControl userControl)
+        {
+            panel2.Controls.Remove(userControl);
+            numberOfContacts--;
+
+            //rearrange all contacts
+            int i = 0;
+            foreach(Control control in panel2.Controls)
+            {
+                control.Location = new Point(5, 132 * i);
+                i++;
             }
         }
 
@@ -95,7 +168,7 @@ namespace EMRKS
             string addyLine2 = address.getLine2();
             string city = address.getCity();
             string state = address.getState();
-            string zip = address.getZip(); 
+            string zip = address.getZip();
 
             if (firstName.Length > 20)
             {

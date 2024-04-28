@@ -114,6 +114,7 @@ namespace EMRKS
 
         public void loadviewPatientDoctor()
         {
+            /*
             if (currentPage != null) { destroyCurrentPage(); }
             Form viewPatientDoctor = new viewPatientsDoctor(staffID);
             viewPatientDoctor.MdiParent = this;
@@ -121,9 +122,11 @@ namespace EMRKS
 
             viewPatientDoctor.Show();
             noFormPage.Hide();
+            */
         }
         public void loadviewPatientAdmin()
         {
+            /*
             if (currentPage != null) { destroyCurrentPage(); }
             Form viewPatientAdmin = new viewPatientsAdmin();
             viewPatientAdmin.MdiParent = this;
@@ -131,9 +134,11 @@ namespace EMRKS
 
             viewPatientAdmin.Show();
             noFormPage.Hide();
+            */
         }
         public void loadviewMedications()
         {
+            /*
             if (currentPage != null) { destroyCurrentPage(); }
             Form viewMedication = new viewMedications();
             viewMedication.MdiParent = this;
@@ -141,6 +146,7 @@ namespace EMRKS
 
             viewMedication.Show();
             noFormPage.Hide();
+            */
         }
 
         public void destroyCurrentPage(){

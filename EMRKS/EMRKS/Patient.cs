@@ -44,7 +44,7 @@ namespace EMRKS
         }
 
         public string getSsn() {  return SSN; }
-        public string getDOB() { return DOB.ToString().Substring(0, 10); }
+        public string getDOB() { return DOB.ToString().Substring(0, 8); }
         public string getAge() { return age.ToString(); }   
         public string getSex() { return sex.ToString(); }
         public string getFirstName() { return firstName; }

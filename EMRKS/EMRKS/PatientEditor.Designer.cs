@@ -57,6 +57,11 @@
             label15 = new Label();
             textBox13 = new TextBox();
             button1 = new Button();
+            panel1 = new Panel();
+            panel2 = new Panel();
+            button2 = new Button();
+            label16 = new Label();
+            panel1.SuspendLayout();
             SuspendLayout();
             // 
             // label1
@@ -306,19 +311,58 @@
             // button1
             // 
             button1.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
-            button1.Location = new Point(265, 379);
+            button1.Location = new Point(513, 332);
             button1.Name = "button1";
-            button1.Size = new Size(126, 43);
+            button1.Size = new Size(104, 32);
             button1.TabIndex = 28;
             button1.Text = "Save Info";
             button1.UseVisualStyleBackColor = true;
             button1.Click += onSaveInfo;
+            // 
+            // panel1
+            // 
+            panel1.BackColor = Color.SeaShell;
+            panel1.Controls.Add(panel2);
+            panel1.Controls.Add(button2);
+            panel1.Controls.Add(label16);
+            panel1.Location = new Point(29, 226);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(387, 265);
+            panel1.TabIndex = 29;
+            // 
+            // panel2
+            // 
+            panel2.Location = new Point(30, 35);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(328, 184);
+            panel2.TabIndex = 4;
+            // 
+            // button2
+            // 
+            button2.Location = new Point(130, 228);
+            button2.Name = "button2";
+            button2.Size = new Size(100, 23);
+            button2.TabIndex = 2;
+            button2.Text = "Add Contact";
+            button2.UseVisualStyleBackColor = true;
+            button2.Click += onAddContact;
+            // 
+            // label16
+            // 
+            label16.AutoSize = true;
+            label16.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
+            label16.Location = new Point(142, 5);
+            label16.Name = "label16";
+            label16.Size = new Size(95, 19);
+            label16.TabIndex = 1;
+            label16.Text = "Edit Contacts";
             // 
             // PatientEditor
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.SeaGreen;
+            Controls.Add(panel1);
             Controls.Add(button1);
             Controls.Add(textBox13);
             Controls.Add(label15);
@@ -350,6 +394,8 @@
             Controls.Add(label1);
             Name = "PatientEditor";
             Size = new Size(711, 513);
+            panel1.ResumeLayout(false);
+            panel1.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -385,5 +431,9 @@
         private Label label15;
         private TextBox textBox13;
         private Button button1;
+        private Panel panel1;
+        private Label label16;
+        private Button button2;
+        private Panel panel2;
     }
 }

@@ -24,6 +24,7 @@ namespace EMRKS
         }
 
         private Patient patient;
+        private List<EmergencyContact>? contacts;
 
         private Medication_Manager medManager;
         private Financial_Manager financialManager;
@@ -58,6 +59,7 @@ namespace EMRKS
             if (patient != null)
             {
                 this.patient = patient;
+                contacts = Database.GetContacts(patient.getSsn());
 
                 FillPatientInformation();
 
@@ -141,7 +143,16 @@ namespace EMRKS
                 patientInformation.Add(address.getZip());
             }
 
-            patientEditor1.FillInformation(patientInformation);
+            List<string> contactInformation = new List<string>();
+
+            foreach (EmergencyContact contact in contacts)
+            {
+                contactInformation.Add(contact.name);
+                contactInformation.Add(contact.phone);
+                contactInformation.Add(contact.relationship);
+            }
+
+            patientEditor1.FillInformation(patientInformation, contactInformation);
             patientEditor1.Show();
         }
 

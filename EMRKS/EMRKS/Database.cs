@@ -70,14 +70,13 @@ namespace EMRKS
             return null;
         }
 
-        public static bool UpdatePatient(Patient patient, Address address, string Ssn)
+        public static bool UpdatePatient(Patient patient, Address address, string Ssn, List<EmergencyContact> contacts)
         {
             var docID = patient.getPrimaryDoctorIDForUpdate();
 
             try
             {
                 string query = "UPDATE Patient SET Dob = '" + patient.getDOBForUpdate() + "', Sex = '" + patient.getSex() + "', First_Name = '" + patient.getFirstName() + "', Minit = '" + patient.getMiddleInit() + "', Last_Name = '" + patient.getLastName() + "', Primary_Doctor_ID = " + docID + ", Phone_Number = " + patient.getPhoneNumber() + " WHERE Ssn = " + Ssn + ";";
-                MessageBox.Show(query);
                 MySqlCommand cmd = new MySqlCommand(query, connection);
                 cmd.ExecuteNonQuery();
             }
@@ -87,6 +86,29 @@ namespace EMRKS
                 return false;
             }
 
+            if (contacts.Count > 0)
+            {
+                foreach(EmergencyContact contact in contacts)
+                {
+                    string name = contact.name;
+                    string phone = contact.phone;
+                    string relation = contact.relationship;
+
+                    try
+                    {
+                        string query = "INSERT INTO Emergency_Contact (Pa_Ssn, Contact_name, Phone_Number, Relation_to_Patient) VALUES ('" + Ssn + "', '" + name + "', '" + phone + "', '" + relation + "');";
+                        Debug.WriteLine(query);
+                        MySqlCommand cmd = new MySqlCommand(query, connection);
+                        cmd.ExecuteNonQuery();
+                    }
+                    catch (MySqlException ex)
+                    {
+                        //UPDATE FAILED
+                        return false;
+                    }
+                }
+            }
+
             return UpdatePatientAddress(address, Ssn);
         }
 
@@ -94,14 +116,33 @@ namespace EMRKS
         {
             string query;
 
-            if (address.getLine2() != "")
+            var addressCheck = GetAddress(Ssn);
+
+            if (addressCheck != null)
             {
-                query = "UPDATE Address SET Line_1 = '" + address.getLine1() + "', Line_2 = '" + address.getLine2() + "', City = '" + address.getCity() + "', State = '" + address.getState() + "', Zip = '" + address.getZip() + "' WHERE Ssn = " + Ssn + ";";
+                //If address already exists
+                if (address.getLine2() != "")
+                {
+                    query = "UPDATE Address SET Line_1 = '" + address.getLine1() + "', Line_2 = '" + address.getLine2() + "', City = '" + address.getCity() + "', State = '" + address.getState() + "', Zip = '" + address.getZip() + "' WHERE Ssn = " + Ssn + ";";
+                }
+                else
+                {
+                    query = "UPDATE Address SET Line_1 = '" + address.getLine1() + "', Line_2 = NULL, City = '" + address.getCity() + "', State = '" + address.getState() + "', Zip = '" + address.getZip() + "' WHERE Ssn = " + Ssn + ";";
+                }
             }
             else
             {
-                query = "UPDATE Address SET Line_1 = '" + address.getLine1() + "', Line_2 = NULL, City = '" + address.getCity() + "', State = '" + address.getState() + "', Zip = '" + address.getZip() + "' WHERE Ssn = " + Ssn + ";";
+                if (address.getLine2() != "")
+                {
+                    query = "INSERT INTO Address(Ssn, Line_1, Line_2, City, State, Zip) VALUES ('" + Ssn + "', '" + address.getLine1() + "', '" + address.getLine2() + "', '" + address.getCity() + "', '" + address.getState() + "', '" + address.getZip() + "')";
+                }
+                else
+                {
+                    query = "INSERT INTO Address(Ssn, Line_1, Line_2, City, State, Zip) VALUES ('" + Ssn + "', '" + address.getLine1() + "', NULL, '" + address.getCity() + "', '" + address.getState() + "', '" + address.getZip() + "')";
+                }
             }
+            
+            Debug.WriteLine(query);
 
             try
             {
@@ -121,6 +162,7 @@ namespace EMRKS
         {
             List<string> doctorsNameParts = doctorName.Split(" ").ToList();
             string query;
+
 
             if (doctorsNameParts.Count == 2)
             {
@@ -153,6 +195,34 @@ namespace EMRKS
             return null;
         }
 
+        public static List<EmergencyContact>? GetContacts(string patientSsn)
+        {
+            List<EmergencyContact> contacts = new List<EmergencyContact>();
+
+            try
+            {
+                string query = "SELECT * FROM Emergency_Contact WHERE Pa_Ssn = " + patientSsn;
+                MySqlCommand cmd = new MySqlCommand(query, connection);
+
+                using (MySqlDataReader reader = cmd.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        contacts.Add(new EmergencyContact(reader["Contact_name"].ToString(), reader["Phone_Number"].ToString(), reader["Relation_to_Patient"].ToString()));
+                    }
+                }
+
+                return contacts;
+            }
+            catch (MySqlException ex)
+            {
+                //QUERY FAILED
+                return null;
+            }
+
+            return null;
+        }
+
         public static Staff? GetStaff(string staffID)
         {
             try
@@ -167,8 +237,6 @@ namespace EMRKS
                         return new Staff(reader["ID_Number"].ToString(), reader["Ssn"].ToString(), reader["Pin"].ToString(), reader["Staff_First_Name"].ToString(), reader["Staff_Last_Name"].ToString(), reader["Staff_Type"].ToString(), reader["Hire_Date"].ToString(), reader["Years_Practicing"].ToString(), reader["Specialty"].ToString(), reader["Staff_Middle_Init"].ToString());
                     }
                 }
-
-
             }
             catch (MySqlException ex)
             {
@@ -196,6 +264,7 @@ namespace EMRKS
             catch (MySqlException ex)
             {
                 //QUERY FAILED
+                return null;
             }
 
             return null;

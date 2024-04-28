@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Org.BouncyCastle.Bcpg.OpenPgp;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -35,6 +36,10 @@ namespace EMRKS
         string Ssn;
 
         List<EmergencyContact> contacts = new List<EmergencyContact>();
+        List<EmergencyContact> contactsToRemove = new List<EmergencyContact>();
+
+        bool contactsAdded = false;
+
 
         int numberOfContacts;
 
@@ -122,8 +127,16 @@ namespace EMRKS
                 return;
             }
 
+            bool noAdd = false;
+
+            if (!contactsAdded)
+            {
+                contacts.Clear();
+                noAdd = true;
+            }
+
             //check all fields valid
-            if (!Database.UpdatePatient(patient, address, Ssn, contacts))
+            if (!Database.UpdatePatient(patient, address, Ssn, contacts, contactsToRemove, noAdd))
             {
                 MessageBox.Show("UPDATE FAILED SOMETHING WENT WRONG");
             }
@@ -139,10 +152,13 @@ namespace EMRKS
             Patient_EmergencyContact contact = new Patient_EmergencyContact(this);
             contact.Location = new Point(5, 132 * (numberOfContacts - 1));
             panel2.Controls.Add(contact);
+            contactsAdded = true;
         }
 
-        public void removeControl(UserControl userControl)
+        public void removeControl(UserControl userControl, string name, string phone, string relation)
         {
+            contactsToRemove.Add(new EmergencyContact(name, phone, relation));
+
             panel2.Controls.Remove(userControl);
             numberOfContacts--;
 

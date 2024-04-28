@@ -25,5 +25,12 @@ namespace EMRKS
             this.phoneModified = phoneModified;
             this.relationshipModified = relationshipModified;
         }
+
+        public EmergencyContact(string name, string phone, string relationship)
+        {
+            this.name = name;
+            this.phone = phone;
+            this.relationship = relationship;
+        }
     }
 }

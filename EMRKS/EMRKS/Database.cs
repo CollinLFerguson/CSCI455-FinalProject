@@ -71,7 +71,7 @@ namespace EMRKS
             return null;
         }
 
-        public static bool UpdatePatient(Patient patient, Address address, string Ssn, List<EmergencyContact> contacts)
+        public static bool UpdatePatient(Patient patient, Address address, string Ssn, List<EmergencyContact> contacts, List<EmergencyContact> contactsToRemove, bool noAdd)
         {
             var docID = patient.getPrimaryDoctorIDForUpdate();
 
@@ -97,7 +97,26 @@ namespace EMRKS
 
                     try
                     {
-                        string query = "INTSET INTO Emergency_Contact (Pa_Ssn, Contact_name, Phone_Number, Relation_to_Patient) VALUES ('" + Ssn + "', '" + name + "', '" + phone + "', '" + relation + "');";
+                        //only insert if it doesnt already exist
+                        string query = "INSERT INTO Emergency_Contact (Pa_Ssn, Contact_name, Phone_Number, Relation_to_Patient) VALUES ('" + Ssn + "', '" + name + "', '" + phone + "', '" + relation + "');";
+                        MySqlCommand cmd = new MySqlCommand(query, connection);
+                        cmd.ExecuteNonQuery();
+                    }
+                    catch (MySqlException ex)
+                    {
+                        //UPDATE FAILED
+
+                        return false;
+                    }
+                }
+            }
+            else
+            {
+                if (!noAdd)
+                {
+                    try
+                    {
+                        string query = "DELETE FROM Emergency_Contact WHERE Pa_Ssn = '" + Ssn + "';";
                         MySqlCommand cmd = new MySqlCommand(query, connection);
                         cmd.ExecuteNonQuery();
                     }
@@ -107,20 +126,31 @@ namespace EMRKS
                         return false;
                     }
                 }
+       
             }
-            else
+
+            if (contactsToRemove.Count > 0)
             {
-                try
+                foreach (EmergencyContact contact in contactsToRemove)
                 {
-                    string query = "DELETE FROM Emergency_Contact WHERE Pa_Ssn = '" + Ssn + "';";
-                    MessageBox.Show(query);
-                    MySqlCommand cmd = new MySqlCommand(query, connection);
-                    cmd.ExecuteNonQuery();
-                }
-                catch (MySqlException ex)
-                {
-                    //UPDATE FAILED
-                    return false;
+                    string name = contact.name;
+                    string phone = contact.phone;
+                    string relation = contact.relationship;
+
+                    try
+                    {
+                        string query = "DELETE FROM Emergency_Contact WHERE (Pa_Ssn = '" + Ssn + "' AND Contact_Name = '" + name + "' AND Phone_Number = '" + phone + "' AND Relation_to_Patient = '" + relation + "');"; 
+                        Debug.WriteLine(query);
+                        MySqlCommand cmd = new MySqlCommand(query, connection);
+                        cmd.ExecuteNonQuery();
+                    }
+                    catch (MySqlException ex)
+                    {
+                        //UPDATE FAILED
+                        MessageBox.Show("4");
+
+                        return false;
+                    }
                 }
             }
 

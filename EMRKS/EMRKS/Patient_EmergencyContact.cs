@@ -21,6 +21,10 @@ namespace EMRKS
         public bool phoneModified;
         public bool relationModified;
 
+        public string origName;
+        public string origPhone;
+        public string origRelation;
+
         //for use inside patient editor
         UserControl parent;
 
@@ -43,6 +47,10 @@ namespace EMRKS
             txtContactName.Text = name;
             txtContactPhone.Text = phone;
             txtContactRelationship.Text = relation;
+
+            origName = name;
+            origPhone = phone;
+            origRelation = relation;
         }
 
         public string GetName()
@@ -82,7 +90,7 @@ namespace EMRKS
             //for when using inside patient editor
             if (parent != null)
             {
-                (parent as PatientEditor).removeControl(this);
+                (parent as PatientEditor).removeControl(this, origName, origPhone, origRelation);
                 return;
             }
 

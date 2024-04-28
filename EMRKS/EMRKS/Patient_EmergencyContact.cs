@@ -25,10 +25,21 @@ namespace EMRKS
         {
             InitializeComponent();
         }
+
         public Patient_EmergencyContact(UserControl parent)
         {
             InitializeComponent();
             this.parent = parent;
+        }
+
+        public Patient_EmergencyContact(UserControl parent, string name, string phone, string relation)
+        {
+            InitializeComponent();
+            this.parent = parent;
+
+            txtContactName.Text = name;
+            txtContactPhone.Text = phone;
+            txtContactRelationship.Text = relation;
         }
 
         public string GetName()

@@ -12,6 +12,7 @@ using static System.Windows.Forms.LinkLabel;
 using Mysqlx.Crud;
 using static System.ComponentModel.Design.ObjectSelectorEditor;
 using System.Windows.Forms;
+using System.Xml.Linq;
 
 namespace EMRKS
 {
@@ -96,7 +97,7 @@ namespace EMRKS
 
                     try
                     {
-                        string query = "INSERT INTO Emergency_Contact (Pa_Ssn, Contact_name, Phone_Number, Relation_to_Patient) VALUES ('" + Ssn + "', '" + name + "', '" + phone + "', '" + relation + "');";
+                        string query = "UPDATE Emergency_Contact (Pa_Ssn, Contact_name, Phone_Number, Relation_to_Patient) VALUES ('" + Ssn + "', '" + name + "', '" + phone + "', '" + relation + "');";
                         Debug.WriteLine(query);
                         MySqlCommand cmd = new MySqlCommand(query, connection);
                         cmd.ExecuteNonQuery();
@@ -106,6 +107,21 @@ namespace EMRKS
                         //UPDATE FAILED
                         return false;
                     }
+                }
+            }
+            else
+            {
+                try
+                {
+                    string query = "DELETE FROM Emergency_Contact WHERE Pa_Ssn = '" + Ssn + "';";
+                    MessageBox.Show(query);
+                    MySqlCommand cmd = new MySqlCommand(query, connection);
+                    cmd.ExecuteNonQuery();
+                }
+                catch (MySqlException ex)
+                {
+                    //UPDATE FAILED
+                    return false;
                 }
             }
 

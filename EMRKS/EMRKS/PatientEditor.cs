@@ -72,14 +72,11 @@ namespace EMRKS
                 {
                     EmergencyContact contact = new EmergencyContact(contactInformation[i], contactInformation[i + 1], contactInformation[i + 2]);
                     contacts.Add(contact);
-                }
-
-                foreach (EmergencyContact contact in contacts)
-                {
                     numberOfContacts++;
+                    Patient_EmergencyContact eContact = new Patient_EmergencyContact(this, contactInformation[i], contactInformation[i + 1], contactInformation[i + 2]);
+                    eContact.Location = new Point(5, 132 * (numberOfContacts - 1));
+                    panel2.Controls.Add(eContact);
                 }
-
-                //need to add these as controls
             }
             else
             {

@@ -68,6 +68,7 @@
             Icon = (Icon)resources.GetObject("$this.Icon");
             IsMdiContainer = true;
             MainMenuStrip = menuStrip1;
+            MaximizeBox = false;
             Name = "MainForm";
             Text = "Astra Care Digital Journal - Group 07 EMRK System";
             Load += MainForm_Load;

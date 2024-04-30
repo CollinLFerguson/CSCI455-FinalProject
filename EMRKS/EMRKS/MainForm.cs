@@ -134,7 +134,7 @@ namespace EMRKS
         }
         public void loadviewMedications()
         {
-            /*
+            
             if (currentPage != null) { destroyCurrentPage(); }
             Form viewMedication = new viewMedications();
             viewMedication.MdiParent = this;
@@ -142,7 +142,7 @@ namespace EMRKS
 
             viewMedication.Show();
             noFormPage.Hide();
-            */
+            
         }
 
         public void destroyCurrentPage(){

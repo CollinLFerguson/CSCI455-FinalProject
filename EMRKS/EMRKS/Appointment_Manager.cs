@@ -81,12 +81,14 @@ namespace EMRKS
                 editAppoint.Location = new Point(45, 227);
                 editAppoint.BringToFront();
                 editAppoint.Show();
+                
 
             }
             catch (Exception ex)
             {
                 MessageBox.Show("An appointment ID must be specified.");
             }
+            appointmentIDBox.ResetText();
         }
 
         private void label1_Click(object sender, EventArgs e)

@@ -31,12 +31,14 @@
             statusBox = new ComboBox();
             appointmentStatusBox = new Label();
             rescheduleInfoPanel = new Panel();
+            confirmStatus = new Button();
+            cancelStatusChange = new Button();
             SuspendLayout();
             // 
             // statusBox
             // 
             statusBox.FormattingEnabled = true;
-            statusBox.Items.AddRange(new object[] { "A", "F", "C", "R", "M" });
+            statusBox.Items.AddRange(new object[] { "A- Active", "F- Fullfilled", "C- Cancelled", "R- Rescheduled", "M- Missed" });
             statusBox.Location = new Point(13, 23);
             statusBox.Name = "statusBox";
             statusBox.Size = new Size(113, 23);
@@ -59,11 +61,33 @@
             rescheduleInfoPanel.Size = new Size(468, 105);
             rescheduleInfoPanel.TabIndex = 13;
             // 
+            // confirmStatus
+            // 
+            confirmStatus.Location = new Point(13, 52);
+            confirmStatus.Name = "confirmStatus";
+            confirmStatus.Size = new Size(113, 23);
+            confirmStatus.TabIndex = 14;
+            confirmStatus.Text = "Confirm Status";
+            confirmStatus.UseVisualStyleBackColor = true;
+            confirmStatus.Click += confirmStatus_Click;
+            // 
+            // cancelStatusChange
+            // 
+            cancelStatusChange.Location = new Point(13, 81);
+            cancelStatusChange.Name = "cancelStatusChange";
+            cancelStatusChange.Size = new Size(113, 23);
+            cancelStatusChange.TabIndex = 15;
+            cancelStatusChange.Text = "Cancel Change";
+            cancelStatusChange.UseVisualStyleBackColor = true;
+            cancelStatusChange.Click += cancelStatusChange_Click;
+            // 
             // EditAppointmentStatus
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.DarkSeaGreen;
+            Controls.Add(cancelStatusChange);
+            Controls.Add(confirmStatus);
             Controls.Add(rescheduleInfoPanel);
             Controls.Add(appointmentStatusBox);
             Controls.Add(statusBox);
@@ -79,5 +103,7 @@
         private ComboBox statusBox;
         private Label appointmentStatusBox;
         private Panel rescheduleInfoPanel;
+        private Button confirmStatus;
+        private Button cancelStatusChange;
     }
 }

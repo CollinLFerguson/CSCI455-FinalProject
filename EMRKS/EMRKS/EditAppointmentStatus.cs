@@ -37,10 +37,13 @@ namespace EMRKS
         private void appointmentStatus_SelectedIndexChanged(object sender, EventArgs e)
         {
             string statusTxt = statusBox.GetItemText(statusBox.SelectedItem);
-            status = char.Parse(statusTxt);
+            String[] strlist = statusTxt.Split('-', 2, StringSplitOptions.None);
+            status = char.Parse(strlist[0]);
+    
+        }
 
-
-
+        private void confirmStatus_Click(object sender, EventArgs e)
+        {
             if (!Database.EditPatientAppointmentStatus(currSSN, appointmentID, status))
             {
                 MessageBox.Show("unable to update the given status");
@@ -68,7 +71,15 @@ namespace EMRKS
             else
             {
                 this.Dispose();
+                
             }
+
+        }
+
+        private void cancelStatusChange_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
+
         }
     }
 }

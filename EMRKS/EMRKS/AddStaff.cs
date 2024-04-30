@@ -21,7 +21,7 @@ namespace EMRKS
         {
             if (!sqlStaffCanSerealize())
             { 
-                MessageBox.Show("The staff member can not be added. Verify all necessary items are present."); 
+                MessageBox.Show("Failure to Serealize: The staff member can not be added. Verify all necessary items are present."); 
                 return; 
             }
 
@@ -29,7 +29,7 @@ namespace EMRKS
 
             if (!Database.addStaff(sqlStatement))
             {
-                MessageBox.Show("The staff member can not be added. Verify all necessary items are present.");
+                MessageBox.Show("Failure to Add: The staff member can not be added. Verify all necessary items are present.");
                 return;
             }
 
@@ -37,9 +37,9 @@ namespace EMRKS
             {
                 sqlStatement = "'" + txtSSN.Text + "'," + sqlAddressSerealize();
 
-                if (Database.addAddress(sqlStatement) == false) //Adds the patient to the database.
+                if (!Database.addAddress(sqlStatement)) //Adds the patient to the database.
                 {
-                    MessageBox.Show("The staff member can not be added. Verify all necessary items are present."); 
+                    MessageBox.Show("Failure to add address: The staff member can not be added. Verify all necessary items are present."); 
                     return; //create a popup here.
                 }
             }

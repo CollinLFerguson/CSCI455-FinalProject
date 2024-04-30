@@ -14,10 +14,10 @@ namespace EMRKS
 {
     public partial class AddPatient : Form
     {
-        List<Patient_KnownAllergies>   patientAllergies = new List<Patient_KnownAllergies>(); //A list of all allergies. 
+        List<Patient_KnownAllergies> patientAllergies = new List<Patient_KnownAllergies>(); //A list of all allergies. 
         List<Patient_EmergencyContact> patientEmergencyContacts = new List<Patient_EmergencyContact>(); //List of all emergency contacts associated with the patient
-        List<Patient_AddInsurance>     patientInsurances = new List<Patient_AddInsurance>();
-        List<Patient_Payment>          patientPayments = new List<Patient_Payment>();
+        List<Patient_AddInsurance> patientInsurances = new List<Patient_AddInsurance>();
+        List<Patient_Payment> patientPayments = new List<Patient_Payment>();
 
         public AddPatient()
         {
@@ -33,8 +33,8 @@ namespace EMRKS
 
             }
 
-            String sqlStatement = sqlSerealize();            
-            
+            String sqlStatement = sqlSerealize();
+
 
             if (Database.addPatient(sqlStatement) == false) //Adds the patient to the database.
             {
@@ -53,7 +53,7 @@ namespace EMRKS
                 }
             }
 
-            for (int i = 0; i < patientAllergies.Count;i++) 
+            for (int i = 0; i < patientAllergies.Count; i++)
             {
                 if (patientAllergies.ElementAt(i).sqlSerialize().Length != 0)
                 {
@@ -110,7 +110,7 @@ namespace EMRKS
                     MessageBox.Show("Could not add one or more patient insurances.");
                 }
             }
-            
+
             for (int i = 0; i < patientEmergencyContacts.Count; i++)
             {
                 if (patientEmergencyContacts.ElementAt(i).sqlCanSerialize())
@@ -145,9 +145,9 @@ namespace EMRKS
             {
                 return true;
             }
-            else 
+            else
             {
-                return false;            
+                return false;
             }
         }
 
@@ -166,7 +166,7 @@ namespace EMRKS
             }
             else
             {
-                sqlStatement += "'" + comboBoxDoctor.Text + "',";
+                sqlStatement += "'" + comboBoxDoctor.Text.Split(", ")[0] + "',";
             }
 
             sqlStatement += "'" + txtPhoneNumber.Text + "'";
@@ -295,6 +295,18 @@ namespace EMRKS
             {
                 patientEmergencyContacts.ElementAt(i).Location = new Point(5, 50 + (patientEmergencyContacts.ElementAt(i).Height) * (i));
             }
+        }
+
+        private void AddPatient_Load(object sender, EventArgs e)
+        {
+            DataTable dtbl = Database.getAllDoctors();
+            if(dtbl == null) { return; }
+            foreach (DataRow dr in dtbl.Rows)
+            {
+                String comboString = dr["ID_Number"].ToString() + ", " + dr["Staff_First_Name"] + " " + dr["Staff_Last_name"]; 
+                comboBoxDoctor.Items.Add(comboString);
+            }
+            
         }
     }
 }

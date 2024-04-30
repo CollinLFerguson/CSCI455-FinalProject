@@ -104,7 +104,7 @@
             // 
             label4.AutoSize = true;
             label4.Font = new Font("Segoe UI", 12F);
-            label4.Location = new Point(40, 342);
+            label4.Location = new Point(40, 351);
             label4.Name = "label4";
             label4.Size = new Size(133, 21);
             label4.TabIndex = 7;
@@ -113,7 +113,7 @@
             // 
             // addAppoint
             // 
-            addAppoint.Location = new Point(179, 342);
+            addAppoint.Location = new Point(179, 351);
             addAppoint.Name = "addAppoint";
             addAppoint.Size = new Size(130, 27);
             addAppoint.TabIndex = 17;
@@ -124,7 +124,7 @@
             // addAppointment1
             // 
             addAppointment1.BackColor = Color.DarkSeaGreen;
-            addAppointment1.Location = new Point(43, 375);
+            addAppointment1.Location = new Point(43, 384);
             addAppointment1.Name = "addAppointment1";
             addAppointment1.Size = new Size(567, 120);
             addAppointment1.TabIndex = 18;

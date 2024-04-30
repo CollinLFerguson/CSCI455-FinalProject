@@ -857,7 +857,20 @@ namespace EMRKS
 
             return null;
         }
-
+        public static DataTable? getAllDoctors()
+        {
+            try
+            {
+                string query = "SELECT ID_Number, Staff_First_Name, Staff_Last_name FROM Staff WHERE Staff_Type = 'D'";
+                MySqlDataAdapter sqlDa = new MySqlDataAdapter(query, connection);
+                DataTable dtbl = new DataTable();
+                sqlDa.Fill(dtbl);
+                return dtbl;
+            }
+            catch (MySqlException ex)
+            {
+                return null;
+            }
+        }
     }
-
 }

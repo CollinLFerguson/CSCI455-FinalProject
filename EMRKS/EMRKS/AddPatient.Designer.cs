@@ -136,16 +136,15 @@
             // 
             comboBoxDoctor.DropDownStyle = ComboBoxStyle.DropDownList;
             comboBoxDoctor.FormattingEnabled = true;
-            comboBoxDoctor.Items.AddRange(new object[] { "Male", "Female" });
-            comboBoxDoctor.Location = new Point(782, 150);
+            comboBoxDoctor.Location = new Point(493, 157);
             comboBoxDoctor.Name = "comboBoxDoctor";
-            comboBoxDoctor.Size = new Size(134, 23);
+            comboBoxDoctor.Size = new Size(216, 23);
             comboBoxDoctor.TabIndex = 24;
             // 
             // label20
             // 
             label20.AutoSize = true;
-            label20.Location = new Point(694, 158);
+            label20.Location = new Point(405, 165);
             label20.Name = "label20";
             label20.Size = new Size(87, 15);
             label20.TabIndex = 23;
@@ -156,7 +155,7 @@
             txtZip.Location = new Point(244, 157);
             txtZip.Name = "txtZip";
             txtZip.Size = new Size(122, 23);
-            txtZip.TabIndex = 22;
+            txtZip.TabIndex = 23;
             // 
             // comboState
             // 
@@ -167,7 +166,7 @@
             comboState.Location = new Point(84, 158);
             comboState.Name = "comboState";
             comboState.Size = new Size(83, 23);
-            comboState.TabIndex = 21;
+            comboState.TabIndex = 22;
             // 
             // txtCity
             // 
@@ -525,6 +524,7 @@
             StartPosition = FormStartPosition.Manual;
             Text = " ";
             TopMost = true;
+            Load += AddPatient_Load;
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
             groupBoxPayment.ResumeLayout(false);

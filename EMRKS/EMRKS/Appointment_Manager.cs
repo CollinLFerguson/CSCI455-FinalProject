@@ -78,7 +78,7 @@ namespace EMRKS
                 appointmentID = int.Parse(appointmentIDBox.Text);
                 editAppoint = new EditAppointmentStatus(currSSN, appointmentID);
                 editAppoint.Parent = this;
-                editAppoint.Location = new Point(45, 238);
+                editAppoint.Location = new Point(45, 227);
                 editAppoint.BringToFront();
                 editAppoint.Show();
 
@@ -87,12 +87,6 @@ namespace EMRKS
             {
                 MessageBox.Show("An appointment ID must be specified.");
             }
-
-            
-
-
-
-
         }
 
         private void label1_Click(object sender, EventArgs e)

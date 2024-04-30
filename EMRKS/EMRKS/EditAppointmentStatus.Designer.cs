@@ -67,7 +67,7 @@
             Controls.Add(rescheduleInfoPanel);
             Controls.Add(appointmentStatusBox);
             Controls.Add(statusBox);
-            Location = new Point(45, 238);
+            Location = new Point(45, 227);
             Name = "EditAppointmentStatus";
             Size = new Size(630, 113);
             ResumeLayout(false);

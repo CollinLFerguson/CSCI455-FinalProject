@@ -1,6 +1,8 @@
 "# CSCI455-FinalProject" 
-HEY ITS JOHN WHATS UP
-HEY ITS COLLIN WHATS UP
-This is a test - Daisy
-This is Angelina.
-This is Angelina!
+This is the repository for our CSCI-455: Database Management Systems.
+
+The project's goal was to design an Electronic Medical Records Keeping System.
+
+It was developed by Collin L. Ferguson, Angelina M. Toste, and John Guido, and Daisy Codenys.
+
+This project was designed using C# and Visual Studio 2022 and was intended to be used with a MySQL database.
